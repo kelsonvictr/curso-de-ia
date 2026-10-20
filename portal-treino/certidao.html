@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Solicitar certidão · Portal de treino (fictício)</title>
+<link rel="stylesheet" href="portal.css">
+</head>
+<body>
+<div class="faixa-treino">SITE DE TREINO DO CURSO DE IA · Prefeitura fictícia · nenhum dado aqui é real</div>
+<header><div class="in"><span class="brasao">VA</span><div><h1>Prefeitura de Vila Aurora</h1><small>Portal do Contribuinte · cidade fictícia</small></div></div></header>
+<nav><div class="in">
+  <a href="index.html">Início</a>
+  <a href="notas.html">Notas fiscais emitidas</a>
+  <a href="certidao.html" class="ativo">Solicitar certidão</a>
+  <a href="avisos.html">Avisos</a>
+</div></nav>
+<main>
+<div class="card">
+  <h2>Solicitar certidão</h2>
+  <p>Preencha os dados da empresa. <b>Treino:</b> nada é enviado; o portal só gera um número de protocolo na tela.</p>
+  <form id="form">
+    <label for="empresa">Nome da empresa</label><input id="empresa" name="empresa" required>
+    <label for="cnpj">CNPJ</label><input id="cnpj" name="cnpj" placeholder="00.000.000/0000-00" required>
+    <label for="email">E-mail para contato</label><input id="email" name="email" type="email" required>
+    <label for="tipo">Tipo de certidão</label>
+    <select id="tipo" name="tipo" required><option value="">Selecione</option><option>Regularidade fiscal</option><option>Débitos municipais</option></select>
+    <p style="margin-top:16px"><button class="btn prim" type="submit">Solicitar</button></p>
+  </form>
+  <div id="ok" class="ok" hidden></div>
+</div>
+</main>
+<p class="rodape">Portal de treino do Curso de IA da Programa AI. Cidade, empresas, CNPJs e valores são inventados. Nada é enviado a lugar nenhum.</p>
+<script>
+(function(){
+  const f=document.getElementById('form'), ok=document.getElementById('ok'); let n=0;
+  f.addEventListener('submit',e=>{
+    e.preventDefault(); n++;
+    const dig=(f.cnpj.value.match(/\d/g)||[]).join('');
+    const proto='VA-'+(dig.slice(0,4)||String(4100+n))+'-25';
+    ok.hidden=false;
+    ok.textContent='Solicitação registrada (treino). Protocolo '+proto+' para '+f.empresa.value+' ('+f.tipo.value+').';
+    f.reset();
+  });
+})();
+</script>
+</body>
+</html>

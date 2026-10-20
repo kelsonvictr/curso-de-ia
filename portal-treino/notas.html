@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Notas fiscais · Portal de treino (fictício)</title>
+<link rel="stylesheet" href="portal.css">
+</head>
+<body>
+<div class="faixa-treino">SITE DE TREINO DO CURSO DE IA · Prefeitura fictícia · nenhum dado aqui é real</div>
+<header><div class="in"><span class="brasao">VA</span><div><h1>Prefeitura de Vila Aurora</h1><small>Portal do Contribuinte · cidade fictícia</small></div></div></header>
+<nav><div class="in">
+  <a href="index.html">Início</a>
+  <a href="notas.html" class="ativo">Notas fiscais emitidas</a>
+  <a href="certidao.html">Solicitar certidão</a>
+  <a href="avisos.html">Avisos</a>
+</div></nav>
+<main>
+<div class="card">
+  <h2>Notas fiscais de serviço emitidas</h2>
+  <p>Período: agosto e setembro de 2025. 12 notas por página.</p>
+  <div class="filtro">
+    <div><label for="f-empresa">Empresa</label><select id="f-empresa"><option value="">Todas</option></select></div>
+  </div>
+  <table>
+    <thead><tr><th>Número</th><th>Data</th><th>Empresa</th><th>Serviço</th><th>Valor (R$)</th><th>Situação</th></tr></thead>
+    <tbody id="linhas"></tbody>
+  </table>
+  <div class="pag" id="pag"></div>
+</div>
+</main>
+<p class="rodape">Portal de treino do Curso de IA da Programa AI. Cidade, empresas, CNPJs e valores são inventados. Nada é enviado a lugar nenhum.</p>
+<script src="notas.js"></script>
+<script>
+(function(){
+  const POR=12; let pagina=1, filtro='';
+  const brl=v=>v.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
+  const sel=document.getElementById('f-empresa');
+  [...new Set(NOTAS.map(n=>n[2]))].sort().forEach(e=>{const o=document.createElement('option');o.textContent=e;sel.appendChild(o)});
+  function desenha(){
+    const dados=NOTAS.filter(n=>!filtro||n[2]===filtro);
+    const total=Math.max(1,Math.ceil(dados.length/POR)); pagina=Math.min(pagina,total);
+    const tb=document.getElementById('linhas'); tb.replaceChildren();
+    dados.slice((pagina-1)*POR,pagina*POR).forEach(n=>{
+      const tr=document.createElement('tr');
+      [n[0],n[1],n[2],n[3],brl(n[4]),n[5]].forEach((v,i)=>{const td=document.createElement('td');td.textContent=v;if(i===4)td.className='valor';if(i===5&&v==='Cancelada')td.className='cancelada';tr.appendChild(td)});
+      tb.appendChild(tr);
+    });
+    const p=document.getElementById('pag'); p.replaceChildren();
+    const info=document.createElement('span'); info.textContent='Página '+pagina+' de '+total+' · ';p.appendChild(info);
+    for(let i=1;i<=total;i++){const b=document.createElement('button');b.type='button';b.textContent=i;if(i===pagina)b.setAttribute('aria-current','page');b.onclick=()=>{pagina=i;desenha()};p.appendChild(b)}
+  }
+  sel.onchange=()=>{filtro=sel.value;pagina=1;desenha()};
+  desenha();
+})();
+</script>
+</body>
+</html>

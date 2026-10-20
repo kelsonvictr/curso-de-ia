@@ -1,0 +1,26 @@
+/* Capítulo 6 · componentes locais */
+.mt-linha{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;min-height:34px}
+.mt-item{font-size:13px;padding:5px 10px;border-radius:99px;border:1px solid var(--line2);background:var(--surface)}
+.mt-item.ponto{border-color:var(--ok);background:var(--ok-bg)}
+.mt-item.quebra{border-color:var(--bad);background:var(--bad-bg)}
+.mt-site{min-height:180px;border-radius:12px;border:1px solid var(--line2);padding:22px;display:flex;flex-direction:column;gap:10px;align-items:flex-start;transition:background .4s,color .4s}
+.mt-site small{opacity:.75;font-size:14px}
+.mt-cartoes{display:flex;gap:8px;width:100%}
+.mt-cartoes span{flex:1;height:44px;border-radius:8px;background:color-mix(in srgb,currentColor 12%,transparent)}
+.mt-botao{padding:7px 14px;border-radius:99px;background:var(--claude);color:#1a0e08;font-weight:700;font-size:14px}
+.mt-erro{width:100%;text-align:center;color:var(--bad);font-weight:800;font-size:20px;padding:30px 0}
+.mt-erro small{display:block;color:var(--dim);font-weight:500;font-size:14px}
+.pl-grade{display:grid;grid-template-columns:1fr 1.2fr;gap:18px}
+@media (max-width:760px){.pl-grade{grid-template-columns:1fr}}
+.pl-form label{display:block;font-size:14px;font-weight:700;color:var(--dim);margin-bottom:12px}
+.pl-form input,.pl-form select{display:block;width:100%;margin-top:5px;padding:9px 11px;border-radius:10px;border:1px solid var(--line2);background:var(--surface);color:var(--text);font:15px var(--sans)}
+.pl-saida .prompt{margin-top:0}
+.habitos5{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:18px 0}
+@media (max-width:900px){.habitos5{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.habitos5{grid-template-columns:1fr}}
+.habitos5 .cartao{padding:18px}
+.hb-n{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--claude);color:#1a0e08;font-weight:800;margin-bottom:8px}
+.habitos5 h4{font-size:16px}
+.apoio-link{text-decoration:none;color:var(--text);display:block}
+.apoio-link:hover{border-color:var(--claude)}
+.limites li{max-width:70ch}

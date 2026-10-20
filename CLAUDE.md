@@ -14,9 +14,12 @@ Sucessor do `oficina-claude-code/` (v1), que continua existindo e não deve ser 
 - `index.html` — hub (mapa dos 6 capítulos)
 - `capitulos/NN-slug/` — um capítulo por pasta: `index.html`, `cap.css`, `cap.js`, teatros (`teatro-*/`) e vídeos (`video/`)
 - `shared/base.css` + `shared/curso.js` — identidade "noite de trabalho" e comportamentos comuns
-- `assets/kit/` — arquivos fictícios de treino (contrato de 41 páginas etc.)
+- `assets/kit/` — arquivos fictícios de treino; `assets/kit-aurora.zip` é o que o aluno baixa (refazer o zip ao mudar o kit)
+- `assets/logos/` — logo oficial da Programa AI (SVG) e logos de ferramentas (simple-icons, CC0)
+- `portal-treino/` — prefeitura fictícia de Vila Aurora para as práticas de navegador (Cap 6)
+- `shared/fluxo.js` (fluxos desenhados etapa a etapa) e `shared/mini-ia.js` (mini-IA do hub)
 - `tooling/` — projetos de vídeo 8-bit (HyperFrames); `node_modules`, `renders/`, `snapshots/` não vão pro git
-- `tools/checar.py` — lint da casa
+- `tools/checar.py` — lint da casa · `tools/gerar_contrato.py` — regera o contrato do kit
 
 ## Regras da casa
 - Ligaduras OFF em toda fonte mono (regra global em `base.css` + repetir em classe mono local).
