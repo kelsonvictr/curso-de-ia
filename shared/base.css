@@ -537,3 +537,8 @@ img.fluxo-ic{width:30px;height:30px;object-fit:contain}
 
 .pratica{scroll-margin-top:84px}
 .pt-btn.ok,.pt-btn.duvida,.pt-btn.nao{font-weight:700}
+
+/* botões-pílula de escolha (usados em vários simuladores) */
+.mb-areas,.mb-pecas{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.mb-area{
+.mb-area[aria-pressed="true"]{background:var(--text);color:var(--bg);border-color:var(--text)}

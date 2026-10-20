@@ -1,0 +1,22 @@
+/* Capítulo 4 · componentes locais */
+.fb-grade{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:720px){.fb-grade{grid-template-columns:1fr}}
+.fb-modelo,.fb-doc{min-height:150px;padding:14px 16px;border-radius:12px;background:var(--surface);border:1px solid var(--line2);font-size:15px;line-height:1.6;white-space:pre-line}
+.fb-marcador{font-family:var(--mono);font-size:13.5px;padding:1px 6px;border-radius:6px;background:var(--claude-bg);color:var(--claude-soft);font-variant-ligatures:none;font-feature-settings:"liga" 0,"clig" 0,"calt" 0}
+.fb-dado{background:var(--ok-bg);border-radius:5px;padding:0 4px;font-weight:700}
+.fb-bug{background:var(--bad-bg);color:var(--bad);font-weight:700;border-radius:5px}
+.fb-erro{display:flex;gap:8px;align-items:center;margin-top:10px;font-size:14px;color:var(--dim);cursor:pointer}
+.fb-pilha{display:flex;flex-wrap:wrap;gap:5px;margin-top:16px;min-height:34px}
+.fb-carta{font-size:12px;padding:5px 8px;border-radius:6px;background:var(--surface2);border:1px solid var(--line2);border-top:3px solid var(--ok)}
+.fb-carta.bug{border-top-color:var(--bad)}
+.cc-perguntas{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.cc-grade{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+@media (max-width:720px){.cc-grade{grid-template-columns:1fr}}
+.cc-paginas{display:grid;grid-template-columns:repeat(9,1fr);gap:4px}
+.cc-pag{aspect-ratio:3/4;display:grid;place-items:center;font-size:11px;border-radius:4px;background:var(--surface);border:1px solid var(--line);color:var(--faint);transition:background .2s,border-color .2s}
+.cc-pag.cl{border-color:var(--line2);color:var(--dim)}
+.cc-pag.lida{background:var(--surface2)}
+.cc-pag.achou{background:var(--ok);color:#06210f;border-color:var(--ok);font-weight:800;transform:scale(1.15)}
+.cc-trecho{padding:14px 16px;border-radius:12px;background:var(--surface);border:1px solid var(--line2);min-height:140px}
+.cc-trecho p{margin:6px 0 0 !important;max-width:none !important}
+.cc-trecho mark{background:var(--warn);color:#1a0e08;padding:0 3px;border-radius:3px}

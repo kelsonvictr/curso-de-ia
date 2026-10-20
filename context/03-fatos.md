@@ -53,3 +53,4 @@
 - `marketing/release-produto.txt`: Aurora Termo 500, 500 ml, quente 12h / gelado 24h, R$ 249,00 (pré-venda R$ 219,00).
 - `professor/apostila-capitulo.txt`: juros compostos, regra dos 72 (8% a.a. → 9 anos).
 - Contrato (cláusulas extras): Sexta garantia 3 meses; Sétima confidencialidade 5 anos; Décima Primeira foro João Pessoa.
+  Uma cláusula por página (Primeira = pág. 2 … Décima Primeira = pág. 12); págs. 13–40 anexo operacional; 41 assinaturas.
