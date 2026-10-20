@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capítulo 5 · Conteúdo e ensino no automático — Curso de IA · Programa AI</title>
+<script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('curso-ia-tema');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="icon" href="../../assets/logos/programa-ai.svg">
+<link rel="stylesheet" href="../../shared/base.css">
+<link rel="stylesheet" href="cap.css">
+</head>
+<body>
+
+<header class="topo">
+  <div class="topo-in">
+    <a class="marca" href="../../"><img class="marca-img" src="../../assets/logos/programa-ai.svg" alt="Programa AI"><span>Curso de IA<small>IA na prática</small></span></a>
+    <span class="topo-cap"><b>Capítulo 5</b> · Conteúdo e ensino no automático</span>
+    <div class="topo-acoes">
+      <button class="btn-icone" id="btn-tema" type="button" aria-label="Trocar tema">☀️</button>
+      <button class="btn-icone" type="button" data-abre-indice aria-label="Abrir índice do capítulo">☰</button>
+    </div>
+  </div>
+  <div class="progresso"></div>
+</header>
+
+<div class="veu"></div>
+<nav class="indice" aria-label="Índice do capítulo">
+  <button class="btn-icone indice-fechar" type="button" data-fecha-indice aria-label="Fechar índice">✕</button>
+  <h3>Capítulo 5</h3>
+  <a href="#abertura"><span class="n">00</span>As demandas do dia</a>
+  <a href="#regras"><span class="n">01</span>O arquivo de regras</a>
+  <a href="#pratica-a"><span class="n">02</span>Prática A · um texto vira dez</a>
+  <a href="#pratica-b"><span class="n">03</span>Prática B · a prova com gabarito</a>
+  <a href="#curadoria"><span class="n">04</span>Simulador: a curadoria</a>
+  <a href="#extensoes"><span class="n">05</span>Skills, Conectores e Cowork</a>
+  <a href="#skill"><span class="n">06</span>Simulador: monte uma Skill</a>
+  <a href="#pratica-c"><span class="n">07</span>Prática C · sua primeira Skill</a>
+  <a href="#conectores"><span class="n">08</span>Conectores e Cowork</a>
+  <a href="#estacoes"><span class="n">09</span>Estação da sua área</a>
+  <a href="#quiz-final"><span class="n">10</span>Quiz final</a>
+</nav>
+
+<main>
+<div class="wrap">
+
+  <section class="hero">
+    <span class="hero-kicker">Capítulo 5 de 6 · Conteúdo e ensino no automático</span>
+    <h1>Um texto vira dez, a prova se monta e o Claude aprende <em>o seu jeito</em></h1>
+    <p class="hero-lead">
+      Hoje o agente produz conteúdo para vários canais sem perder o tom, monta uma prova com gabarito
+      e versões A e B, e você conhece as três extensões que fazem ele trabalhar como você:
+      <strong>Skills</strong> (o jeito de fazer), <strong>Conectores</strong> (o acesso aos seus apps) e o
+      <strong>Cowork</strong> (o agente que trabalha em segundo plano).
+    </p>
+    <div class="roteiro" style="--cols:3">
+      <a class="tl" href="#regras"><span class="tl-hora">19:00 · 10 min</span><b>O arquivo de regras</b><span>Por que o tom não se perde</span></a>
+      <a class="tl" href="#pratica-a"><span class="tl-hora">19:10 · 30 min</span><b>Prática A · um texto vira dez</b><span>Instagram, LinkedIn, e-mail, calendário</span></a>
+      <a class="tl" href="#pratica-b"><span class="tl-hora">19:40 · 25 min</span><b>Prática B · a prova</b><span>Gabarito, A e B, curadoria</span></a>
+      <a class="tl" href="#extensoes"><span class="tl-hora">20:05 · 30 min</span><b>Skills</b><span>Fluxo, simulador, primeira Skill</span></a>
+      <a class="tl" href="#conectores"><span class="tl-hora">20:35 · 15 min</span><b>Conectores e Cowork</b><span>Drive, Gmail, Agenda</span></a>
+      <a class="tl" href="#quiz-final"><span class="tl-hora">20:50 · 10 min</span><b>Estação e quiz</b><span>Na sua área</span></a>
+    </div>
+  </section>
+
+  <section class="ato" id="abertura">
+    <span class="kicker">00 · abertura</span>
+    <h2>As demandas do dia</h2>
+    <div class="aurora revela">
+      <div class="aurora-cab"><span class="aurora-logo">A</span><div><b>Aurora Assessoria</b><small>contabilidade · jurídico · RH · administrativo</small></div></div>
+      <div class="aurora-corpo">
+        <div class="aurora-msg">
+          <span class="aurora-de">Marta, sócia da Aurora · 10:20</span>
+          <p>A Aurora Casa & Escritório lança a garrafa Termo 500 e quer posts, LinkedIn, e-mail e um calendário, <b>tudo no mesmo tom</b>. E o Instituto pediu uma <b>prova com gabarito</b> do capítulo de juros compostos, em duas versões. Ah: cansei de explicar o nosso jeito de escrever toda vez. Dá para ensinar de uma vez?</p>
+        </div>
+      </div>
+    </div>
+    <div class="regra revela">
+      <span class="regra-rot">A regra central do capítulo</span>
+      <p>O que você explicaria toda vez vira <em>arquivo</em>: regras de tom num texto, o jeito de fazer numa Skill. A IA rascunha; <em>a curadoria é sua</em>.</p>
+    </div>
+  </section>
+
+  <section class="ato" id="regras">
+    <span class="kicker">01 · teoria + fluxo</span>
+    <h2>O arquivo de regras: o contexto que não some</h2>
+    <p class="lead">
+      Lembra do Capítulo 1? Conversa nova, contexto vazio. Com o agente, a solução é simples: as regras
+      viram um <strong>arquivo na pasta</strong>, e todo pedido manda ler esse arquivo. O tom passa a ser
+      o mesmo em todos os canais, hoje e no mês que vem.
+    </p>
+    <div class="fluxo" data-titulo="fluxo · um release, quatro canais, um tom">
+      <script type="application/json">{
+        "altura": 380,
+        "nos": [
+          {"id":"release","x":10,"y":25,"rot":"Release","sub":"os fatos","ic":"📰"},
+          {"id":"regras","x":10,"y":75,"rot":"tom-de-voz.txt","sub":"as regras","ic":"📏"},
+          {"id":"agente","x":40,"y":50,"rot":"Agente","sub":"lê os dois a cada pedido","ic":"🤖"},
+          {"id":"insta","x":76,"y":12,"rot":"Instagram","sub":"3 variações","ic":"📸"},
+          {"id":"linkedin","x":92,"y":40,"rot":"LinkedIn","sub":"tom sóbrio","ic":"💼"},
+          {"id":"email","x":92,"y":72,"rot":"E-mail","sub":"3 assuntos","ic":"✉️"},
+          {"id":"cal","x":72,"y":90,"rot":"Calendário","sub":"2 semanas","ic":"📅"}
+        ],
+        "inicio": "Os fatos vêm do release. O jeito de escrever vem do arquivo de regras.",
+        "passos": [
+          {"acende":["release","agente"],"pacote":{"de":"release","para":"agente","txt":"Termo 500: 12h quente, R$ 249"},
+           "legenda":"<b>1. Os fatos.</b> Tudo o que pode ser dito sobre o produto está no release. Nada além disso."},
+          {"acende":["regras","agente"],"pacote":{"de":"regras","para":"agente","txt":"frases curtas, sempre o preço…","tipo":"info"},
+           "legenda":"<b>2. As regras.</b> Informal mas nunca boba, frases curtas, sempre citar o preço, nunca prometer o que o produto não faz."},
+          {"acende":["insta"],"pacote":{"de":"agente","para":"insta","txt":"3 posts","tipo":"ok"},
+           "legenda":"<b>3. Instagram.</b> Três ganchos diferentes, mesmo tom."},
+          {"acende":["linkedin"],"pacote":{"de":"agente","para":"linkedin","txt":"1 post","tipo":"ok"},
+           "legenda":"<b>4. LinkedIn.</b> Mais sóbrio, mas obedecendo às mesmas regras: preço citado, nada inventado."},
+          {"acende":["email"],"pacote":{"de":"agente","para":"email","txt":"e-mail + 3 assuntos","tipo":"ok"},
+           "legenda":"<b>5. E-mail.</b> Com opções de assunto para você escolher."},
+          {"acende":["cal"],"pacote":{"de":"agente","para":"cal","txt":"calendario-posts.csv","tipo":"ok"},"marca":{"cal":"ok"},
+           "legenda":"<b>6. O calendário.</b> Tudo distribuído em duas semanas, como planilha. No mês que vem, mesmo arquivo de regras, mesmo tom."}
+        ]
+      }</script>
+    </div>
+  </section>
+
+  <section class="ato pratica" id="pratica-a">
+    <span class="kicker">02 · prática guiada · 30 min</span>
+    <h2>Prática A · Um texto vira dez</h2>
+    <ol class="passos">
+      <li><b>O arquivo de regras.</b>
+        <div class="prompt"><div class="prompt-topo"><span class="rot">📏 tom de voz</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+          <pre>leia marketing/release-produto.txt para conhecer o produto. depois crie
+marketing/tom-de-voz.txt com estas regras para TODOS os textos da marca:
+- informal, mas nunca boba
+- frases curtas
+- sem exclamação dupla
+- sempre citar o preço
+- nunca prometer o que o produto não faz (só o que está no release)</pre></div>
+      </li>
+      <li><b>Instagram em três sabores.</b>
+        <div class="prompt"><div class="prompt-topo"><span class="rot">📸 três posts</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+          <pre>seguindo marketing/tom-de-voz.txt e usando só fatos do release, escreva
+3 posts de Instagram para o lançamento da Termo 500, cada um com um
+gancho: 1) o café frio, 2) presente, 3) pré-venda com desconto. curtos,
+com emoji. salve em marketing/posts/instagram.txt.</pre></div>
+      </li>
+      <li><b>LinkedIn e e-mail.</b>
+        <div class="prompt"><div class="prompt-topo"><span class="rot">💼 sóbrio e direto</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+          <pre>ainda seguindo o tom-de-voz.txt e só com fatos do release: 1) um post
+de LinkedIn mais sóbrio, destacando o desenvolvimento e o produto
+nacional, em marketing/posts/linkedin.txt; 2) um e-mail de lançamento com
+3 opções de assunto, em marketing/posts/email.txt.</pre></div>
+      </li>
+      <li><b>O calendário.</b>
+        <div class="prompt"><div class="prompt-topo"><span class="rot">📅 duas semanas</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+          <pre>crie marketing/calendario-posts.csv com um plano de 2 semanas
+distribuindo tudo o que criamos. colunas: dia_da_semana;canal;conteudo;status.
+status começa como "rascunho" para tudo.</pre></div>
+      </li>
+      <li><b>A conferência dos fatos (inegociável).</b> Confira em todos os textos: R$ 249,00 nas lojas, R$ 219,00 na pré-venda, 12 horas quente, 24 horas gelado, 500 ml. Qualquer número fora disso é invenção.</li>
+    </ol>
+    <div class="caixa dica"><span class="caixa-ic">🔁</span><div><span class="caixa-tit">O superpoder: iterar com o arquivo</span>
+      <p>Não gostou de algo? Mude a <b>regra</b>, não o post: “acrescente ao tom-de-voz.txt: nunca usar a palavra ‘incrível’” e peça para refazer. A correção passa a valer para tudo.</p></div></div>
+  </section>
+
+  <section class="ato pratica" id="pratica-b">
+    <span class="kicker">03 · prática guiada · 25 min</span>
+    <h2>Prática B · A prova que se monta sozinha</h2>
+    <ol class="passos">
+      <li><b>As questões com gabarito comentado.</b>
+        <div class="prompt"><div class="prompt-topo"><span class="rot">📝 8 questões</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+          <pre>leia professor/apostila-capitulo.txt e crie 8 questões de múltipla
+escolha usando SÓ o conteúdo dele. 4 alternativas (a, b, c, d), uma
+correta. depois, um gabarito comentado: por que a certa está certa e por
+que cada errada é tentadora. salve em prova/quiz-gabarito.txt.</pre></div>
+        <div class="tela"><span class="tela-rot">um exemplo do que pode sair</span>
+          <span class="tela-linha">Pela regra dos 72, a 8% ao ano, em quanto tempo o dinheiro dobra?</span>
+          <span class="tela-linha">a) 72 anos  b) 9 anos  c) 8 anos  d) 6 anos · Gabarito: b (72 dividido por 8)</span></div>
+      </li>
+      <li><b>A curadoria.</b> Leia as 8 questões como professor. Use o simulador abaixo para treinar o olhar: o que procurar em questão gerada por IA.</li>
+      <li><b>Versões A e B.</b>
+        <div class="prompt"><div class="prompt-topo"><span class="rot">🔀 embaralhar</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+          <pre>a partir de prova/quiz-gabarito.txt aprovado, gere duas versões com as
+mesmas 8 questões, mas com a ordem das questões E das alternativas
+embaralhada de forma diferente. SEM gabarito nas provas. salve em
+prova/prova-a.txt, prova/prova-b.txt e os gabaritos em prova/gabaritos.txt.</pre></div>
+      </li>
+      <li><b>A lista de presença.</b>
+        <div class="prompt"><div class="prompt-topo"><span class="rot">🖊️ lista</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+          <pre>com os nomes de declaracoes/participantes.csv, crie
+prova/lista-presenca.txt: título "LISTA DE PRESENÇA - AVALIAÇÃO", os 30
+nomes em ordem alfabética, numerados, cada um com uma linha para assinatura.</pre></div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="ato" id="curadoria">
+    <span class="kicker">04 · simulador</span>
+    <h2>A curadoria: você é o professor</h2>
+    <p class="lead">Questões geradas a partir da apostila. Algumas têm defeito. Marque o que você faria com cada uma.</p>
+    <div class="sim" id="sim-curadoria">
+      <div class="sim-topo"><span class="bolinhas"><i></i><i></i><i></i></span><span class="sim-label">simulador · curadoria de questões</span></div>
+      <div class="sim-palco"><div class="cur-lista" id="cur-lista"></div></div>
+      <div class="sim-controles"><span class="sim-legenda" id="cur-placar">Revise as quatro questões.</span></div>
+    </div>
+  </section>
+
+  <section class="ato" id="extensoes">
+    <span class="kicker">05 · teoria + fluxo</span>
+    <h2>Skills, Conectores e Cowork: o que é cada um</h2>
+    <p class="lead">
+      Três palavras que você vai ouvir muito. A diferença é simples: a <strong>Skill</strong> ensina o
+      <em>jeito de fazer</em>; o <strong>Conector</strong> dá <em>acesso</em> a um aplicativo; o
+      <strong>Cowork</strong> é o <em>agente trabalhando em segundo plano</em> enquanto você faz outra coisa.
+    </p>
+    <div class="tres revela">
+      <div class="cartao claude"><h4>📘 Skill · o jeito de fazer</h4><p>Um arquivo com instruções (SKILL.md). O Claude lê a descrição e usa sozinho quando o pedido combina, ou quando você chama pelo nome com “/”.</p></div>
+      <div class="cartao info"><h4>🔌 Conector · o acesso</h4><p>Um cabo seguro entre o Claude e um app: Google Drive, Gmail, Agenda e outros. Você autoriza, e pode desligar quando quiser.</p></div>
+      <div class="cartao ok"><h4>🧑‍💻 Cowork · o colega</h4><p>A aba do app Claude onde um agente autônomo toca tarefas em segundo plano enquanto você trabalha em outra coisa, com o seu ok.</p></div>
+    </div>
+    <div class="fluxo" data-titulo="fluxo · prepare a reunião de amanhã">
+      <script type="application/json">{
+        "altura": 400,
+        "nos": [
+          {"id":"voce","x":9,"y":50,"rot":"Você","sub":"“prepare a reunião”","ic":"🙋"},
+          {"id":"skill","x":34,"y":18,"rot":"Skill","sub":"pauta-aurora","ic":"📘"},
+          {"id":"agente","x":34,"y":62,"rot":"Agente","sub":"","ic":"🤖"},
+          {"id":"cal","x":64,"y":14,"rot":"Agenda","sub":"conector","ic":"../../assets/logos/calendar.svg"},
+          {"id":"gmail","x":64,"y":50,"rot":"Gmail","sub":"conector","ic":"../../assets/logos/gmail.svg"},
+          {"id":"drive","x":64,"y":86,"rot":"Drive","sub":"conector","ic":"../../assets/logos/drive.svg"},
+          {"id":"pauta","x":91,"y":50,"rot":"Pauta","sub":"rascunho","ic":"📋"}
+        ],
+        "inicio": "Um pedido curto. Por trás, a Skill diz <b>como</b> e os Conectores dão <b>acesso</b>.",
+        "passos": [
+          {"acende":["voce","agente"],"pacote":{"de":"voce","para":"agente","txt":"prepare a reunião de amanhã"},
+           "legenda":"<b>1. Um pedido curto.</b> Sem explicar o seu jeito de montar pauta: isso já está escrito numa Skill."},
+          {"acende":["skill"],"pacote":{"de":"skill","para":"agente","txt":"1) agenda 2) e-mails 3) documentos","tipo":"info"},
+           "legenda":"<b>2. A Skill entra sozinha.</b> A descrição dela diz “use quando pedirem para preparar reunião”. O pedido combinou, ela foi carregada: é o jeito de fazer."},
+          {"acende":["cal"],"pacote":{"de":"agente","para":"cal","txt":"eventos de amanhã?"},
+           "legenda":"<b>3. Conector da Agenda.</b> Ele consulta o evento de amanhã: quem, quando, sobre o quê."},
+          {"acende":["gmail"],"pacote":{"de":"agente","para":"gmail","txt":"e-mails do cliente?"},
+           "legenda":"<b>4. Conector do Gmail.</b> Busca as últimas mensagens com o cliente. Só lê: rascunho no máximo, nunca envia sem você."},
+          {"acende":["drive"],"pacote":{"de":"agente","para":"drive","txt":"contrato do cliente"},
+           "legenda":"<b>5. Conector do Drive.</b> Abre o documento citado nos e-mails."},
+          {"acende":["pauta"],"pacote":{"de":"agente","para":"pauta","txt":"pauta + pendências","tipo":"ok"},"marca":{"pauta":"ok"},
+           "legenda":"<b>6. A pauta sai no seu formato.</b> Skill = o como. Conectores = o acesso. Você revisa e decide o que enviar."}
+        ]
+      }</script>
+    </div>
+  </section>
+
+  <section class="ato" id="skill">
+    <span class="kicker">06 · simulador</span>
+    <h2>Monte uma Skill e veja quando ela entra</h2>
+    <p class="lead">
+      A parte mais importante de uma Skill é a <strong>descrição</strong>: é por ela que o Claude decide
+      se usa ou não. Escreva, e depois teste pedidos diferentes.
+    </p>
+    <div class="sim" id="sim-skill">
+      <div class="sim-topo"><span class="bolinhas"><i></i><i></i><i></i></span><span class="sim-label">simulador · .claude/skills/…/SKILL.md</span></div>
+      <div class="sim-palco">
+        <div class="sk-grade">
+          <div class="sk-form">
+            <label>nome <input id="sk-nome" type="text" value="post-aurora" maxlength="40"></label>
+            <label>descrição (quando usar) <textarea id="sk-desc" rows="3">Use quando pedirem posts, legendas ou textos de redes sociais para a Aurora.</textarea></label>
+            <label>instruções (o jeito de fazer)<textarea id="sk-inst" rows="5">1. Leia marketing/tom-de-voz.txt antes de escrever.
+2. Use só fatos de marketing/release-produto.txt.
+3. Sempre cite o preço.
+4. Entregue 3 variações com ganchos diferentes.</textarea></label>
+          </div>
+          <div>
+            <span class="np-rot">o arquivo que o agente criaria</span>
+            <pre class="sk-arquivo" id="sk-arquivo"></pre>
+          </div>
+        </div>
+        <div class="sk-teste">
+          <span class="np-rot">teste um pedido</span>
+          <div class="sk-pedidos" id="sk-pedidos"></div>
+          <div class="sk-resultado" id="sk-resultado"><span class="dim">Escolha um pedido.</span></div>
+        </div>
+      </div>
+      <div class="sim-controles"><span class="sim-legenda">Simulação didática: o Claude real decide pelo sentido da descrição, não só por palavras iguais.</span></div>
+    </div>
+  </section>
+
+  <section class="ato pratica" id="pratica-c">
+    <span class="kicker">07 · prática guiada · 15 min</span>
+    <h2>Prática C · Sua primeira Skill</h2>
+    <p class="lead">Você não precisa escrever o arquivo: peça ao agente. As Skills de um projeto ficam em <code>.claude/skills/</code> dentro da pasta.</p>
+    <ol class="passos">
+      <li><b>Peça a criação.</b>
+        <div class="prompt"><div class="prompt-topo"><span class="rot">📘 criar a skill</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+          <pre>crie uma skill neste projeto em .claude/skills/post-aurora/SKILL.md.
+nome: post-aurora. descrição: "Use quando pedirem posts, legendas ou
+textos de redes sociais para a Aurora". instruções: ler
+marketing/tom-de-voz.txt, usar só fatos do release, sempre citar o preço
+e entregar 3 variações com ganchos diferentes. me mostre o arquivo antes.</pre></div>
+      </li>
+      <li><b>Teste chamando pelo nome.</b> Digite <code>/post-aurora</code> seguido de um pedido curto, por exemplo: “Dia das Mães”.</li>
+      <li><b>Teste sem chamar.</b> Numa conversa nova na mesma pasta, peça “três legendas para o Dia dos Pais”. Repare se ele segue as regras sem você mandar.</li>
+    </ol>
+    <div class="caixa dica"><span class="caixa-ic">🗂️</span><div><span class="caixa-tit">Onde moram as Skills</span>
+      <p>Na pasta do projeto (<code>.claude/skills/</code>), valem só ali. Na sua pasta pessoal (<code>~/.claude/skills/</code>), valem em todos os seus projetos. No app, o menu <strong>Customize</strong> reúne Skills, Conectores e plugins.</p></div></div>
+  </section>
+
+  <section class="ato" id="conectores">
+    <span class="kicker">08 · demonstração + prática opcional</span>
+    <h2>Conectores e Cowork, na prática</h2>
+    <ol class="passos">
+      <li><b>Adicionar um conector.</b> No app, aba Code, clique no <strong>+</strong> ao lado da caixa de texto e escolha <strong>Add connectors</strong> (em algumas versões: Connectors, Browse connectors). Escolha Google Drive, Gmail ou Google Agenda e autorize com a sua conta.</li>
+      <li><b>Um pedido que usa o conector.</b>
+        <div class="prompt"><div class="prompt-topo"><span class="rot">📅 a agenda de amanhã</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+          <pre>olhe os meus compromissos de amanhã na agenda e me mande um resumo:
+horário, com quem e o assunto. não altere nada na agenda.</pre></div>
+      </li>
+      <li><b>Para desligar:</b> Settings, Connectors. Autorizar e revogar é com você.</li>
+      <li><b>O Cowork.</b> No app Claude, a aba <strong>Cowork</strong> é um agente autônomo que trabalha nas tarefas em segundo plano. Use para tarefas que levam tempo e não precisam de você olhando, sempre revisando o resultado.</li>
+    </ol>
+    <div class="caixa perigo"><span class="caixa-ic">🔐</span><div><span class="caixa-tit">Conector é acesso de verdade</span>
+      <p>Ligou o Gmail? O Claude passa a ler seus e-mails quando o pedido pedir. Use conta de trabalho só se a sua empresa permitir, peça sempre rascunho e nunca deixe ele enviar sozinho.</p></div></div>
+    <details class="prof">
+      <summary>Para o professor · como conduzir</summary>
+      Faça a demonstração com a sua própria conta no telão (a turma não precisa conectar nada). Mostre a tela de autorização
+      do Google, um pedido que só lê e o caminho para desligar. Quem quiser, conecta em casa.
+    </details>
+  </section>
+
+  <section class="ato pratica" id="estacoes">
+    <span class="kicker">09 · estação da sua área · 10 min</span>
+    <h2>Um texto vira três, na sua área</h2>
+    <div data-abas>
+      <div class="abas" role="tablist">
+        <button class="aba" role="tab" aria-controls="e-cont" aria-selected="true">Contabilidade</button>
+        <button class="aba" role="tab" aria-controls="e-jur" aria-selected="false">Jurídico</button>
+        <button class="aba" role="tab" aria-controls="e-rh" aria-selected="false">RH</button>
+        <button class="aba" role="tab" aria-controls="e-sau" aria-selected="false">Saúde</button>
+        <button class="aba" role="tab" aria-controls="e-edu" aria-selected="false">Educação</button>
+      </div>
+      <div class="aba-painel" id="e-cont" role="tabpanel"><div class="prompt"><div class="prompt-topo"><span class="rot">📣 o prazo</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+        <pre>escreva o mesmo aviso de prazo de entrega de documentos em três formatos:
+e-mail formal, mensagem curta de WhatsApp e post para o Instagram do
+escritório. não invente datas: deixe [DATA] para eu preencher.</pre></div></div>
+      <div class="aba-painel" id="e-jur" role="tabpanel"><div class="prompt"><div class="prompt-topo"><span class="rot">⚖️ o leigo entende</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+        <pre>a partir da Cláusula Quinta do contrato do kit, escreva: 1) uma
+explicação para o cliente leigo, em 5 linhas; 2) um resumo técnico
+para o colega. cite a cláusula nos dois.</pre></div></div>
+      <div class="aba-painel" id="e-rh" role="tabpanel"><div class="prompt"><div class="prompt-topo"><span class="rot">👥 o comunicado</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+        <pre>escreva o comunicado de mudança no registro de ponto em três versões:
+e-mail para a equipe, mensagem curta para o grupo e um passo a passo de
+uma página para imprimir. não invente nomes de aplicativos.</pre></div></div>
+      <div class="aba-painel" id="e-sau" role="tabpanel"><div class="prompt"><div class="prompt-topo"><span class="rot">🩺 linguagem simples</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+        <pre>transforme esta orientação técnica em linguagem simples para o
+paciente, em tópicos curtos, sem acrescentar nenhuma informação nova:
+[cole aqui uma orientação genérica, sem dados de paciente]</pre></div></div>
+      <div class="aba-painel" id="e-edu" role="tabpanel"><div class="prompt"><div class="prompt-topo"><span class="rot">📚 estudo dirigido</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+        <pre>a partir de prova/quiz-gabarito.txt, crie um estudo dirigido: as 8
+questões como perguntas abertas, cada uma com uma dica curta entre
+parênteses, sem as respostas. salve em prova/estudo-dirigido.txt.</pre></div></div>
+    </div>
+    <div class="duas">
+      <div class="cartao claude"><h4>📝 Leve para o trabalho</h4><p>Escreva o seu próprio arquivo de regras: 5 regras de como você escreve para clientes. Guarde: ele vira a base do seu assistente no Capítulo 6.</p></div>
+      <div class="cartao info"><h4>🧰 Antes do Capítulo 6</h4><p>Instale o <strong>Google Chrome</strong> se ainda não tiver. No último capítulo, o Claude Code vai usar o navegador por você.</p></div>
+    </div>
+  </section>
+
+  <section class="ato" id="quiz-final">
+    <span class="kicker">10 · quiz final</span>
+    <h2>Três decisões de conteúdo</h2>
+    <div class="quiz" data-quiz>
+      <p class="quiz-q">Os posts saíram ótimos, mas um diz “mantém gelado por 48 horas”. O release diz 24. O que aconteceu e o que fazer?</p>
+      <div class="quiz-ops">
+        <button class="quiz-op" type="button" data-fb="Nunca publique número inventado: seria propaganda enganosa.">Nada: 48 horas soa melhor.</button>
+        <button class="quiz-op" type="button" data-certa data-fb="O número veio do “provável”, não do release. Corrija e reforce a regra: “use só números do release”.">Invenção: corrigir para 24 e reforçar no arquivo de regras que só valem fatos do release.</button>
+        <button class="quiz-op" type="button" data-fb="Mudar de ferramenta não resolve: o que resolve é fonte + regra + conferência.">Trocar de IA.</button>
+      </div>
+      <div class="quiz-fb"></div>
+    </div>
+    <div class="quiz" data-quiz>
+      <p class="quiz-q">Sua Skill de posts nunca é usada sozinha, só quando você digita “/post-aurora”. O que provavelmente está fraco?</p>
+      <div class="quiz-ops">
+        <button class="quiz-op" type="button" data-certa data-fb="O Claude decide pela descrição. Diga com clareza quando usar: “Use quando pedirem posts, legendas…”.">A descrição: ela não diz claramente quando a Skill deve ser usada.</button>
+        <button class="quiz-op" type="button" data-fb="O nome serve para chamar com “/”. Quem decide o uso automático é a descrição.">O nome da Skill.</button>
+        <button class="quiz-op" type="button" data-fb="O tamanho não é o problema: o critério de uso está na descrição.">As instruções são curtas demais.</button>
+      </div>
+      <div class="quiz-fb"></div>
+    </div>
+    <div class="quiz" data-quiz>
+      <p class="quiz-q">Qual frase descreve um Conector?</p>
+      <div class="quiz-ops">
+        <button class="quiz-op" type="button" data-fb="Isso é uma Skill: o jeito de fazer.">Um arquivo que ensina o jeito de fazer uma tarefa.</button>
+        <button class="quiz-op" type="button" data-certa data-fb="Conector é acesso autorizado a um app, como Drive, Gmail ou Agenda. E pode ser revogado.">Um acesso autorizado a um aplicativo, como Gmail ou Drive.</button>
+        <button class="quiz-op" type="button" data-fb="Isso lembra o Cowork, o agente em segundo plano.">Um agente que trabalha sozinho em segundo plano.</button>
+      </div>
+      <div class="quiz-fb"></div>
+    </div>
+    <div class="regra">
+      <span class="regra-rot">O que fica deste capítulo</span>
+      <p>Regras viram arquivo, o jeito de fazer vira Skill, o acesso vira Conector. A IA rascunha; você faz a curadoria.</p>
+    </div>
+    <nav class="nav-caps" aria-label="Navegação entre capítulos">
+      <a href="../04-documentos/"><small>anterior</small>‹ Capítulo 4 · O agente nos seus documentos</a>
+      <a class="prox" href="../06-dia-a-dia/"><small>próximo</small>Capítulo 6 · Sua página e o agente no dia a dia ›</a>
+    </nav>
+  </section>
+
+</div>
+</main>
+
+<footer class="rodape">Curso de IA · Programa AI · Capítulo 5 · Dados e empresas dos exercícios são fictícios.</footer>
+<script src="../../shared/curso.js"></script>
+<script src="../../shared/fluxo.js"></script>
+<script src="cap.js"></script>
+</body>
+</html>

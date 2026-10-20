@@ -1,0 +1,25 @@
+/* Capítulo 5 · componentes locais */
+.cur-lista{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:760px){.cur-lista{grid-template-columns:1fr}}
+.cur-q{padding:16px;border-radius:var(--r);border:1px solid var(--line);background:var(--surface)}
+.cur-q.certo{border-color:var(--ok)}.cur-q.errado{border-color:var(--bad)}
+.cur-enun{margin:0 0 8px !important;font-size:15.5px}
+.cur-alts{list-style:none;margin:0 0 6px !important;padding:0;font-size:14.5px;color:var(--dim)}
+.cur-alts li{padding:2px 0;margin:0}
+.cur-alts li.gab{color:var(--text)}
+.cur-gab{display:block;font-size:13px;color:var(--warn);margin-bottom:10px}
+.cur-botoes{display:flex;gap:6px;flex-wrap:wrap}
+.cur-botoes .btn{padding:7px 11px;font-size:14px}
+.cur-botoes .btn.marcado{outline:2px solid var(--text)}
+.cur-fb{margin:10px 0 0 !important;font-size:14.5px;color:var(--dim)}
+.cur-fb b{color:var(--text)}
+.sk-grade{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:760px){.sk-grade{grid-template-columns:1fr}}
+.sk-form label{display:block;font-size:13px;font-weight:700;color:var(--dim);margin-bottom:10px}
+.sk-form input,.sk-form textarea{display:block;width:100%;margin-top:4px;padding:9px 11px;border-radius:10px;border:1px solid var(--line2);background:var(--surface);color:var(--text);font:15px var(--sans);resize:vertical}
+.sk-arquivo{font-family:var(--mono);font-size:13.5px;line-height:1.55;padding:14px;border-radius:12px;background:var(--bg);border:1px solid var(--line2);white-space:pre-wrap;min-height:220px;margin:0;font-variant-ligatures:none;font-feature-settings:"liga" 0,"clig" 0,"calt" 0}
+.sk-teste{margin-top:16px}
+.sk-pedidos{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.sk-resultado{padding:14px 16px;border-radius:12px;border:1px solid var(--line2);background:var(--surface);font-size:15.5px;min-height:60px}
+.sk-resultado.usa{border-color:var(--ok);background:var(--ok-bg)}
+.sk-resultado.nao-usa{border-color:var(--line2)}
