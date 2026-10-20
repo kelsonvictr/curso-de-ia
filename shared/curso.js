@@ -1,6 +1,6 @@
 /* =========================================================
    Curso de IA — Programa AI  ·  shared/curso.js
-   Comportamentos comuns a todas as noites: tema, progresso,
+   Comportamentos comuns a todos os capítulos: tema, progresso,
    índice, copiar prompt, quiz, abas de estação e entrada suave.
    Sem dependência externa — a página funciona offline.
    ========================================================= */

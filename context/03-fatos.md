@@ -13,7 +13,7 @@
 ## Planos e preços
 - Claude Code exige plano pago; preço sempre por link: https://claude.com/pricing (não escrever valor).
 - Fatos de instalação da v1 continuam em `../oficina-claude-code/context/03-fatos-instalacao.md`
-  (verificados em 2026-08-12; revalidar antes da Noite 2).
+  (verificados em 2026-08-12; revalidar antes do Capítulo 2).
 
 ## Contrato do kit (`assets/kit/contrato/contrato-prestacao-servicos.pdf`, 41 págs)
 - Cláusula Segunda: prazo 24 meses, prorrogável por termo aditivo.

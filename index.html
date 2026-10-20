@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/logos/programa-ai.svg">
 <link rel="stylesheet" href="shared/base.css">
 <style>
 .mapa{margin:36px 0 10px;position:relative}
@@ -20,28 +21,28 @@
 .mapa text{font-family:var(--mono);font-size:15px;fill:var(--dim);text-anchor:middle;font-variant-ligatures:none}
 .mapa .no-num{fill:var(--text);font-weight:600}
 .mapa .no-num.on{fill:#1a0e08}
-.noites{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:26px 0}
-@media (max-width:720px){.noites{grid-template-columns:1fr}}
-.noite{
+.caps{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:26px 0}
+@media (max-width:720px){.caps{grid-template-columns:1fr}}
+.cap-card{
   position:relative;display:block;padding:22px;border-radius:var(--r-lg);text-decoration:none;color:var(--text);
   background:var(--surface);border:1px solid var(--line);transition:border-color .2s,transform .2s var(--ease);
 }
-a.noite:hover{border-color:var(--claude);transform:translateY(-3px)}
-.noite .n{font-family:var(--mono);font-size:13px;color:var(--claude-soft)}
-.noite h3{font-family:var(--serif);font-weight:600;font-size:25px;line-height:1.15;margin:6px 0 8px}
-.noite p{color:var(--dim);font-size:15.5px;margin:0}
-.noite .estado{position:absolute;top:18px;right:18px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:99px}
-.noite .estado.on{background:var(--ok-bg);color:var(--ok)}
-.noite .estado.breve{background:var(--surface2);color:var(--faint)}
-.noite.breve{opacity:.72}
-.noite.destaque{border-color:color-mix(in srgb,var(--claude) 50%,transparent);box-shadow:0 0 0 4px var(--claude-bg)}
+a.cap-card:hover{border-color:var(--claude);transform:translateY(-3px)}
+.cap-card .n{font-family:var(--mono);font-size:13px;color:var(--claude-soft)}
+.cap-card h3{font-family:var(--serif);font-weight:600;font-size:25px;line-height:1.15;margin:6px 0 8px}
+.cap-card p{color:var(--dim);font-size:15.5px;margin:0}
+.cap-card .estado{position:absolute;top:18px;right:18px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:99px}
+.cap-card .estado.on{background:var(--ok-bg);color:var(--ok)}
+.cap-card .estado.breve{background:var(--surface2);color:var(--faint)}
+.cap-card.breve{opacity:.72}
+.cap-card.destaque{border-color:color-mix(in srgb,var(--claude) 50%,transparent);box-shadow:0 0 0 4px var(--claude-bg)}
 </style>
 </head>
 <body>
 
 <header class="topo">
   <div class="topo-in">
-    <a class="marca" href="./"><span class="marca-logo">A</span><span>Curso de IA<small>Programa AI</small></span></a>
+    <a class="marca" href="./"><img class="marca-img" src="assets/logos/programa-ai.svg" alt="Programa AI"><span>Curso de IA<small>IA na prática</small></span></a>
     <div class="topo-acoes">
       <button class="btn-icone" id="btn-tema" type="button" aria-label="Trocar tema">☀️</button>
     </div>
@@ -55,7 +56,7 @@ a.noite:hover{border-color:var(--claude);transform:translateY(-3px)}
     <span class="hero-kicker">Inteligência Artificial na Prática para Profissionais</span>
     <h1>Da conversa com a IA a um <em>assistente que trabalha</em> por você</h1>
     <p class="hero-lead">
-      Seis noites para quem vive de planilha, contrato, e-mail e documento, de qualquer área.
+      Seis capítulos, um por encontro, para quem vive de planilha, contrato, e-mail e documento, de qualquer área.
       Você começa entendendo o que a IA faz de verdade e termina com o <strong>Claude Code</strong>
       organizando arquivos, lendo documentos longos, trabalhando no navegador e rodando uma rotina sua.
       <strong>Tudo em português, sem programar.</strong>
@@ -77,48 +78,48 @@ a.noite:hover{border-color:var(--claude);transform:translateY(-3px)}
     </div>
   </section>
 
-  <section class="ato" id="noites">
-    <span class="kicker">as seis noites</span>
+  <section class="ato" id="capitulos">
+    <span class="kicker">os seis capítulos</span>
     <h2>Um escritório fictício, seis demandas reais</h2>
     <p class="lead">
-      Em todas as noites você trabalha na <strong>Aurora Assessoria</strong>, um escritório de
+      Em todos os capítulos você trabalha na <strong>Aurora Assessoria</strong>, um escritório de
       contabilidade, jurídico e RH. Os arquivos são de treino; os problemas são os do seu dia.
     </p>
 
-    <div class="noites">
-      <a class="noite destaque revela" href="noites/01-panorama/">
+    <div class="caps">
+      <a class="cap-card destaque revela" href="capitulos/01-panorama/">
         <span class="estado on">disponível</span>
-        <span class="n">Noite 1</span>
+        <span class="n">Capítulo 1</span>
         <h3>O que a IA faz de verdade</h3>
         <p>Como um LLM escreve, por que alucina, o briefing de 4 peças, qual ferramenta usar e o semáforo dos dados.</p>
       </a>
-      <div class="noite breve revela" id="noite-2">
+      <div class="cap-card breve revela" id="cap-2">
         <span class="estado breve">em breve</span>
-        <span class="n">Noite 2</span>
+        <span class="n">Capítulo 2</span>
         <h3>Do chat ao agente</h3>
         <p>Instalação do Claude Code e a primeira tarefa de verdade: a pasta bagunçada, com plano antes de mexer.</p>
       </div>
-      <div class="noite breve revela">
+      <div class="cap-card breve revela">
         <span class="estado breve">em breve</span>
-        <span class="n">Noite 3</span>
+        <span class="n">Capítulo 3</span>
         <h3>O agente com dados</h3>
         <p>Planilha de gastos e documentos em lote, com estações para cada área.</p>
       </div>
-      <div class="noite breve revela">
+      <div class="cap-card breve revela">
         <span class="estado breve">em breve</span>
-        <span class="n">Noite 4</span>
+        <span class="n">Capítulo 4</span>
         <h3>Documentos longos e o seu jeito</h3>
         <p>O contrato de 41 páginas com a cláusula citada, o caderno de regras e a sua primeira Skill.</p>
       </div>
-      <div class="noite breve revela">
+      <div class="cap-card breve revela">
         <span class="estado breve">em breve</span>
-        <span class="n">Noite 5</span>
+        <span class="n">Capítulo 5</span>
         <h3>O agente no navegador</h3>
         <p>Claude Code com o Chrome: tirar dados de sites, preencher formulários e rascunhar mensagens com segurança.</p>
       </div>
-      <div class="noite breve revela">
+      <div class="cap-card breve revela">
         <span class="estado breve">em breve</span>
-        <span class="n">Noite 6</span>
+        <span class="n">Capítulo 6</span>
         <h3>Da tarefa à rotina</h3>
         <p>Sua página publicada, conectores e uma rotina sua rodando, com os limites honestos do agente.</p>
       </div>

@@ -1,5 +1,5 @@
 /* =========================================================
-   Noite 1 · Panorama — simulações da noite
+   Capítulo 1 · Panorama — simulações do capítulo
    Tudo avança por ação do aluno (nada começa sozinho).
    Motion (motion.dev) dá as molas quando carrega; sem ele,
    a Web Animations API nativa faz o mesmo papel.
@@ -448,9 +448,12 @@
       const minha = vez;
       await Promise.all([chat(minha), agente(minha)]);
       if (minha !== vez) return;
-      leg.innerHTML = '<b>No chat: 150 copiar e colar.</b> Com o agente: um pedido, uma permissão e uma conferência. Isso é a Noite 2.';
+      leg.innerHTML = '<b>No chat: 150 copiar e colar.</b> Com o agente: um pedido, uma permissão e uma conferência. Isso é o Capítulo 2.';
       bPlay.disabled = false; bPlay.textContent = '▶ De novo';
     });
     $('#agente-reset').addEventListener('click', reset);
   })();
 })();
+
+/* mitos × realidade: virar a carta */
+document.querySelectorAll('.mito').forEach(m => m.addEventListener('click', () => m.classList.toggle('virado')));

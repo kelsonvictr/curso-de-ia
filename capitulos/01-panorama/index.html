@@ -3,34 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Noite 1 · O que a IA faz de verdade — Curso de IA · Programa AI</title>
+<title>Capítulo 1 · O que a IA faz de verdade — Curso de IA · Programa AI</title>
 <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('curso-ia-tema');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="icon" href="../../assets/logos/programa-ai.svg">
 <link rel="stylesheet" href="../../shared/base.css">
 <link rel="stylesheet" href="teatro-oficina/teatro.css">
-<link rel="stylesheet" href="noite.css">
+<link rel="stylesheet" href="cap.css">
 </head>
 <body>
 
 <!-- ═══════════ TOPO ═══════════ -->
 <header class="topo">
   <div class="topo-in">
-    <a class="marca" href="../../"><span class="marca-logo">A</span><span>Curso de IA<small>Programa AI</small></span></a>
-    <span class="topo-noite"><b>Noite 1</b> · O que a IA faz de verdade</span>
+    <a class="marca" href="../../"><img class="marca-img" src="../../assets/logos/programa-ai.svg" alt="Programa AI"><span>Curso de IA<small>IA na prática</small></span></a>
+    <span class="topo-cap"><b>Capítulo 1</b> · O que a IA faz de verdade</span>
     <div class="topo-acoes">
       <button class="btn-icone" id="btn-tema" type="button" aria-label="Trocar tema">☀️</button>
-      <button class="btn-icone" type="button" data-abre-indice aria-label="Abrir índice da noite">☰</button>
+      <button class="btn-icone" type="button" data-abre-indice aria-label="Abrir índice do capítulo">☰</button>
     </div>
   </div>
   <div class="progresso"></div>
 </header>
 
 <div class="veu"></div>
-<nav class="indice" aria-label="Índice da noite">
+<nav class="indice" aria-label="Índice do capítulo">
   <button class="btn-icone indice-fechar" type="button" data-fecha-indice aria-label="Fechar índice">✕</button>
-  <h3>Noite 1</h3>
+  <h3>Capítulo 1</h3>
   <a href="#abertura"><span class="n">00</span>Bem-vindo à Aurora</a>
   <a href="#enter"><span class="n">01</span>O que acontece no Enter</a>
   <a href="#alucinacao"><span class="n">02</span>Alucinação e a regra da fonte</a>
@@ -39,8 +40,9 @@
   <a href="#ferramentas"><span class="n">04</span>Qual ferramenta usar</a>
   <a href="#pratica-b"><span class="n">04a</span>Prática B · três IAs</a>
   <a href="#pratica-c"><span class="n">04b</span>Prática C · NotebookLM</a>
+  <a href="#pratica-d"><span class="n">04c</span>Prática D · imagem</a>
   <a href="#dados"><span class="n">05</span>O semáforo dos dados</a>
-  <a href="#fechamento"><span class="n">06</span>Do chat ao agente</a>
+  <a href="#fechamento"><span class="n">06</span>Do chat ao agente (Claude Code ao vivo)</a>
   <a href="#quiz-final"><span class="n">07</span>Quiz final</a>
 </nav>
 
@@ -49,7 +51,7 @@
 
   <!-- ═══════════ HERO ═══════════ -->
   <section class="hero">
-    <span class="hero-kicker">Noite 1 de 6 · Panorama</span>
+    <span class="hero-kicker">Capítulo 1 de 6 · Panorama</span>
     <h1>O que a IA <em>faz de verdade</em> e como colocá&#8209;la para trabalhar</h1>
     <p class="hero-lead">
       Hoje você entende o que acontece por dentro quando aperta Enter, descobre
@@ -62,9 +64,9 @@
       <a class="tl" href="#abertura"><span class="tl-hora">19:00 · 10 min</span><b>Bem-vindo à Aurora</b><span>O caso que atravessa o curso</span></a>
       <a class="tl" href="#enter"><span class="tl-hora">19:10 · 25 min</span><b>O que acontece no Enter</b><span>A máquina da próxima palavra</span></a>
       <a class="tl" href="#alucinacao"><span class="tl-hora">19:35 · 15 min</span><b>Alucinação</b><span>Com fonte × sem fonte</span></a>
-      <a class="tl" href="#briefing"><span class="tl-hora">19:50 · 25 min</span><b>O briefing de 4 peças</b><span>Montador + Prática A</span></a>
-      <a class="tl" href="#ferramentas"><span class="tl-hora">20:15 · 35 min</span><b>Qual ferramenta usar</b><span>Práticas B e C (NotebookLM)</span></a>
-      <a class="tl" href="#dados"><span class="tl-hora">20:50 · 10 min</span><b>Dados e próximo passo</b><span>Semáforo, chat × agente, quiz</span></a>
+      <a class="tl" href="#briefing"><span class="tl-hora">19:50 · 20 min</span><b>O briefing de 4 peças</b><span>Montador + Prática A</span></a>
+      <a class="tl" href="#ferramentas"><span class="tl-hora">20:10 · 35 min</span><b>Qual ferramenta usar</b><span>Práticas B, C (NotebookLM) e D (imagem)</span></a>
+      <a class="tl" href="#dados"><span class="tl-hora">20:45 · 15 min</span><b>Dados e Claude Code ao vivo</b><span>Semáforo, demonstração, quiz</span></a>
     </div>
   </section>
 
@@ -73,9 +75,9 @@
     <span class="kicker">00 · abertura</span>
     <h2>Bem-vindo à Aurora Assessoria</h2>
     <p class="lead">
-      Durante as seis noites, você trabalha num escritório fictício: a <strong>Aurora Assessoria</strong>,
+      Durante os seis capítulos, você trabalha num escritório fictício: a <strong>Aurora Assessoria</strong>,
       que cuida da contabilidade, do jurídico e do RH de pequenas empresas.
-      Cada noite chega uma demanda nova de um setor diferente. Os arquivos são de mentira,
+      A cada capítulo chega uma demanda nova de um setor diferente. Os arquivos são de mentira,
       então dá para errar à vontade, mas os problemas são os mesmos do seu trabalho.
     </p>
 
@@ -98,7 +100,7 @@
       </div>
     </div>
 
-    <h3>Como cada noite funciona</h3>
+    <h3>Como cada capítulo funciona</h3>
     <div class="ciclo revela">
       <div class="ciclo-item"><span>1</span><b>Entender</b><small>uma ideia por vez, com o porquê</small></div>
       <div class="ciclo-item"><span>2</span><b>Ver</b><small>uma simulação mostra o mecanismo</small></div>
@@ -109,7 +111,7 @@
     <details class="prof">
       <summary>Para o professor · quebra-gelo (5 min)</summary>
       Pergunte: <em>"Qual tarefa do seu trabalho você faria tudo para nunca mais fazer?"</em>
-      Anote as respostas no quadro, agrupadas por área. Essa lista volta na Noite 6, quando cada
+      Anote as respostas no quadro, agrupadas por área. Essa lista volta no Capítulo 6, quando cada
       aluno monta a própria rotina. Guarde uma foto do quadro.
     </details>
   </section>
@@ -124,13 +126,36 @@
       Entender o que ele faz explica quase tudo o que vem depois, inclusive os erros.
     </p>
 
-    <h3>O mecanismo, em quatro passos</h3>
-    <ol class="mecanismo revela">
-      <li><b>Lê</b> tudo o que está na conversa: o seu pedido, o que já foi dito, os arquivos anexados.</li>
-      <li><b>Calcula</b> quais palavras poderiam vir em seguida e a chance de cada uma.</li>
-      <li><b>Escolhe</b> uma delas, normalmente entre as mais prováveis.</li>
-      <li><b>Repete</b>: a palavra escolhida entra no texto, e o cálculo recomeça. Até terminar a resposta.</li>
-    </ol>
+    <h3>O caminho do seu pedido</h3>
+    <p>Avance uma etapa por vez. Cada etapa mostra o que viaja e para onde.</p>
+    <div class="fluxo" data-titulo="fluxo · do Enter à resposta">
+      <script type="application/json">{
+        "altura": 380,
+        "nos": [
+          {"id":"voce","x":9,"y":50,"rot":"Você","sub":"escreve o pedido","ic":"🙋"},
+          {"id":"pedacos","x":32,"y":20,"rot":"Pedaços","sub":"o texto é picado","ic":"✂️"},
+          {"id":"modelo","x":56,"y":20,"rot":"Modelo","sub":"bilhões de números fixos","ic":"🧠"},
+          {"id":"chances","x":82,"y":20,"rot":"Chances","sub":"cada próxima palavra","ic":"📊"},
+          {"id":"escolha","x":82,"y":80,"rot":"Escolha","sub":"uma palavra","ic":"🎯"},
+          {"id":"resposta","x":32,"y":80,"rot":"Resposta","sub":"vai crescendo","ic":"💬"}
+        ],
+        "inicio": "Você aperta Enter. O que acontece até a resposta aparecer? Aperte <b>Começar</b>.",
+        "passos": [
+          {"acende":["voce","pedacos"],"pacote":{"de":"voce","para":"pedacos","txt":"Escreva um e-mail…"},
+           "legenda":"<b>1. Seu texto viaja.</b> Ele sai do seu computador e vai para os servidores da empresa da IA. Lá, é picado em <b>pedaços</b> (palavras ou partes de palavras)."},
+          {"acende":["modelo"],"pacote":{"de":"pedacos","para":"modelo","txt":"[Escre][va][um][e-mail]"},
+           "legenda":"<b>2. O modelo lê tudo.</b> O modelo é uma rede com bilhões de números ajustados no treinamento. Ele lê a conversa inteira, não só a última frase."},
+          {"acende":["chances"],"pacote":{"de":"modelo","para":"chances","txt":"Prezados 58% · Olá 22%"},
+           "legenda":"<b>3. Calcula as chances.</b> Para cada palavra possível, uma chance de ser a próxima. Não há uma busca na internet aqui: é cálculo sobre padrões."},
+          {"acende":["escolha"],"pacote":{"de":"chances","para":"escolha","txt":"Prezados","tipo":"ok"},
+           "legenda":"<b>4. Escolhe uma.</b> Quase sempre entre as mais prováveis, com uma pitada de sorteio. Por isso a mesma pergunta pode ter respostas diferentes."},
+          {"acende":["resposta","pedacos"],"pacote":{"de":"escolha","para":"resposta","txt":"+ Prezados","tipo":"ok"},"muda":{"resposta":"Prezados…"},
+           "legenda":"<b>5. Entra na resposta e o ciclo recomeça.</b> A palavra escolhida passa a fazer parte do texto, e o modelo calcula a próxima. Uma palavra por vez, centenas de vezes."},
+          {"acende":["voce","resposta"],"pacote":{"de":"resposta","para":"voce","txt":"resposta completa","tipo":"info"},"muda":{"resposta":"pronta"},"marca":{"voce":"ok"},
+           "legenda":"<b>6. Chega na sua tela.</b> Tudo isso em segundos. Repare: em nenhuma etapa alguém conferiu se era verdade. Guarde isso para o assunto da alucinação."}
+        ]
+      }</script>
+    </div>
 
     <div class="caixa analogia">
       <span class="caixa-ic">📱</span>
@@ -150,7 +175,7 @@
       Antes de falar de trabalho, veja o mecanismo numa cena simples. A Lia faz uma pergunta,
       o Beto responde, e o <strong>Tico</strong> (a IA, nos bastidores) monta a fala do Beto
       um pedacinho de cada vez. Assista às três histórias em ordem: a terceira prepara o
-      próximo assunto da noite.
+      próximo assunto do capítulo.
     </p>
 
     <!-- TEATRO: a oficina de falas (padrão aprovado, vozes ElevenLabs locais) -->
@@ -223,20 +248,39 @@
     </div>
 
     <div class="regra revela">
-      <span class="regra-rot">A regra central da noite</span>
+      <span class="regra-rot">A regra central do capítulo</span>
       <p>A IA não consulta a verdade: ela continua o seu texto do jeito mais provável. <em>O que está na conversa decide o que sai.</em></p>
     </div>
 
-    <h3>Duas consequências práticas</h3>
-    <div class="duas">
-      <div class="cartao info">
-        <h4>Ela não aprende com você hoje</h4>
-        <p>O que ela "sabe" veio do treinamento, feito antes. Conversar com ela não muda o motor. Se você corrigir um erro hoje, amanhã, numa conversa nova, ela pode errar igual.</p>
-      </div>
-      <div class="cartao claude">
-        <h4>Contexto é a conversa aberta</h4>
-        <p>Tudo o que está nesta conversa conta. Começou uma conversa nova? Ela começa do zero. Por isso você explica quem é e o que precisa, toda vez, ou guarda isso num lugar fixo (você verá como nas próximas noites).</p>
-      </div>
+    <h3>Treinamento × conversa: o que você controla</h3>
+    <p>Duas coisas entram na resposta: o que o modelo aprendeu antes e o que está na sua conversa. Só a segunda depende de você.</p>
+    <div class="fluxo" data-titulo="fluxo · treinamento × conversa">
+      <script type="application/json">{
+        "altura": 360,
+        "nos": [
+          {"id":"bib","x":10,"y":22,"rot":"Biblioteca","sub":"muito texto","ic":"📚"},
+          {"id":"treino","x":34,"y":22,"rot":"Treinamento","sub":"acontece antes","ic":"🏋️"},
+          {"id":"modelo","x":62,"y":50,"rot":"Modelo","sub":"o que ele sabe","ic":"🧠"},
+          {"id":"conversa","x":10,"y":78,"rot":"Sua conversa","sub":"pedido + anexos","ic":"💬"},
+          {"id":"janela","x":34,"y":78,"rot":"Contexto","sub":"esta conversa","ic":"🪟"},
+          {"id":"resp","x":88,"y":50,"rot":"Resposta","sub":"","ic":"✉️"}
+        ],
+        "inicio": "Por que a IA não lembra do que você explicou ontem? Aperte <b>Começar</b>.",
+        "passos": [
+          {"acende":["bib","treino"],"pacote":{"de":"bib","para":"treino","txt":"livros, sites, códigos…"},
+           "legenda":"<b>1. O treinamento vem antes.</b> Meses antes de você usar, o modelo é treinado com uma quantidade enorme de texto."},
+          {"acende":["modelo"],"pacote":{"de":"treino","para":"modelo","txt":"números ajustados"},"muda":{"modelo":"congelado"},"marca":{"modelo":"alerta"},
+           "legenda":"<b>2. Terminou, congelou.</b> O resultado são bilhões de números que <b>não mudam</b> enquanto você conversa. Ela não aprende com você hoje."},
+          {"acende":["conversa","janela"],"pacote":{"de":"conversa","para":"janela","txt":"quem sou + o que preciso"},
+           "legenda":"<b>3. A parte que é sua: o contexto.</b> Seu pedido, as respostas anteriores e os arquivos anexados formam o contexto desta conversa."},
+          {"acende":["modelo","janela"],"pacote":{"de":"janela","para":"modelo","txt":"contexto inteiro"},
+           "legenda":"<b>4. A cada resposta, o modelo relê o contexto.</b> É por isso que dar contexto muda tanto o resultado."},
+          {"acende":["resp"],"pacote":{"de":"modelo","para":"resp","txt":"resposta sob medida","tipo":"ok"},"marca":{"resp":"ok"},
+           "legenda":"<b>5. Resposta = o que ele sabe + o que você deu.</b> Você não mexe no treinamento. No contexto, sim."},
+          {"acende":["janela"],"muda":{"janela":"conversa nova: vazio"},"marca":{"janela":"erro","resp":"alerta"},
+           "legenda":"<b>6. Conversa nova, contexto vazio.</b> O modelo é o mesmo, mas o que você explicou ontem não está mais lá. Nos próximos capítulos você aprende a guardar instruções fixas num arquivo de regras."}
+        ]
+      }</script>
     </div>
 
     <div class="quiz" data-quiz>
@@ -247,6 +291,17 @@
         <button class="quiz-op" type="button" data-fb="Ela não lembra de pessoas entre conversas novas, e “conhecer” não é o mecanismo: ela continua o texto que está na conversa.">A IA já conhecia a primeira colega.</button>
       </div>
       <div class="quiz-fb"></div>
+    </div>
+
+    <h3>Mitos × realidade</h3>
+    <p>Toque em cada carimbo para virar a carta.</p>
+    <div class="mitos">
+      <button class="mito" type="button"><span class="frente"><i>MITO</i>“A IA vai me substituir.”</span><span class="verso"><i>NA REAL</i>Ela substitui <b>tarefas</b>, não pessoas. Quem usa bem rende mais; julgamento e responsabilidade continuam seus.</span></button>
+      <button class="mito" type="button"><span class="frente"><i>MITO</i>“Se ela disse, está certo.”</span><span class="verso"><i>NA REAL</i>Ela escreve o <b>provável</b>, não o verificado. Número, nome e lei: confira na fonte.</span></button>
+      <button class="mito" type="button"><span class="frente"><i>MITO</i>“A IA pensa e sente.”</span><span class="verso"><i>NA REAL</i>Ela calcula a próxima palavra. O tom humano é estilo de texto, não consciência.</span></button>
+      <button class="mito" type="button"><span class="frente"><i>MITO</i>“Preciso saber programar.”</span><span class="verso"><i>NA REAL</i>Neste curso tudo é em <b>português</b>. Até o agente do Capítulo 2 você comanda conversando.</span></button>
+      <button class="mito" type="button"><span class="frente"><i>MITO</i>“Ela pesquisa no Google antes de responder.”</span><span class="verso"><i>NA REAL</i>Por padrão, ela responde pelo que aprendeu no treino. Algumas ferramentas buscam na web quando você pede ou ativa a busca.</span></button>
+      <button class="mito" type="button"><span class="frente"><i>MITO</i>“Ela lembra de mim.”</span><span class="verso"><i>NA REAL</i>Cada conversa nova começa do zero, a não ser que a ferramenta tenha memória ligada ou você dê o contexto de novo.</span></button>
     </div>
   </section>
 
@@ -492,17 +547,17 @@ e termine oferecendo ajuda por telefone.</pre>
     </p>
 
     <div class="ferramentas revela">
-      <div class="ferr"><span class="ferr-ic">💬</span><b>ChatGPT</b><small>OpenAI · chatgpt.com</small><p>Chat geral versátil: rascunhos, ideias, revisão de texto. Também gera imagens.</p></div>
-      <div class="ferr"><span class="ferr-ic">🔷</span><b>Gemini</b><small>Google · gemini.google.com</small><p>Chat geral ligado ao mundo Google. Bom para quem já trabalha no Gmail, Drive e Docs. Gera imagens.</p></div>
-      <div class="ferr destaque"><span class="ferr-ic">✳️</span><b>Claude</b><small>Anthropic · claude.ai</small><p>Chat geral forte em ler e analisar documentos longos. É a porta para o Claude Code, o agente das próximas noites.</p></div>
-      <div class="ferr"><span class="ferr-ic">📚</span><b>NotebookLM</b><small>Google · notebooklm.google.com</small><p>Responde <strong>só com base nos documentos que você carregar</strong> e mostra o trecho de onde tirou. A regra da fonte, embutida.</p></div>
+      <div class="ferr"><img class="ferr-logo mono" src="../../assets/logos/chatgpt.svg" alt=""><b>ChatGPT</b><small>OpenAI · chatgpt.com</small><p>Chat geral versátil: rascunhos, ideias, revisão de texto. Também gera imagens.</p></div>
+      <div class="ferr"><img class="ferr-logo" src="../../assets/logos/gemini.svg" alt=""><b>Gemini</b><small>Google · gemini.google.com</small><p>Chat geral ligado ao mundo Google. Bom para quem já trabalha no Gmail, Drive e Docs. Gera imagens.</p></div>
+      <div class="ferr destaque"><img class="ferr-logo" src="../../assets/logos/claude.svg" alt=""><b>Claude</b><small>Anthropic · claude.ai</small><p>Chat geral forte em ler e analisar documentos longos. É a porta para o Claude Code, o agente dos próximos capítulos.</p></div>
+      <div class="ferr"><span class="ferr-ic">📓</span><b>NotebookLM</b><small>Google · notebooklm.google.com</small><p>Responde <strong>só com base nos documentos que você carregar</strong> e mostra o trecho de onde tirou. A regra da fonte, embutida.</p></div>
     </div>
 
     <div class="caixa alerta">
       <span class="caixa-ic">💳</span>
       <div>
         <span class="caixa-tit">Gratuito e pago</span>
-        <p>Os planos gratuitos bastam para hoje. A partir da Noite 2, o Claude Code exige um plano pago do Claude (o Pro é o de entrada). Preço atual na página oficial: <a href="https://claude.com/pricing" target="_blank" rel="noopener">claude.com/pricing</a>.</p>
+        <p>Os planos gratuitos bastam para hoje. A partir do Capítulo 2, o Claude Code exige um plano pago do Claude (o Pro é o de entrada). Preço atual na página oficial: <a href="https://claude.com/pricing" target="_blank" rel="noopener">claude.com/pricing</a>.</p>
       </div>
     </div>
 
@@ -632,12 +687,49 @@ constar nas fontes, responda apenas "não consta".</pre>
       <span class="caixa-ic">🔒</span>
       <div>
         <span class="caixa-tit">Treino é com dado fictício</span>
-        <p>Não suba contrato real de cliente para treinar. Na seção a seguir, você vê o que pode ou não ir para um chat. Na Noite 4, este mesmo contrato volta, desta vez com o Claude Code trabalhando nos seus arquivos.</p>
+        <p>Não suba contrato real de cliente para treinar. Na seção a seguir, você vê o que pode ou não ir para um chat. No Capítulo 4, este mesmo contrato volta, desta vez com o Claude Code trabalhando nos seus arquivos.</p>
       </div>
     </div>
   </section>
 
   <!-- ═══════════ 05 · DADOS ═══════════ -->
+  <section class="ato pratica" id="pratica-d">
+    <span class="kicker">04c · prática guiada · 10 min</span>
+    <h2>Prática D · Uma imagem com o Nano Banana</h2>
+    <p class="lead">
+      O gerador de imagens do Gemini ficou conhecido pelo apelido de <strong>Nano Banana</strong>.
+      Ele cria imagens a partir de texto e, o que é mais útil no trabalho, <strong>edita</strong> uma imagem
+      mantendo o resto igual. O briefing de 4 peças vale aqui também.
+    </p>
+    <ol class="passos">
+      <li><b>Abra o Gemini</b> em gemini.google.com e peça uma imagem:
+        <div class="prompt">
+          <div class="prompt-topo"><span class="rot">🎨 a capa do comunicado</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+          <pre>Crie uma imagem para a capa de um comunicado interno de um escritório
+de contabilidade avisando sobre o prazo da declaração do imposto de renda.
+Estilo ilustração plana, cores azul-marinho e laranja, uma mesa com
+calculadora, papéis e um calendário. Formato horizontal. Sem texto na imagem.</pre>
+          <div class="prompt-pq"><b>As 4 peças:</b> contexto (escritório, comunicado), objetivo (a capa), formato (horizontal, ilustração plana) e restrições (cores, sem texto).</div>
+        </div>
+      </li>
+      <li><b>Edite sem recomeçar.</b> Na mesma conversa:
+        <div class="prompt">
+          <div class="prompt-topo"><span class="rot">✏️ só um ajuste</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+          <pre>Mantenha tudo igual, mas troque o fundo por um tom claro e
+acrescente uma xícara de café na mesa.</pre>
+        </div>
+      </li>
+      <li><b>Repare no que mudou e no que ficou.</b> Editar por conversa é o forte dele: a cena se mantém e só o pedido muda.</li>
+    </ol>
+    <div class="caixa alerta">
+      <span class="caixa-ic">🖼️</span>
+      <div>
+        <span class="caixa-tit">Três cuidados com imagem</span>
+        <p>Texto dentro da imagem costuma sair com erro: escreva o texto você mesmo por cima. Não gere imagem de pessoas reais nem de marcas de terceiros. E imagem gerada não é foto: não use como prova de nada.</p>
+      </div>
+    </div>
+  </section>
+
   <section class="ato" id="dados">
     <span class="kicker">05 · decisão</span>
     <h2>O semáforo dos dados</h2>
@@ -646,6 +738,30 @@ constar nas fontes, responda apenas "não consta".</pre>
       Contadores, advogados e RH lidam com dado de terceiros o tempo todo, então a pergunta
       certa antes de colar é: <strong>esse dado pode sair daqui?</strong>
     </p>
+
+    <div class="fluxo" data-titulo="fluxo · para onde vai o que você cola">
+      <script type="application/json">{
+        "altura": 300,
+        "nos": [
+          {"id":"pc","x":10,"y":50,"rot":"Seu computador","sub":"você cola o texto","ic":"💻"},
+          {"id":"net","x":36,"y":50,"rot":"Internet","sub":"conexão protegida","ic":"🌐"},
+          {"id":"emp","x":64,"y":50,"rot":"Empresa da IA","sub":"processa o pedido","ic":"🏢","largo":true},
+          {"id":"hist","x":90,"y":22,"rot":"Histórico","sub":"conversas salvas","ic":"🗂️"},
+          {"id":"pol","x":90,"y":78,"rot":"Regras de uso","sub":"configurações da conta","ic":"📜"}
+        ],
+        "inicio": "Você colou um contrato no chat. Onde ele foi parar? Aperte <b>Começar</b>.",
+        "passos": [
+          {"acende":["pc","net"],"pacote":{"de":"pc","para":"net","txt":"contrato.pdf"},
+           "legenda":"<b>1. Saiu do seu computador.</b> Colou ou anexou, o conteúdo viaja pela internet (de forma protegida)."},
+          {"acende":["emp"],"pacote":{"de":"net","para":"emp","txt":"contrato.pdf"},"marca":{"emp":"alerta"},
+           "legenda":"<b>2. Chegou nos servidores da empresa da IA.</b> É lá que o modelo roda. Agora existe uma cópia fora do seu escritório."},
+          {"acende":["hist"],"pacote":{"de":"emp","para":"hist","txt":"conversa salva"},
+           "legenda":"<b>3. A conversa fica guardada</b> no seu histórico, para você voltar nela depois."},
+          {"acende":["pol"],"pacote":{"de":"emp","para":"pol","txt":"o que pode ser feito com ela?","tipo":"info"},
+           "legenda":"<b>4. O que acontece depois depende das regras de uso</b> da ferramenta e das configurações da sua conta. Leia, e siga a política da sua empresa. Daí o semáforo abaixo."}
+        ]
+      }</script>
+    </div>
 
     <div class="semaforo-leg revela">
       <span><i class="luz verde"></i><b>Verde</b> pode colar</span>
@@ -687,7 +803,7 @@ constar nas fontes, responda apenas "não consta".</pre>
             <div class="contador"><b id="cont-chat">0</b><span>/30 e-mails</span></div>
           </div>
           <div class="pista agente">
-            <span class="np-rot">🤖 com um agente (Noite 2 em diante)</span>
+            <span class="np-rot">🤖 com um agente (Capítulo 2 em diante)</span>
             <ol class="pista-passos" id="pista-agente">
               <li>você descreve o objetivo, uma vez</li><li>ele lê a planilha sozinho</li><li>mostra o plano e pede sua permissão</li><li>escreve os 30 rascunhos</li><li>você confere uma amostra</li>
             </ol>
@@ -703,19 +819,74 @@ constar nas fontes, responda apenas "não consta".</pre>
     </div>
 
     <p>
-      Esse é o salto da Noite 2. Um <strong>agente</strong> é uma IA que, além de escrever, consegue
+      Esse é o salto do Capítulo 2. Um <strong>agente</strong> é uma IA que, além de escrever, consegue
       <strong>agir</strong>: abrir arquivos, organizar pastas, criar documentos. Mas a regra central
       continua valendo para ele também: o que ele vê decide o que ele faz. E ele sempre pede sua
       permissão antes de mexer.
     </p>
 
+    <h3>Primeiro contato: o Claude Code, ao vivo</h3>
+    <p>
+      O professor abre o <strong>Claude Code</strong> no telão, dentro da pasta do contrato do kit, e faz o
+      pedido da Marta de um jeito novo: em vez de responder num chat, o agente <strong>cria um arquivo</strong>.
+      Você só assiste hoje; no Capítulo 2, instala no seu computador.
+    </p>
+
+    <div class="fluxo" data-titulo="fluxo · o ciclo do agente">
+      <script type="application/json">{
+        "altura": 340,
+        "nos": [
+          {"id":"voce","x":10,"y":50,"rot":"Você","sub":"descreve o objetivo","ic":"🙋"},
+          {"id":"le","x":34,"y":20,"rot":"Lê a pasta","sub":"contrato.pdf","ic":"📂"},
+          {"id":"plano","x":62,"y":20,"rot":"Plano","sub":"o que vai fazer","ic":"📝"},
+          {"id":"perm","x":88,"y":50,"rot":"Permissão","sub":"você aprova?","ic":"✋"},
+          {"id":"faz","x":62,"y":80,"rot":"Faz","sub":"cria o arquivo","ic":"⚙️"},
+          {"id":"confere","x":34,"y":80,"rot":"Você confere","sub":"abre e checa","ic":"👀"}
+        ],
+        "inicio": "Chat responde. Agente <b>age</b>, mas só com a sua permissão. Aperte <b>Começar</b>.",
+        "passos": [
+          {"acende":["voce","le"],"pacote":{"de":"voce","para":"le","txt":"crie um resumo do contrato"},
+           "legenda":"<b>1. Você descreve o resultado</b>, não o passo a passo. O agente começa lendo os arquivos da pasta em que está."},
+          {"acende":["plano"],"pacote":{"de":"le","para":"plano","txt":"41 páginas lidas"},
+           "legenda":"<b>2. Ele monta um plano</b> e mostra para você antes de fazer: o que vai ler, o que vai criar, onde vai salvar."},
+          {"acende":["perm"],"pacote":{"de":"plano","para":"perm","txt":"posso criar resumo.csv?","tipo":"alerta"},"marca":{"perm":"alerta"},
+           "legenda":"<b>3. Ele pede permissão.</b> Nada é criado, apagado ou alterado sem o seu ok. Este é o freio de mão do agente."},
+          {"acende":["faz"],"pacote":{"de":"perm","para":"faz","txt":"sim, pode","tipo":"ok"},"marca":{"perm":"ok"},
+           "legenda":"<b>4. Ele executa.</b> Cria o arquivo de verdade, no seu computador. É aqui que o agente deixa de ser um chat."},
+          {"acende":["confere"],"pacote":{"de":"faz","para":"confere","txt":"resumo.csv","tipo":"ok"},"marca":{"confere":"ok"},
+           "legenda":"<b>5. Você confere.</b> Abre o arquivo e checa um valor no contrato. A regra da fonte continua valendo, agora com o resultado num arquivo."}
+        ]
+      }</script>
+    </div>
+
+    <div class="prompt">
+      <div class="prompt-topo"><span class="rot">🎓 o pedido da demonstração (professor)</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+      <pre>Leia o contrato desta pasta e crie uma planilha resumo.csv com uma
+linha para cada item: valor mensal, vencimento, prazo, multa por
+rescisão e prazo de atendimento urgente. Coloque numa coluna a cláusula
+de onde saiu cada informação. Antes de criar, me mostre o plano.</pre>
+    </div>
+    <div class="tela">
+      <span class="tela-rot">o que a turma vai ver (resumido)</span>
+      <span class="tela-linha dim">Claude lê contrato-prestacao-servicos.pdf</span>
+      <span class="tela-linha">Plano: extrair 5 itens com a cláusula e salvar em resumo.csv</span>
+      <span class="tela-linha dim">Pede permissão para criar resumo.csv</span>
+      <span class="tela-linha">resumo.csv criado · Multa por rescisão: R$ 14.700,00 · Cláusula Quinta</span>
+    </div>
+    <details class="prof">
+      <summary>Para o professor · como preparar a demonstração</summary>
+      Antes da aula: baixe o contrato do kit numa pasta só dele e abra essa pasta no app do Claude Code (aba Code).
+      Na hora, cole o pedido, mostre o plano, aprove e abra o resumo.csv. Feche conferindo a multa no PDF
+      (Cláusula Quinta). Quem já tiver o plano Pro e o app pode acompanhar, mas ninguém precisa.
+    </details>
+
     <div class="duas">
       <div class="cartao claude">
         <h4>📝 Leve para o trabalho</h4>
-        <p>Escolha uma tarefa real desta semana, escreva o briefing de 4 peças e teste num chat. Anote o que precisou ajustar. Traga a tarefa que você "faria tudo para nunca mais fazer": ela vira matéria-prima nas próximas noites.</p>
+        <p>Escolha uma tarefa real desta semana, escreva o briefing de 4 peças e teste num chat. Anote o que precisou ajustar. Traga a tarefa que você "faria tudo para nunca mais fazer": ela vira matéria-prima nos próximos capítulos.</p>
       </div>
-      <div class="cartao info" id="antes-noite-2">
-        <h4>🧰 Antes da Noite 2</h4>
+      <div class="cartao info" id="antes-cap-2">
+        <h4>🧰 Antes do Capítulo 2</h4>
         <p>Traga o <strong>notebook com Windows ou Mac</strong> (tablet e Chromebook não servem). Assine o <strong>plano Pro do Claude</strong> em <a href="https://claude.com/pricing" target="_blank" rel="noopener">claude.com/pricing</a>. No Windows, instale o <strong>Git</strong> em <a href="https://git-scm.com/downloads/win" target="_blank" rel="noopener">git-scm.com</a> (é um ajudante que o app exige; avance com as opções padrão).</p>
       </div>
     </div>
@@ -724,7 +895,7 @@ constar nas fontes, responda apenas "não consta".</pre>
   <!-- ═══════════ 07 · QUIZ FINAL ═══════════ -->
   <section class="ato" id="quiz-final">
     <span class="kicker">07 · quiz final</span>
-    <h2>Três decisões para fechar a noite</h2>
+    <h2>Três decisões para fechar o capítulo</h2>
     <p class="lead">Cada pergunta é um caso novo. A regra central resolve todas.</p>
 
     <div class="quiz" data-quiz>
@@ -740,7 +911,7 @@ constar nas fontes, responda apenas "não consta".</pre>
     <div class="quiz" data-quiz>
       <p class="quiz-q">Ontem, numa conversa, você explicou à IA todo o perfil do escritório. Hoje abriu uma conversa nova e a resposta voltou genérica. Por quê?</p>
       <div class="quiz-ops">
-        <button class="quiz-op" type="button" data-certa data-fb="Contexto é a conversa aberta. Conversa nova começa do zero, a menos que você use um recurso que guarde instruções fixas (vem nas próximas noites).">A conversa nova não tem o contexto de ontem.</button>
+        <button class="quiz-op" type="button" data-certa data-fb="Contexto é a conversa aberta. Conversa nova começa do zero, a menos que você use um recurso que guarde instruções fixas (vem nos próximos capítulos).">A conversa nova não tem o contexto de ontem.</button>
         <button class="quiz-op" type="button" data-fb="Ela não piora com o tempo. O que mudou foi o que está na conversa.">A IA esqueceu porque ficou mais lenta.</button>
         <button class="quiz-op" type="button" data-fb="Ela não aprende com a sua conversa: o motor não muda enquanto você usa.">Ela aprendeu o perfil, mas preferiu ignorar.</button>
       </div>
@@ -758,26 +929,27 @@ constar nas fontes, responda apenas "não consta".</pre>
     </div>
 
     <div class="regra">
-      <span class="regra-rot">O que fica desta noite</span>
+      <span class="regra-rot">O que fica deste capítulo</span>
       <p>O que está na conversa decide o que sai. Por isso você <em>dá contexto</em>, <em>dá a fonte</em> e <em>confere</em>.</p>
     </div>
 
-    <nav class="nav-noites" aria-label="Navegação entre noites">
+    <nav class="nav-caps" aria-label="Navegação entre capítulos">
       <a href="../../"><small>voltar</small>‹ Mapa do curso</a>
-      <a class="prox" href="../../#noite-2"><small>próxima</small>Noite 2 · Do chat ao agente ›</a>
+      <a class="prox" href="../../#cap-2"><small>próxima</small>Capítulo 2 · Do chat ao agente ›</a>
     </nav>
   </section>
 
 </div>
 </main>
 
-<footer class="rodape">Curso de IA · Programa AI · Noite 1 · Dados e empresas dos exercícios são fictícios.</footer>
+<footer class="rodape">Curso de IA · Programa AI · Capítulo 1 · Dados e empresas dos exercícios são fictícios.</footer>
 
 <script src="../../shared/curso.js"></script>
+<script src="../../shared/fluxo.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/motion@11.11.13/dist/motion.js" defer></script>
 <script src="teatro-oficina/audio/manifest.js" defer></script>
 <script src="teatro-oficina/teatro.js" defer></script>
 <script src="teatro-multa/audio/manifest.js" defer></script>
-<script src="noite.js" defer></script>
+<script src="cap.js" defer></script>
 </body>
 </html>
