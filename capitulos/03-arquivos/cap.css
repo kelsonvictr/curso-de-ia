@@ -1,0 +1,30 @@
+/* Capítulo 3 · componentes locais */
+.og-palco{display:grid;grid-template-columns:1fr 1.15fr;gap:16px}
+@media (max-width:800px){.og-palco{grid-template-columns:1fr}}
+.og-solta{display:flex;flex-wrap:wrap;gap:6px;align-content:flex-start;min-height:220px;padding:12px;border-radius:var(--r);border:1px dashed var(--line2);background:var(--bg)}
+.og-pastas{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.og-pasta{padding:10px;border-radius:var(--r);border:1px solid var(--line);background:var(--surface);min-height:90px;opacity:.45;transition:opacity .4s,border-color .4s}
+.og-pasta b{display:block;font-size:14px;margin-bottom:6px}
+.og-pasta.dup{grid-column:1/-1}
+.og-dentro{display:flex;flex-wrap:wrap;gap:5px}
+.sim.plano .og-pasta,.sim.feito .og-pasta{opacity:1;border-color:var(--claude)}
+.og-chip{display:inline-flex;align-items:center;gap:5px;padding:4px 9px;border-radius:8px;font-size:12.5px;background:var(--surface2);border:1px solid var(--line2);max-width:100%}
+.og-chip i{font-style:normal}
+.og-chip span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sim.diag .og-chip[data-tipo="img"]{border-color:#7cb7ff}
+.sim.diag .og-chip[data-tipo="doc"]{border-color:#b69cff}
+.sim.diag .og-chip[data-tipo="csv"]{border-color:#5ad19a}
+.sim.diag .og-chip[data-tipo="pdf"]{border-color:#f2b84b}
+.sim.diag .og-chip[data-dup]::after{content:'⚠';color:var(--warn);margin-left:2px}
+.sim.diag .og-chip[data-sens]{background:var(--bad-bg);border-color:var(--bad)}
+.og-relatorio{margin-top:14px}
+.og-relatorio pre{font-family:var(--mono);font-size:13px;line-height:1.55;padding:12px 14px;border-radius:12px;background:var(--bg);border:1px solid var(--line);white-space:pre-wrap;font-variant-ligatures:none;font-feature-settings:"liga" 0,"clig" 0,"calt" 0}
+.gr-barras{display:grid;gap:5px}
+.gr-linha{display:grid;grid-template-columns:120px 1fr 110px;gap:10px;align-items:center;font-size:13.5px}
+.gr-rot{text-align:right;color:var(--dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gr-trilho{height:16px;border-radius:5px;background:var(--surface2);overflow:hidden}
+.gr-barra{display:block;height:100%;width:0;border-radius:5px;transition:width .8s var(--ease)}
+.gr-val{font-family:var(--mono);font-size:12.5px;color:var(--dim);font-variant-ligatures:none;font-feature-settings:"liga" 0,"clig" 0,"calt" 0}
+.gr-barras.juntado .gr-linha{font-size:15.5px}
+.gr-barras.juntado .gr-trilho{height:24px}
+@media (max-width:560px){.gr-linha{grid-template-columns:86px 1fr 92px}}

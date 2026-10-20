@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capítulo 2 · Do chat ao agente — Curso de IA · Programa AI</title>
+<script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('curso-ia-tema');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="icon" href="../../assets/logos/programa-ai.svg">
+<link rel="stylesheet" href="../../shared/base.css">
+<link rel="stylesheet" href="cap.css">
+</head>
+<body>
+
+<header class="topo">
+  <div class="topo-in">
+    <a class="marca" href="../../"><img class="marca-img" src="../../assets/logos/programa-ai.svg" alt="Programa AI"><span>Curso de IA<small>IA na prática</small></span></a>
+    <span class="topo-cap"><b>Capítulo 2</b> · Do chat ao agente</span>
+    <div class="topo-acoes">
+      <button class="btn-icone" id="btn-tema" type="button" aria-label="Trocar tema">☀️</button>
+      <button class="btn-icone" type="button" data-abre-indice aria-label="Abrir índice do capítulo">☰</button>
+    </div>
+  </div>
+  <div class="progresso"></div>
+</header>
+
+<div class="veu"></div>
+<nav class="indice" aria-label="Índice do capítulo">
+  <button class="btn-icone indice-fechar" type="button" data-fecha-indice aria-label="Fechar índice">✕</button>
+  <h3>Capítulo 2</h3>
+  <a href="#abertura"><span class="n">00</span>A demanda da Marta</a>
+  <a href="#ciclo"><span class="n">01</span>O que faz um agente</a>
+  <a href="#porteiro"><span class="n">02</span>Simulador: você é o porteiro</a>
+  <a href="#web"><span class="n">03</span>Claude na web × Claude Code</a>
+  <a href="#instalar"><span class="n">04</span>Prática A · instalação</a>
+  <a href="#kit"><span class="n">05</span>Prática B · o kit e a primeira conversa</a>
+  <a href="#estacoes"><span class="n">06</span>Estação da sua área</a>
+  <a href="#sobrevivencia"><span class="n">07</span>Kit de sobrevivência</a>
+  <a href="#quiz-final"><span class="n">08</span>Quiz final</a>
+</nav>
+
+<main>
+<div class="wrap">
+
+  <section class="hero">
+    <span class="hero-kicker">Capítulo 2 de 6 · Do chat ao agente</span>
+    <h1>A IA sai do navegador e vai <em>trabalhar</em> no seu computador</h1>
+    <p class="hero-lead">
+      Hoje você entende o que transforma um chat num <strong>agente</strong>, instala o Claude Code,
+      abre o kit de treino da Aurora e dá as duas primeiras ordens: uma que só olha e outra que cria
+      um arquivo de verdade. <strong>Com você aprovando cada passo.</strong>
+    </p>
+    <div class="roteiro" style="--cols:3">
+      <a class="tl" href="#ciclo"><span class="tl-hora">19:00 · 25 min</span><b>O que faz um agente</b><span>Ciclo do agente + simulador do porteiro</span></a>
+      <a class="tl" href="#web"><span class="tl-hora">19:25 · 15 min</span><b>Claude na web × Claude Code</b><span>Projects, Artifacts e o agente</span></a>
+      <a class="tl" href="#instalar"><span class="tl-hora">19:40 · 35 min</span><b>Prática A · instalação</b><span>App, conta, pasta, teste do “oi”</span></a>
+      <a class="tl" href="#kit"><span class="tl-hora">20:15 · 25 min</span><b>Prática B · o kit</b><span>Olhar e criar</span></a>
+      <a class="tl" href="#estacoes"><span class="tl-hora">20:40 · 10 min</span><b>Estação da sua área</b><span>Uma pergunta do seu mundo</span></a>
+      <a class="tl" href="#quiz-final"><span class="tl-hora">20:50 · 10 min</span><b>Sobrevivência e quiz</b><span>O que fazer quando der errado</span></a>
+    </div>
+  </section>
+
+  <!-- 00 -->
+  <section class="ato" id="abertura">
+    <span class="kicker">00 · abertura</span>
+    <h2>A Marta mandou outra</h2>
+    <div class="aurora revela">
+      <div class="aurora-cab"><span class="aurora-logo">A</span><div><b>Aurora Assessoria</b><small>contabilidade · jurídico · RH · administrativo</small></div></div>
+      <div class="aurora-corpo">
+        <div class="aurora-msg">
+          <span class="aurora-de">Marta, sócia da Aurora · 08:40</span>
+          <p>Bom dia! Recebemos a pasta de um cliente novo. 34 arquivos com nome de "IMG_8274", "relatorio final FINAL (2)"… Antes de organizar, preciso saber <b>o que tem lá</b>. E não me apaga nada, por favor.</p>
+        </div>
+        <p class="aurora-nota">No Capítulo 1 você copiava e colava no chat. Hoje a IA vai abrir a pasta sozinha.</p>
+      </div>
+    </div>
+    <div class="regra revela">
+      <span class="regra-rot">A regra central do capítulo</span>
+      <p>Um agente não só escreve: ele <em>age</em> nos seus arquivos. E quem decide até onde ele vai é você, aprovando o plano e cada permissão.</p>
+    </div>
+  </section>
+
+  <!-- 01 -->
+  <section class="ato" id="ciclo">
+    <span class="kicker">01 · teoria + fluxo</span>
+    <h2>O que transforma um chat num agente</h2>
+    <p class="lead">
+      O modelo é o mesmo do Capítulo 1: ele continua prevendo texto. A diferença é que, no agente,
+      parte desse texto são <strong>ordens para ferramentas</strong>: "abrir este arquivo", "criar aquele",
+      "rodar este comando". O programa em volta do modelo executa a ferramenta e devolve o resultado
+      para a conversa. E o ciclo recomeça.
+    </p>
+
+    <div class="tres revela">
+      <div class="cartao claude"><h4>🧠 O modelo</h4><p>Decide o próximo passo, escrevendo. É o mesmo "cérebro" dos chats.</p></div>
+      <div class="cartao info"><h4>🧰 As ferramentas</h4><p>Ler arquivo, listar pasta, criar, editar, rodar comando, buscar na web.</p></div>
+      <div class="cartao ok"><h4>✋ As permissões</h4><p>O freio de mão: o que ele pode fazer sozinho e o que precisa do seu ok.</p></div>
+    </div>
+
+    <div class="fluxo" data-titulo="fluxo · o agente por dentro">
+      <script type="application/json">{
+        "altura": 400,
+        "nos": [
+          {"id":"voce","x":9,"y":50,"rot":"Você","sub":"o objetivo","ic":"🙋"},
+          {"id":"modelo","x":38,"y":50,"rot":"Modelo","sub":"decide o próximo passo","ic":"🧠","largo":true},
+          {"id":"ler","x":72,"y":14,"rot":"Ferramenta: ler","sub":"listar a pasta","ic":"📂"},
+          {"id":"perm","x":72,"y":50,"rot":"Permissão","sub":"você aprova?","ic":"✋"},
+          {"id":"criar","x":72,"y":86,"rot":"Ferramenta: criar","sub":"novo arquivo","ic":"📝"},
+          {"id":"pasta","x":93,"y":50,"rot":"Sua pasta","sub":"kit da Aurora","ic":"🗂️"}
+        ],
+        "inicio": "Você pede: “conte os arquivos da pasta e crie um inventário.txt”. O que acontece por dentro?",
+        "passos": [
+          {"acende":["voce","modelo"],"pacote":{"de":"voce","para":"modelo","txt":"conte e crie o inventário"},
+           "legenda":"<b>1. O objetivo entra na conversa.</b> Igual ao chat: o modelo lê tudo o que está ali."},
+          {"acende":["ler"],"pacote":{"de":"modelo","para":"ler","txt":"usar: listar pasta","tipo":"info"},
+           "legenda":"<b>2. Em vez de responder, o modelo pede uma ferramenta.</b> Ele escreve uma ordem: “listar a pasta”. Ler não altera nada, então isso costuma rodar sem perguntar."},
+          {"acende":["pasta"],"pacote":{"de":"ler","para":"pasta","txt":"o que tem aqui?"},
+           "legenda":"<b>3. A ferramenta vai até a sua pasta</b>, de verdade, no seu computador."},
+          {"acende":["modelo"],"pacote":{"de":"pasta","para":"modelo","txt":"34 arquivos: …","tipo":"ok","curva":-0.25},"muda":{"modelo":"agora sabe o que tem"},
+           "legenda":"<b>4. O resultado volta para a conversa.</b> Agora o modelo tem um dado que não tinha. É o ciclo do agente: decidir, agir, observar, decidir de novo."},
+          {"acende":["perm"],"pacote":{"de":"modelo","para":"perm","txt":"posso criar inventario.txt?","tipo":"alerta"},"marca":{"perm":"alerta"},
+           "legenda":"<b>5. Criar mexe na sua pasta: ele pede permissão.</b> No modo Manual, nada é criado, alterado ou apagado sem o seu ok."},
+          {"acende":["criar"],"pacote":{"de":"perm","para":"criar","txt":"aprovado","tipo":"ok"},"marca":{"perm":"ok"},
+           "legenda":"<b>6. Você aprovou: a ferramenta de criar entra em ação.</b>"},
+          {"acende":["pasta","voce"],"pacote":{"de":"criar","para":"pasta","txt":"inventario.txt","tipo":"ok"},"marca":{"pasta":"ok"},
+           "legenda":"<b>7. O arquivo existe.</b> O agente avisa o que fez, e você confere abrindo o arquivo. Um pedido, vários ciclos, um resultado concreto."}
+        ]
+      }</script>
+    </div>
+
+    <div class="caixa analogia">
+      <span class="caixa-ic">🧑‍💼</span>
+      <div>
+        <span class="caixa-tit">Pense num estagiário muito rápido</span>
+        <p>Ele lê tudo, trabalha em segundos e nunca reclama. Mas é o primeiro dia: não conhece a empresa e, se você não disser, pode fazer algo que você não queria. Por isso ele mostra o plano e pede licença. <strong>Onde a comparação falha:</strong> ele não aprende sozinho de um dia para o outro. Nos próximos capítulos você vê como deixar as regras escritas para ele.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 -->
+  <section class="ato" id="porteiro">
+    <span class="kicker">02 · simulador</span>
+    <h2>Você é o porteiro</h2>
+    <p class="lead">
+      Durante o curso, o Claude Code vai pedir licença muitas vezes. A habilidade que mais importa é
+      saber <strong>quando aprovar, quando perguntar e quando recusar</strong>. Treine aqui, sem risco.
+    </p>
+    <div class="sim" id="sim-porteiro">
+      <div class="sim-topo"><span class="bolinhas"><i></i><i></i><i></i></span><span class="sim-label">simulador · pedidos de permissão do agente</span></div>
+      <div class="sim-palco">
+        <p class="pt-contexto">Sua ordem foi: <b>“Analise a pasta bagunca, me diga o que tem e crie um diario.txt com o resumo.”</b></p>
+        <div class="pt-pedido" id="pt-pedido" aria-live="polite"></div>
+        <div class="pt-botoes" id="pt-botoes">
+          <button class="btn pt-btn ok" type="button" data-r="aprovar">✅ Aprovar</button>
+          <button class="btn pt-btn duvida" type="button" data-r="perguntar">❓ Perguntar antes</button>
+          <button class="btn pt-btn nao" type="button" data-r="recusar">⛔ Recusar</button>
+        </div>
+        <div class="pt-fb" id="pt-fb" aria-live="polite"></div>
+      </div>
+      <div class="sim-controles">
+        <span class="sim-legenda" id="pt-placar">pedido 1 de 7</span>
+        <button class="btn" type="button" id="pt-reset">↺ Recomeçar</button>
+        <button class="btn prim" type="button" id="pt-prox" disabled>Próximo pedido ›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 -->
+  <section class="ato" id="web">
+    <span class="kicker">03 · panorama</span>
+    <h2>Claude na web × Claude Code</h2>
+    <p class="lead">
+      É a mesma família de modelos em lugares diferentes. Saber onde cada um mora evita usar
+      um agente para o que um chat resolve, e vice-versa.
+    </p>
+
+    <div class="fluxo" data-titulo="fluxo · onde mora cada Claude">
+      <script type="application/json">{
+        "altura": 340,
+        "nos": [
+          {"id":"voce","x":10,"y":50,"rot":"Você","sub":"","ic":"🙋"},
+          {"id":"chat","x":42,"y":14,"rot":"Chat (claude.ai)","sub":"conversa","ic":"../../assets/logos/claude.svg","largo":true},
+          {"id":"proj","x":42,"y":50,"rot":"Projects","sub":"instruções + arquivos fixos","ic":"🗃️","largo":true},
+          {"id":"art","x":42,"y":86,"rot":"Artifacts","sub":"documento ao lado","ic":"🧾","largo":true},
+          {"id":"code","x":84,"y":50,"rot":"Claude Code","sub":"seu computador","ic":"💻","largo":true}
+        ],
+        "inicio": "Quatro portas. Avance para ver quando usar cada uma.",
+        "passos": [
+          {"acende":["chat"],"pacote":{"de":"voce","para":"chat","txt":"uma pergunta rápida"},
+           "legenda":"<b>Chat:</b> conversa avulsa no navegador, com os arquivos que você anexar. Ótimo para rascunho, revisão e dúvida rápida."},
+          {"acende":["proj"],"pacote":{"de":"voce","para":"proj","txt":"projeto “Cliente Bom Preço”"},
+           "legenda":"<b>Projects:</b> uma “pasta” no claude.ai com instruções e arquivos que valem para todas as conversas dele. Resolve o “conversa nova, contexto vazio” do Capítulo 1."},
+          {"acende":["art"],"pacote":{"de":"voce","para":"art","txt":"crie uma calculadora de multa"},
+           "legenda":"<b>Artifacts:</b> quando o Claude cria algo para usar (um documento, uma tabela, uma página interativa), ele aparece ao lado da conversa, pronto para copiar ou compartilhar."},
+          {"acende":["code"],"pacote":{"de":"voce","para":"code","txt":"organize a pasta","tipo":"ok"},"marca":{"code":"ok"},
+           "legenda":"<b>Claude Code:</b> o agente que trabalha nas pastas do seu computador, criando e alterando arquivos com a sua permissão. É o protagonista daqui até o fim do curso."}
+        ]
+      }</script>
+    </div>
+
+    <div class="tabela-rolo">
+      <table class="tabela">
+        <thead><tr><th></th><th>Chat</th><th>Projects</th><th>Artifacts</th><th>Claude Code</th></tr></thead>
+        <tbody>
+          <tr><th>Onde</th><td>navegador</td><td>navegador</td><td>navegador</td><td>app no seu computador</td></tr>
+          <tr><th>Enxerga</th><td>o que você anexa</td><td>arquivos do projeto</td><td>a conversa</td><td>a pasta que você abrir</td></tr>
+          <tr><th>Cria arquivo no seu PC?</th><td>não</td><td>não</td><td>você baixa</td><td><b>sim, com permissão</b></td></tr>
+          <tr><th>Quando usar</th><td>rascunho rápido</td><td>cliente recorrente</td><td>peça para mostrar</td><td>trabalho em lote nos arquivos</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <details class="prof">
+      <summary>Para o professor · demonstração de 5 minutos no claude.ai</summary>
+      Crie um Project “Cliente Bom Preço”, cole nas instruções “Sou da Aurora Assessoria; respostas curtas; sempre cite a fonte”
+      e suba o contrato do kit. Numa conversa do projeto, peça: “crie como artifact uma calculadora: eu digito quantos meses
+      faltam e ela mostra a multa”. Mostre que o artifact aparece ao lado, e que uma conversa nova no projeto já começa sabendo do contrato.
+    </details>
+  </section>
+
+  <!-- 04 -->
+  <section class="ato pratica" id="instalar">
+    <span class="kicker">04 · prática guiada · 35 min</span>
+    <h2>Prática A · Instalando o Claude Code pelo aplicativo</h2>
+    <p class="lead">Sem terminal. O app Claude já traz o Claude Code dentro, na aba <strong>Code</strong>.</p>
+
+    <div class="precisa">
+      <b class="tit">O que você vai precisar</b>
+      <ul>
+        <li>Notebook com <strong>Windows ou macOS</strong> (tablet e Chromebook não servem)</li>
+        <li>Conta no Claude com <strong>plano pago</strong> (o Pro é o de entrada): <a href="https://claude.com/pricing" target="_blank" rel="noopener">claude.com/pricing</a></li>
+        <li>Uns 10 minutos de internet boa</li>
+      </ul>
+    </div>
+
+    <ol class="passos">
+      <li><b>Baixe o app.</b>
+        <div class="downloads">
+          <a class="btn-kit" href="https://claude.ai/api/desktop/win32/x64/setup/latest/redirect" rel="noopener">⬇ Windows</a>
+          <a class="btn-kit" href="https://claude.ai/api/desktop/darwin/universal/dmg/latest/redirect" rel="noopener">⬇ macOS</a>
+        </div>
+        <span class="dim">Windows com processador ARM tem instalador próprio na página oficial de download.</span>
+      </li>
+      <li><b>Instale e entre com a sua conta.</b> No Windows, abra pelo menu Iniciar; no Mac, pela pasta Aplicativos. Faça login com a mesma conta do plano.</li>
+      <li><b>Clique na aba Code</b>, no topo. Se aparecer um convite para assinar, o plano ainda não está ativo nessa conta.</li>
+      <li><b>Se o Windows pedir o Git,</b> instale em <a href="https://git-scm.com/downloads/win" target="_blank" rel="noopener">git-scm.com</a> avançando com as opções padrão, feche e reabra o app. É um ajudante de bastidores que você vai usar no Capítulo 6 como “máquina do tempo”.</li>
+      <li><b>Confira o modo de permissão.</b> Na linha abaixo da caixa de texto há um seletor. Use <strong>Manual</strong> durante o curso: ele pergunta antes de editar ou rodar qualquer coisa.</li>
+    </ol>
+
+    <div class="modos revela">
+      <div class="modo on"><b>Manual</b><small>pergunta antes de editar ou rodar. <em>Use no curso.</em></small></div>
+      <div class="modo"><b>Plan</b><small>só planeja, não mexe em nada. Bom para tarefas grandes.</small></div>
+      <div class="modo"><b>Accept edits</b><small>aplica edições sem perguntar; você revisa depois.</small></div>
+      <div class="modo"><b>Auto</b><small>um verificador decide o que é arriscado. Para quem já tem prática.</small></div>
+    </div>
+
+    <h3>O teste do “oi”</h3>
+    <p>Ainda sem pasta nenhuma, só para ver que está vivo:</p>
+    <div class="prompt">
+      <div class="prompt-topo"><span class="rot">✨ seu primeiro pedido</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+      <pre>oi! você está funcionando? me responda em uma frase, em português.</pre>
+    </div>
+
+    <h3>Deu errado? Está previsto</h3>
+    <div class="faq">
+      <details><summary>A aba Code pede para assinar</summary><p>O plano pago não está nessa conta. Confira em claude.ai, nas configurações da conta, qual plano está ativo, e se você entrou no app com o mesmo e-mail.</p></details>
+      <details><summary>Pediu para entrar no navegador e voltou sem nada</summary><p>Termine o login no navegador e reinicie o app. É o comportamento descrito na documentação oficial.</p></details>
+      <details><summary>Windows reclamou de Git</summary><p>Instale o Git em git-scm.com com as opções padrão e reabra o app.</p></details>
+      <details><summary>Demorou muito para responder</summary><p>A primeira resposta pode demorar um pouco. Se passar de um minuto, use o botão de parar e mande de novo.</p></details>
+    </div>
+  </section>
+
+  <!-- 05 -->
+  <section class="ato pratica" id="kit">
+    <span class="kicker">05 · prática guiada · 25 min</span>
+    <h2>Prática B · O kit da Aurora e a primeira conversa de verdade</h2>
+    <p class="lead">
+      O agente só enxerga a <strong>pasta que você abrir</strong>. Por isso, primeiro uma casa para o curso,
+      depois o kit dentro dela.
+    </p>
+
+    <div class="precisa">
+      <b class="tit">O que você vai precisar</b>
+      <ul>
+        <li>O app aberto na aba Code</li>
+        <li>O kit de treino da Aurora (arquivos fictícios)</li>
+      </ul>
+      <a class="btn-kit" href="../../assets/kit-aurora.zip" download>⬇ Baixar o kit-aurora.zip</a>
+    </div>
+
+    <ol class="passos">
+      <li><b>Crie a casa.</b> Em Documentos, crie uma pasta chamada <code>curso-ia</code>.</li>
+      <li><b>Descompacte o kit dentro dela.</b> Você deve ver <code>curso-ia/kit-aurora/</code> com as pastas bagunca, contrato, declaracoes, marketing, planilha e professor.</li>
+      <li><b>Abra a pasta certa no app.</b> Na linha abaixo da caixa de texto: ambiente <strong>Local</strong> e, no controle de pasta, <strong>Open folder…</strong> escolhendo <code>curso-ia/kit-aurora</code>.</li>
+      <li><b>Tarefa 1: só olhar.</b> Ler não altera nada.
+        <div class="prompt">
+          <div class="prompt-topo"><span class="rot">👀 o diagnóstico da pasta da Marta</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+          <pre>dê uma olhada na pasta bagunca e me conte: quantos arquivos tem,
+de quais tipos, e quais parecem duplicados. só olhe, não mude nada.</pre>
+        </div>
+        <div class="tela">
+          <span class="tela-rot">o que deve aparecer (resumido)</span>
+          <span class="tela-linha">34 arquivos: 15 imagens, 14 textos e planilhas (txt e csv), 5 PDFs.</span>
+          <span class="tela-linha">Prováveis duplicados: os três “relatorio final…”, as duas “anotações reunião”,</span>
+          <span class="tela-linha">“IMG_8274” e “cópia de IMG_8274”, os dois “logo-final-AGORA-VAI”.</span>
+        </div>
+      </li>
+      <li><b>Tarefa 2: criar algo.</b> Aqui ele vai pedir permissão.
+        <div class="prompt">
+          <div class="prompt-topo"><span class="rot">📝 o primeiro arquivo</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+          <pre>crie um arquivo diario.txt aqui na pasta com duas linhas: a data de
+hoje e um resumo, em uma frase, do que você encontrou na pasta bagunca.</pre>
+        </div>
+        <div class="tela">
+          <span class="tela-rot">o que deve aparecer (resumido)</span>
+          <span class="tela-linha dim">Pede permissão para criar diario.txt</span>
+          <span class="tela-linha">Criado. Abra a pasta kit-aurora e confira: o diario.txt está lá.</span>
+        </div>
+      </li>
+      <li><b>Confira no seu explorador de arquivos.</b> Abra o diario.txt. Esse é o momento “ele mexeu no meu computador de verdade”.</li>
+    </ol>
+
+    <div class="caixa alerta">
+      <span class="caixa-ic">🧾</span>
+      <div>
+        <span class="caixa-tit">Por que essa pasta, e não Documentos inteira?</span>
+        <p>Abrir a pasta certa é o primeiro limite de segurança: o agente trabalha ali dentro. Para tarefas reais, abra só a pasta do assunto, nunca o computador todo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 -->
+  <section class="ato pratica" id="estacoes">
+    <span class="kicker">06 · estação da sua área · 10 min</span>
+    <h2>Uma pergunta do seu mundo</h2>
+    <p class="lead">Escolha a sua área. Cada estação usa um arquivo do kit e só lê, sem alterar nada.</p>
+    <div data-abas>
+      <div class="abas" role="tablist">
+        <button class="aba" role="tab" aria-controls="e-cont" aria-selected="true">Contabilidade</button>
+        <button class="aba" role="tab" aria-controls="e-jur" aria-selected="false">Jurídico</button>
+        <button class="aba" role="tab" aria-controls="e-rh" aria-selected="false">RH e secretaria</button>
+        <button class="aba" role="tab" aria-controls="e-edu" aria-selected="false">Educação</button>
+        <button class="aba" role="tab" aria-controls="e-mkt" aria-selected="false">Marketing</button>
+      </div>
+      <div class="aba-painel" id="e-cont" role="tabpanel">
+        <div class="prompt"><div class="prompt-topo"><span class="rot">📊 vendas do mês</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+          <pre>leia bagunca/vendas_marco.csv e me diga: quantas vendas houve, o total
+do mês e o dia de maior venda. mostre a conta que você fez.</pre></div>
+        <div class="tela"><span class="tela-rot">confira</span><span class="tela-linha">4 vendas · total R$ 2.739,00 · maior venda no dia 03 (R$ 996,00)</span></div>
+      </div>
+      <div class="aba-painel" id="e-jur" role="tabpanel">
+        <div class="prompt"><div class="prompt-topo"><span class="rot">⚖️ quem é quem</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+          <pre>leia contrato/contrato-prestacao-servicos.pdf e me diga só: quem é a
+contratante, quem é a contratada, o objeto e o foro. cite a cláusula.</pre></div>
+        <div class="tela"><span class="tela-rot">confira</span><span class="tela-linha">Bom Preço do Vale (contratante) · RefriTec (contratada) · manutenção de refrigeração (Cláusula Primeira) · foro de João Pessoa (Cláusula Décima Primeira)</span></div>
+      </div>
+      <div class="aba-painel" id="e-rh" role="tabpanel">
+        <div class="prompt"><div class="prompt-topo"><span class="rot">👥 a lista de participantes</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+          <pre>leia declaracoes/participantes.csv e me diga quantas pessoas há
+e quantas estão em cada curso, numa tabela.</pre></div>
+        <div class="tela"><span class="tela-rot">confira</span><span class="tela-linha">30 pessoas, de AUR-0001 a AUR-0030, distribuídas por curso</span></div>
+      </div>
+      <div class="aba-painel" id="e-edu" role="tabpanel">
+        <div class="prompt"><div class="prompt-topo"><span class="rot">📚 a apostila</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+          <pre>leia professor/apostila-capitulo.txt e resuma em 5 tópicos para um
+aluno do ensino médio. no fim, diga qual exemplo numérico a apostila usa.</pre></div>
+        <div class="tela"><span class="tela-rot">confira</span><span class="tela-linha">Juros compostos · exemplo de R$ 1.000,00 a 1% ao mês · regra dos 72 (8% ao ano: 9 anos)</span></div>
+      </div>
+      <div class="aba-painel" id="e-mkt" role="tabpanel">
+        <div class="prompt"><div class="prompt-topo"><span class="rot">📣 o release</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+          <pre>leia marketing/release-produto.txt e liste só os fatos que dá para
+usar num anúncio: números, preço e prazos. nada além do que está no texto.</pre></div>
+        <div class="tela"><span class="tela-rot">confira</span><span class="tela-linha">Termo 500 · 500 ml · quente 12h, gelado 24h · R$ 249,00 · pré-venda R$ 219,00</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 -->
+  <section class="ato" id="sobrevivencia">
+    <span class="kicker">07 · antes de ir</span>
+    <h2>Kit de sobrevivência</h2>
+    <div class="sobrev revela">
+      <div class="cartao"><h4>🛑 Ele está indo pelo caminho errado</h4><p>Aperte o botão de parar ou escreva a correção e envie. Não precisa esperar terminar.</p></div>
+      <div class="cartao"><h4>🤔 Pediu uma permissão estranha</h4><p>Recuse e pergunte: “para que você precisa disso?”. Recusar não quebra nada.</p></div>
+      <div class="cartao"><h4>🧩 Apareceu código na tela</h4><p>É o agente trabalhando. Você não precisa ler. Se quiser, peça: “explique em português o que você fez”.</p></div>
+      <div class="cartao"><h4>📂 Ele não acha o arquivo</h4><p>Quase sempre é a pasta errada aberta. Confira o controle de pasta abaixo da caixa de texto.</p></div>
+      <div class="cartao"><h4>↩️ Não gostei do resultado</h4><p>Peça para desfazer: “volte como estava antes”. No Capítulo 3 você aprende a pedir um relatório do que mudou para isso ficar fácil.</p></div>
+    </div>
+    <div class="duas">
+      <div class="cartao claude"><h4>📝 Leve para o trabalho</h4><p>Crie uma pasta com <b>cópias</b> de arquivos reais e sem dados sensíveis do seu trabalho e peça ao agente só para olhar: “o que tem aqui e o que você organizaria?”. Não deixe mexer ainda.</p></div>
+      <div class="cartao info"><h4>🧰 Antes do Capítulo 3</h4><p>Deixe o app instalado e o kit aberto. Se a instalação travou, chegue 15 minutos antes que resolvemos juntos.</p></div>
+    </div>
+  </section>
+
+  <!-- 08 -->
+  <section class="ato" id="quiz-final">
+    <span class="kicker">08 · quiz final</span>
+    <h2>Três decisões de porteiro</h2>
+    <div class="quiz" data-quiz>
+      <p class="quiz-q">Você pediu “liste os PDFs da pasta”. O agente responde sem pedir permissão nenhuma. Isso está certo?</p>
+      <div class="quiz-ops">
+        <button class="quiz-op" type="button" data-certa data-fb="Listar é ler: não altera nada. No modo Manual, a permissão é pedida para editar arquivos ou rodar comandos.">Sim: listar só lê, não altera nada.</button>
+        <button class="quiz-op" type="button" data-fb="Nada foi alterado. Ele só olhou, que é exatamente o que você pediu.">Não: ele deveria pedir para olhar.</button>
+        <button class="quiz-op" type="button" data-fb="O modo não mudou sozinho. Leitura simplesmente não precisa de permissão no modo Manual.">Não: o modo de permissão desligou.</button>
+      </div>
+      <div class="quiz-fb"></div>
+    </div>
+    <div class="quiz" data-quiz>
+      <p class="quiz-q">A pasta aberta é <code>kit-aurora</code>, e o agente pede para mover arquivos de <code>Documentos/Financeiro</code>. O que você faz?</p>
+      <div class="quiz-ops">
+        <button class="quiz-op" type="button" data-fb="É fora da pasta combinada e você não pediu isso. Aprovar sem entender é o erro clássico.">Aprovo: ele deve saber o que está fazendo.</button>
+        <button class="quiz-op" type="button" data-certa data-fb="Fora do combinado, a resposta é não. Depois pergunte o motivo; se fizer sentido, você mesmo abre a pasta certa.">Recuso e pergunto por que ele quer sair da pasta do curso.</button>
+        <button class="quiz-op" type="button" data-fb="Não precisa fechar nada: recusar resolve, e você continua a conversa.">Fecho o app na hora.</button>
+      </div>
+      <div class="quiz-fb"></div>
+    </div>
+    <div class="quiz" data-quiz>
+      <p class="quiz-q">Qual é a diferença real entre o Claude no navegador e o Claude Code?</p>
+      <div class="quiz-ops">
+        <button class="quiz-op" type="button" data-fb="Os dois usam a mesma família de modelos. A diferença está no que cada um consegue fazer.">O Claude Code usa uma IA mais inteligente.</button>
+        <button class="quiz-op" type="button" data-certa data-fb="O modelo é o mesmo tipo. O agente tem ferramentas para agir nos seus arquivos, com permissão.">O Claude Code tem ferramentas para ler e alterar arquivos do seu computador.</button>
+        <button class="quiz-op" type="button" data-fb="Os dois podem dar respostas erradas. Conferir continua sendo trabalho seu.">O Claude Code nunca erra porque vê os arquivos.</button>
+      </div>
+      <div class="quiz-fb"></div>
+    </div>
+    <div class="regra">
+      <span class="regra-rot">O que fica deste capítulo</span>
+      <p>O agente <em>age</em>: lê sozinho, cria e altera com a sua licença. Pasta certa, modo Manual e permissão consciente.</p>
+    </div>
+    <nav class="nav-caps" aria-label="Navegação entre capítulos">
+      <a href="../01-panorama/"><small>anterior</small>‹ Capítulo 1 · O que a IA faz de verdade</a>
+      <a class="prox" href="../03-arquivos/"><small>próximo</small>Capítulo 3 · O agente nos seus arquivos ›</a>
+    </nav>
+  </section>
+
+</div>
+</main>
+
+<footer class="rodape">Curso de IA · Programa AI · Capítulo 2 · Dados e empresas dos exercícios são fictícios.</footer>
+<script src="../../shared/curso.js"></script>
+<script src="../../shared/fluxo.js"></script>
+<script src="cap.js"></script>
+</body>
+</html>

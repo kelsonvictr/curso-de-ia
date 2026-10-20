@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capítulo 3 · O agente nos seus arquivos — Curso de IA · Programa AI</title>
+<script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('curso-ia-tema');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="icon" href="../../assets/logos/programa-ai.svg">
+<link rel="stylesheet" href="../../shared/base.css">
+<link rel="stylesheet" href="cap.css">
+</head>
+<body>
+
+<header class="topo">
+  <div class="topo-in">
+    <a class="marca" href="../../"><img class="marca-img" src="../../assets/logos/programa-ai.svg" alt="Programa AI"><span>Curso de IA<small>IA na prática</small></span></a>
+    <span class="topo-cap"><b>Capítulo 3</b> · O agente nos seus arquivos</span>
+    <div class="topo-acoes">
+      <button class="btn-icone" id="btn-tema" type="button" aria-label="Trocar tema">☀️</button>
+      <button class="btn-icone" type="button" data-abre-indice aria-label="Abrir índice do capítulo">☰</button>
+    </div>
+  </div>
+  <div class="progresso"></div>
+</header>
+
+<div class="veu"></div>
+<nav class="indice" aria-label="Índice do capítulo">
+  <button class="btn-icone indice-fechar" type="button" data-fecha-indice aria-label="Fechar índice">✕</button>
+  <h3>Capítulo 3</h3>
+  <a href="#abertura"><span class="n">00</span>As duas demandas</a>
+  <a href="#metodo"><span class="n">01</span>O método em 4 etapas</a>
+  <a href="#organizador"><span class="n">02</span>Simulador: a pasta se arruma</a>
+  <a href="#pratica-a"><span class="n">03</span>Prática A · a pasta bagunçada</a>
+  <a href="#programa"><span class="n">04</span>Por que ele escreve um programa</a>
+  <a href="#grafias"><span class="n">05</span>Simulador: dado sujo</a>
+  <a href="#pratica-b"><span class="n">06</span>Prática B · a planilha de gastos</a>
+  <a href="#estacoes"><span class="n">07</span>Estação da sua área</a>
+  <a href="#quiz-final"><span class="n">08</span>Quiz final</a>
+</nav>
+
+<main>
+<div class="wrap">
+
+  <section class="hero">
+    <span class="hero-kicker">Capítulo 3 de 6 · O agente nos seus arquivos</span>
+    <h1>A pasta se arruma e a planilha <em>responde em português</em></h1>
+    <p class="hero-lead">
+      Duas tarefas que comem horas de qualquer escritório: organizar uma pasta caótica e entender uma
+      planilha suja. Hoje o agente faz as duas, seguindo um método que você vai usar até o fim do curso:
+      <strong>diagnóstico, plano, execução e conferência</strong>.
+    </p>
+    <div class="roteiro" style="--cols:3">
+      <a class="tl" href="#metodo"><span class="tl-hora">19:00 · 20 min</span><b>O método em 4 etapas</b><span>Fluxo + simulador da pasta</span></a>
+      <a class="tl" href="#pratica-a"><span class="tl-hora">19:20 · 35 min</span><b>Prática A · a pasta</b><span>34 arquivos, plano antes de mexer</span></a>
+      <a class="tl" href="#programa"><span class="tl-hora">19:55 · 15 min</span><b>Por que ele escreve programas</b><span>Conta de cabeça × conta certa</span></a>
+      <a class="tl" href="#pratica-b"><span class="tl-hora">20:10 · 35 min</span><b>Prática B · a planilha</b><span>306 lançamentos, gráfico, suspeitos</span></a>
+      <a class="tl" href="#estacoes"><span class="tl-hora">20:45 · 10 min</span><b>Estação da sua área</b><span>O método na sua pasta</span></a>
+      <a class="tl" href="#quiz-final"><span class="tl-hora">20:55 · 5 min</span><b>Quiz</b><span>Três decisões</span></a>
+    </div>
+  </section>
+
+  <section class="ato" id="abertura">
+    <span class="kicker">00 · abertura</span>
+    <h2>As duas demandas do dia</h2>
+    <div class="aurora revela">
+      <div class="aurora-cab"><span class="aurora-logo">A</span><div><b>Aurora Assessoria</b><small>contabilidade · jurídico · RH · administrativo</small></div></div>
+      <div class="aurora-corpo">
+        <div class="aurora-msg">
+          <span class="aurora-de">Marta, sócia da Aurora · 09:05</span>
+          <p>1) Aquela pasta do cliente novo: <b>organiza</b>, mas me mostra antes o que vai fazer. 2) Outro cliente mandou a planilha de gastos do ano, <b>306 lançamentos</b>, cada um escrito de um jeito. Quanto ele gastou por categoria? E tem alguma coisa estranha?</p>
+        </div>
+      </div>
+    </div>
+    <div class="regra revela">
+      <span class="regra-rot">A regra central do capítulo</span>
+      <p>Primeiro o agente <em>olha</em>, depois <em>propõe</em>, só então <em>executa</em>. E você <em>confere uma amostra</em> antes de confiar.</p>
+    </div>
+  </section>
+
+  <section class="ato" id="metodo">
+    <span class="kicker">01 · teoria + fluxo</span>
+    <h2>O método em 4 etapas</h2>
+    <p class="lead">
+      Profissional experiente não sai mexendo: primeiro entende, depois planeja. Com o agente é igual,
+      e cada etapa tem um pedido próprio.
+    </p>
+    <div class="fluxo" data-titulo="fluxo · diagnóstico, plano, execução, conferência">
+      <script type="application/json">{
+        "altura": 330,
+        "nos": [
+          {"id":"diag","x":12,"y":30,"rot":"1 · Diagnóstico","sub":"só olhar","ic":"🔍","largo":true},
+          {"id":"plano","x":38,"y":70,"rot":"2 · Plano","sub":"proposta por escrito","ic":"📝","largo":true},
+          {"id":"voce","x":62,"y":30,"rot":"Você aprova","sub":"ou ajusta","ic":"✋"},
+          {"id":"exec","x":86,"y":70,"rot":"3 · Execução","sub":"com relatório","ic":"⚙️","largo":true},
+          {"id":"conf","x":86,"y":22,"rot":"4 · Conferência","sub":"amostra na fonte","ic":"👀","largo":true}
+        ],
+        "inicio": "Os quatro pedidos que viram hábito. Aperte <b>Começar</b>.",
+        "passos": [
+          {"acende":["diag"],"muda":{"diag":"“só analise, não mude nada”"},
+           "legenda":"<b>1. Diagnóstico.</b> Você pede para ele olhar e contar o que achou. Ler não altera nada, então é seguro. Você descobre o tamanho do problema."},
+          {"acende":["plano"],"pacote":{"de":"diag","para":"plano","txt":"34 arquivos, 4 grupos de duplicados"},"muda":{"plano":"“mostre o plano antes”"},
+           "legenda":"<b>2. Plano.</b> Com o diagnóstico na conversa, ele propõe: quais pastas criar, que nomes usar, o que fazer com as cópias. Ainda sem mexer."},
+          {"acende":["voce"],"pacote":{"de":"plano","para":"voce","txt":"aprova o plano?","tipo":"alerta"},"marca":{"voce":"alerta"},
+           "legenda":"<b>Você decide.</b> Este é o momento mais barato para corrigir. Mudar o plano custa uma frase; desfazer 34 arquivos custa muito mais."},
+          {"acende":["exec"],"pacote":{"de":"voce","para":"exec","txt":"aprovado, com relatório","tipo":"ok"},"marca":{"voce":"ok"},"muda":{"exec":"“anote o que mudou”"},
+           "legenda":"<b>3. Execução.</b> Ele faz e, a seu pedido, deixa um <b>relatório do que mudou</b> (nome antigo e nome novo). É o que torna o “desfazer” possível."},
+          {"acende":["conf"],"pacote":{"de":"exec","para":"conf","txt":"abro 3 arquivos ao acaso","tipo":"info"},"marca":{"conf":"ok","exec":"ok"},
+           "legenda":"<b>4. Conferência.</b> Você não confere tudo: confere uma <b>amostra</b>. Se a amostra bate, a confiança aumenta. Se não bate, volta ao plano."}
+        ]
+      }</script>
+    </div>
+  </section>
+
+  <section class="ato" id="organizador">
+    <span class="kicker">02 · simulador</span>
+    <h2>Veja a pasta se arrumar</h2>
+    <p class="lead">Os 34 arquivos do kit, como estão. Siga as quatro etapas do método e repare no que acontece com eles.</p>
+    <div class="sim" id="sim-pasta">
+      <div class="sim-topo"><span class="bolinhas"><i></i><i></i><i></i></span><span class="sim-label">simulador · kit-aurora/bagunca</span></div>
+      <div class="sim-palco">
+        <div class="og-palco">
+          <div class="og-solta" id="og-solta" aria-label="Arquivos soltos"></div>
+          <div class="og-pastas" id="og-pastas">
+            <div class="og-pasta" data-tipo="img"><b>📁 imagens/</b><div class="og-dentro"></div></div>
+            <div class="og-pasta" data-tipo="doc"><b>📁 documentos/</b><div class="og-dentro"></div></div>
+            <div class="og-pasta" data-tipo="csv"><b>📁 planilhas/</b><div class="og-dentro"></div></div>
+            <div class="og-pasta" data-tipo="pdf"><b>📁 pdfs/</b><div class="og-dentro"></div></div>
+            <div class="og-pasta dup" data-tipo="dup"><b>📁 duplicados/</b><div class="og-dentro"></div></div>
+          </div>
+        </div>
+        <div class="og-relatorio" id="og-relatorio" hidden><span class="np-rot">relatorio-organizacao.txt (trecho)</span><pre id="og-rel-txt"></pre></div>
+      </div>
+      <div class="sim-controles">
+        <span class="sim-legenda" id="og-leg">Etapa atual: <b>nenhuma</b>. Comece pelo diagnóstico.</span>
+        <button class="btn" type="button" id="og-desfaz" disabled>↩ Desfazer</button>
+        <button class="btn" type="button" id="og-diag">1 · Diagnóstico</button>
+        <button class="btn" type="button" id="og-plano" disabled>2 · Plano</button>
+        <button class="btn prim" type="button" id="og-exec" disabled>3 · Executar</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="ato pratica" id="pratica-a">
+    <span class="kicker">03 · prática guiada · 35 min</span>
+    <h2>Prática A · A pasta bagunçada, de verdade</h2>
+    <div class="precisa">
+      <b class="tit">O que você vai precisar</b>
+      <ul>
+        <li>O app aberto na aba Code, com a pasta <code>curso-ia/kit-aurora</code></li>
+        <li>Modo de permissão <strong>Manual</strong></li>
+      </ul>
+      <a class="btn-kit" href="../../assets/kit-aurora.zip" download>⬇ Kit, se você ainda não baixou</a>
+    </div>
+    <ol class="passos">
+      <li><b>Diagnóstico.</b>
+        <div class="prompt"><div class="prompt-topo"><span class="rot">🔍 só olhar</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+          <pre>analise a pasta bagunca e me diga: quantos arquivos por tipo, quais
+parecem duplicados e quais têm os piores nomes. só analise, não mude nada.</pre></div>
+        <div class="tela"><span class="tela-rot">o que deve aparecer (resumido)</span>
+          <span class="tela-linha">34 arquivos: 15 imagens (jpg, jpeg, png), 14 textos e planilhas (txt, csv), 5 PDFs</span>
+          <span class="tela-linha">Duplicados: os três “relatorio final…”, as duas “anotações reunião”,</span>
+          <span class="tela-linha">IMG_8274 e “cópia de IMG_8274”, os dois “logo-final-AGORA-VAI”</span></div>
+      </li>
+      <li><b>Plano.</b>
+        <div class="prompt"><div class="prompt-topo"><span class="rot">📝 o plano antes de mexer</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+          <pre>proponha uma organização para a pasta bagunca: subpastas por tipo
+(imagens, documentos, planilhas, pdfs) e nomes padronizados, em
+minúsculas, sem espaços nem acentos. as cópias vão para uma subpasta
+"duplicados", sem apagar nada. me mostre o plano completo ANTES de mexer.</pre></div>
+      </li>
+      <li><b>Ajuste o plano, se quiser.</b> Exemplo: “as fotos IMG_ podem virar foto-01, foto-02…”. É só pedir na conversa.</li>
+      <li><b>Execução com relatório.</b>
+        <div class="prompt"><div class="prompt-topo"><span class="rot">⚙️ executar com rastro</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+          <pre>plano aprovado, pode executar. no final, crie o arquivo
+relatorio-organizacao.txt com cada mudança: nome antigo e nome novo.</pre></div>
+        <div class="tela"><span class="tela-rot">o que deve aparecer (resumido)</span>
+          <span class="tela-linha dim">Pede permissão para criar as pastas e mover/renomear os arquivos</span>
+          <span class="tela-linha">Pronto: 34 arquivos organizados; relatorio-organizacao.txt criado.</span></div>
+      </li>
+      <li><b>Conferência.</b> Abra a pasta no seu explorador. Escolha 3 linhas do relatório e confira se o arquivo está mesmo onde ele diz.</li>
+      <li><b>O botão de pânico (não precisa usar, mas saiba que existe):</b>
+        <div class="prompt"><div class="prompt-topo"><span class="rot">↩ desfazer</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+          <pre>não gostei. usando o relatorio-organizacao.txt, volte todos os
+arquivos para os nomes e lugares originais.</pre></div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="ato" id="programa">
+    <span class="kicker">04 · teoria + fluxo</span>
+    <h2>Por que ele escreve um programa para somar</h2>
+    <p class="lead">
+      No Capítulo 1 você viu que o modelo <strong>prevê texto</strong>. Somar 306 valores “prevendo” o
+      resultado é pedir para errar. Um bom agente faz outra coisa: <strong>escreve um pequeno programa</strong>
+      que faz a conta, roda esse programa na sua planilha e só então responde.
+    </p>
+    <div class="fluxo" data-titulo="fluxo · conta de cabeça × conta com programa">
+      <script type="application/json">{
+        "altura": 380,
+        "nos": [
+          {"id":"voce","x":9,"y":50,"rot":"Você","sub":"quanto por categoria?","ic":"🙋"},
+          {"id":"modelo","x":32,"y":50,"rot":"Modelo","sub":"","ic":"🧠"},
+          {"id":"chute","x":58,"y":15,"rot":"De cabeça","sub":"prevê o número","ic":"🎲"},
+          {"id":"prog","x":58,"y":85,"rot":"Programa","sub":"10 linhas que somam","ic":"📜"},
+          {"id":"planilha","x":84,"y":85,"rot":"Planilha","sub":"306 lançamentos","ic":"../../assets/logos/sheets.svg"},
+          {"id":"resp","x":84,"y":15,"rot":"Resposta","sub":"","ic":"💬"}
+        ],
+        "inicio": "Dois jeitos de responder “quanto gastei por categoria?”.",
+        "passos": [
+          {"acende":["voce","modelo"],"pacote":{"de":"voce","para":"modelo","txt":"total por categoria?"},
+           "legenda":"<b>1. A pergunta chega.</b> São 306 valores com vírgula, categorias escritas de vários jeitos."},
+          {"acende":["chute"],"pacote":{"de":"modelo","para":"chute","txt":"somando de cabeça…","tipo":"erro"},"marca":{"chute":"erro"},"muda":{"chute":"“uns R$ 75 mil?”"},
+           "legenda":"<b>2. O caminho ruim: prever o número.</b> O resultado sai com cara de certo e pode estar errado nos centavos, ou em milhares. É alucinação com números."},
+          {"acende":["prog"],"pacote":{"de":"modelo","para":"prog","txt":"escreve o programa","tipo":"info"},
+           "legenda":"<b>3. O caminho do agente: escrever um programa.</b> É aquele “monte de código” que aparece na tela. Você não precisa ler: ele é só a calculadora que o agente montou."},
+          {"acende":["planilha"],"pacote":{"de":"prog","para":"planilha","txt":"posso rodar?","tipo":"alerta"},"marca":{"planilha":"alerta"},
+           "legenda":"<b>4. Rodar o programa pede permissão.</b> É um comando no seu computador. Ele lê a planilha, sem alterar nada."},
+          {"acende":["resp"],"pacote":{"de":"planilha","para":"resp","txt":"Mercado R$ 17.193,78 …","tipo":"ok","curva":0.3},"marca":{"planilha":"ok","resp":"ok"},"muda":{"resp":"conta exata"},
+           "legenda":"<b>5. A resposta vem da conta, não do palpite.</b> Total do ano: R$ 74.945,14. Mesmo assim, você confere uma categoria na conferência."}
+        ]
+      }</script>
+    </div>
+    <div class="caixa dica">
+      <span class="caixa-ic">🧩</span>
+      <div>
+        <span class="caixa-tit">“Apareceu código na tela” não é erro</span>
+        <p>É o agente trabalhando. Se quiser entender, peça: “explique em português o que esse programa faz”. Se ele precisar de algo que não tem no computador (como o Python), vai pedir para instalar: pergunte para que serve e aprove se fizer sentido.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ato" id="grafias">
+    <span class="kicker">05 · simulador</span>
+    <h2>Dado sujo engana gráfico</h2>
+    <p class="lead">
+      A planilha tem a mesma categoria escrita de até quatro jeitos. Veja o que acontece com o gráfico
+      quando ninguém junta as grafias.
+    </p>
+    <div class="sim" id="sim-grafias">
+      <div class="sim-topo"><span class="bolinhas"><i></i><i></i><i></i></span><span class="sim-label">simulador · gastos-2025.csv (dados reais do kit)</span></div>
+      <div class="sim-palco">
+        <div class="gr-barras" id="gr-barras"></div>
+      </div>
+      <div class="sim-controles">
+        <span class="sim-legenda" id="gr-leg"></span>
+        <button class="btn prim" type="button" id="gr-troca">Juntar as grafias</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="ato pratica" id="pratica-b">
+    <span class="kicker">06 · prática guiada · 35 min</span>
+    <h2>Prática B · A planilha que se analisa sozinha</h2>
+    <p class="lead">Sem fórmula. Em português. Com conferência no final.</p>
+    <ol class="passos">
+      <li><b>Raio-X.</b>
+        <div class="prompt"><div class="prompt-topo"><span class="rot">🔍 o diagnóstico</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+          <pre>leia planilha/gastos-2025.csv e me diga o que tem nele (colunas,
+período, quantos lançamentos) e que problemas de qualidade você vê
+nos dados. só analise, não mude nada.</pre></div>
+        <div class="tela"><span class="tela-rot">o que deve aparecer (resumido)</span>
+          <span class="tela-linha">306 lançamentos de um ano · colunas data, descricao, categoria, valor</span>
+          <span class="tela-linha">mesma categoria com grafias diferentes · 6 sem categoria</span>
+          <span class="tela-linha">5 linhas duplicadas · 1 valor muito fora do padrão</span></div>
+      </li>
+      <li><b>Totais, juntando as grafias.</b>
+        <div class="prompt"><div class="prompt-topo"><span class="rot">📊 por categoria</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+          <pre>quanto foi gasto por categoria? trate todas as grafias (maiúsculas,
+minúsculas, com e sem acento) como a mesma categoria. mostre uma
+tabela do maior para o menor e diga o que fez com os sem categoria.</pre></div>
+        <div class="tela"><span class="tela-rot">confira com estes números</span>
+          <span class="tela-linha">Mercado R$ 17.193,78 · Moradia R$ 14.162,58 · Saúde R$ 13.373,84</span>
+          <span class="tela-linha">Educação R$ 11.696,27 · Alimentação R$ 7.830,72 · Lazer R$ 4.994,43</span>
+          <span class="tela-linha">Transporte R$ 4.868,94 · sem categoria R$ 824,58 · total R$ 74.945,14</span></div>
+      </li>
+      <li><b>O detetive.</b>
+        <div class="prompt"><div class="prompt-topo"><span class="rot">🕵️ os suspeitos</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+          <pre>agora seja detetive: liste as linhas duplicadas, os lançamentos sem
+categoria e os valores muito fora do padrão da própria categoria,
+com data, descrição e valor. não mude nada no arquivo.</pre></div>
+        <div class="tela"><span class="tela-rot">o que deve aparecer (resumido)</span>
+          <span class="tela-linha">Fora da curva: 17/08 “jantar de aniversário”, Alimentação, R$ 4.890,00</span>
+          <span class="tela-linha dim">(o normal dessa categoria fica perto de R$ 80)</span>
+          <span class="tela-linha">5 duplicadas, entre elas 25/02 farmácia R$ 297,52 e 28/10 academia R$ 306,97</span>
+          <span class="tela-linha">6 sem categoria: gás, almoço com cliente, passeio, ônibus, livraria, estacionamento</span></div>
+      </li>
+      <li><b>O relatório visual.</b>
+        <div class="prompt"><div class="prompt-topo"><span class="rot">📈 o gráfico</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+          <pre>crie o arquivo planilha/relatorio-gastos.html com um gráfico de barras
+do total por categoria (juntando as grafias), o total do ano e a lista
+de pontos de atenção. visual limpo, para abrir no navegador e mostrar
+ao cliente.</pre></div>
+        <p>Abra o arquivo com dois cliques. É um relatório pronto para mostrar, feito em segundos.</p>
+      </li>
+      <li><b>A conferência.</b>
+        <div class="prompt"><div class="prompt-topo"><span class="rot">👀 abrindo a caixa-preta</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+          <pre>liste todos os lançamentos de Educação (qualquer grafia) com data,
+descrição e valor, e a soma no final.</pre></div>
+        <div class="tela"><span class="tela-rot">confira</span><span class="tela-linha">46 lançamentos · soma R$ 11.696,27, igual ao total da etapa 2</span></div>
+      </li>
+    </ol>
+    <div class="caixa alerta">
+      <span class="caixa-ic">⚠️</span>
+      <div>
+        <span class="caixa-tit">O mês mais caro é uma armadilha</span>
+        <p>Pergunte qual mês foi o mais caro: agosto, com R$ 9.205,91. Mas R$ 4.890,00 disso é um único jantar, o valor fora da curva. Sem ele, agosto vira um mês comum. Análise boa sempre pergunta: “o que puxou esse número?”.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ato pratica" id="estacoes">
+    <span class="kicker">07 · estação da sua área · 10 min</span>
+    <h2>O método na sua pasta</h2>
+    <div data-abas>
+      <div class="abas" role="tablist">
+        <button class="aba" role="tab" aria-controls="e-cont" aria-selected="true">Contabilidade</button>
+        <button class="aba" role="tab" aria-controls="e-adm" aria-selected="false">Administrativo</button>
+        <button class="aba" role="tab" aria-controls="e-jur" aria-selected="false">Jurídico</button>
+        <button class="aba" role="tab" aria-controls="e-rh" aria-selected="false">RH</button>
+        <button class="aba" role="tab" aria-controls="e-edu" aria-selected="false">Educação e saúde</button>
+      </div>
+      <div class="aba-painel" id="e-cont" role="tabpanel">
+        <div class="prompt"><div class="prompt-topo"><span class="rot">📅 o mês que puxou</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+          <pre>no gastos-2025.csv, some o total de cada mês e diga qual foi o mais
+caro. depois mostre as categorias desse mês e o maior lançamento dele.</pre></div>
+      </div>
+      <div class="aba-painel" id="e-adm" role="tabpanel">
+        <div class="prompt"><div class="prompt-topo"><span class="rot">🪑 o orçamento</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+          <pre>no arquivo de orçamento de móveis da pasta bagunca, calcule o total
+de cada item (quantidade vezes valor) e o total geral.</pre></div>
+        <div class="tela"><span class="tela-rot">confira</span><span class="tela-linha">mesas R$ 900,00 · cadeiras R$ 1.680,00 · armário R$ 790,00 · total R$ 3.370,00</span></div>
+      </div>
+      <div class="aba-painel" id="e-jur" role="tabpanel">
+        <div class="prompt"><div class="prompt-topo"><span class="rot">🗂️ a pasta do processo</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+          <pre>na pasta contrato, crie um indice.txt listando cada arquivo, o número
+de páginas e uma linha dizendo do que ele trata. não mude os arquivos.</pre></div>
+      </div>
+      <div class="aba-painel" id="e-rh" role="tabpanel">
+        <div class="prompt"><div class="prompt-topo"><span class="rot">👥 a lista limpa</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+          <pre>a partir de declaracoes/participantes.csv, crie participantes-por-curso.csv
+com o curso, a quantidade de pessoas e a carga horária, ordenado pelo
+curso com mais gente.</pre></div>
+      </div>
+      <div class="aba-painel" id="e-edu" role="tabpanel">
+        <div class="prompt"><div class="prompt-topo"><span class="rot">🗃️ os materiais</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+          <pre>olhe a pasta professor e proponha como organizar materiais de aula
+por turma e por tipo (apostila, prova, gabarito). só proponha, não mexa.</pre></div>
+      </div>
+    </div>
+    <div class="duas">
+      <div class="cartao claude"><h4>📝 Leve para o trabalho</h4><p>Faça uma <b>cópia</b> de uma pasta real e bagunçada do seu trabalho, sem dados sensíveis, e rode só as etapas 1 e 2: diagnóstico e plano. Traga o plano para a aula.</p></div>
+      <div class="cartao info"><h4>🧰 Antes do Capítulo 4</h4><p>Mantenha o kit aberto no app. No próximo capítulo, as declarações e o contrato da Aurora.</p></div>
+    </div>
+  </section>
+
+  <section class="ato" id="quiz-final">
+    <span class="kicker">08 · quiz final</span>
+    <h2>Três decisões de método</h2>
+    <div class="quiz" data-quiz>
+      <p class="quiz-q">O agente terminou de organizar 200 arquivos de um cliente. Qual é o próximo passo?</p>
+      <div class="quiz-ops">
+        <button class="quiz-op" type="button" data-fb="Confiar sem conferir é o erro que o método evita. E um resumo dele não é conferência: é a versão dele.">Mandar para o cliente: ele disse que terminou.</button>
+        <button class="quiz-op" type="button" data-certa data-fb="Amostra: poucos arquivos ao acaso, conferidos no lugar. Se bater, a confiança sobe; se não, volta ao plano.">Abrir alguns arquivos ao acaso e conferir com o relatório do que mudou.</button>
+        <button class="quiz-op" type="button" data-fb="Conferir todos tira o ganho de tempo. A amostra existe para isso.">Conferir os 200, um por um.</button>
+      </div>
+      <div class="quiz-fb"></div>
+    </div>
+    <div class="quiz" data-quiz>
+      <p class="quiz-q">O gráfico mostra “Mercado” e “mercado” como categorias diferentes. O que aconteceu?</p>
+      <div class="quiz-ops">
+        <button class="quiz-op" type="button" data-certa data-fb="Dado sujo: grafias diferentes viram categorias diferentes. Peça explicitamente para juntar as variações.">Ninguém mandou juntar as grafias, então ele tratou como categorias diferentes.</button>
+        <button class="quiz-op" type="button" data-fb="Não é defeito do gráfico: ele mostra exatamente o que está nos dados.">O gráfico está com defeito.</button>
+        <button class="quiz-op" type="button" data-fb="São o mesmo tipo de gasto, escrito de dois jeitos.">São gastos diferentes mesmo.</button>
+      </div>
+      <div class="quiz-fb"></div>
+    </div>
+    <div class="quiz" data-quiz>
+      <p class="quiz-q">Para somar uma planilha grande, o agente mostrou um monte de código e pediu para rodar. Isso é…</p>
+      <div class="quiz-ops">
+        <button class="quiz-op" type="button" data-fb="Não é invasão: é o jeito de fazer a conta com precisão, e ele pediu sua permissão.">Sinal de que algo está errado: recuse sempre.</button>
+        <button class="quiz-op" type="button" data-certa data-fb="Ele montou uma calculadora para não “prever” o número. Rodar sobre a planilha, só lendo, é seguro de aprovar.">O agente montando uma calculadora para fazer a conta certa.</button>
+        <button class="quiz-op" type="button" data-fb="Você não precisa entender o código. Se quiser, peça uma explicação em português.">Hora de aprender a programar.</button>
+      </div>
+      <div class="quiz-fb"></div>
+    </div>
+    <div class="regra">
+      <span class="regra-rot">O que fica deste capítulo</span>
+      <p>Diagnóstico, plano, execução com relatório, conferência por amostra. E conta se faz com programa, não com palpite.</p>
+    </div>
+    <nav class="nav-caps" aria-label="Navegação entre capítulos">
+      <a href="../02-agente/"><small>anterior</small>‹ Capítulo 2 · Do chat ao agente</a>
+      <a class="prox" href="../04-documentos/"><small>próximo</small>Capítulo 4 · O agente nos seus documentos ›</a>
+    </nav>
+  </section>
+
+</div>
+</main>
+
+<footer class="rodape">Curso de IA · Programa AI · Capítulo 3 · Dados e empresas dos exercícios são fictícios.</footer>
+<script src="../../shared/curso.js"></script>
+<script src="../../shared/fluxo.js"></script>
+<script src="cap.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+/* Capítulo 2 · Do chat ao agente — componentes locais */
+.pt-contexto{font-size:15.5px;color:var(--dim);margin-bottom:14px !important;max-width:none !important}
+.pt-pedido{
+  display:flex;gap:14px;align-items:flex-start;padding:18px;border-radius:var(--r);
+  background:var(--warn-bg);border:2px solid color-mix(in srgb,var(--warn) 50%,transparent);min-height:92px;
+}
+.pt-pedido .pt-ic{font-size:30px;line-height:1}
+.pt-pedido b{display:block;font-size:17px}
+.pt-pedido small{display:block;color:var(--dim);font-size:14px;margin-top:4px}
+.pt-botoes{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+.pt-btn{flex:1 1 150px}
+.pt-btn.marcado{outline:3px solid var(--text)}
+.pt-fb{min-height:60px;font-size:15.5px;color:var(--dim)}
+.pt-fb b{color:var(--text)}
+.pt-fb .certo{color:var(--ok)}.pt-fb .errado{color:var(--bad)}
