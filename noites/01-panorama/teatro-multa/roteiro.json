@@ -1,0 +1,21 @@
+{
+  "0-0": [
+    {"role": "MARTA", "text": "Tico, o Bom Preço quer saber: quanto paga de multa se cancelar o contrato com a RefriTec?"},
+    {"role": "LLM", "text": "Hum. O contrato não está na nossa conversa. Mas eu sei muito bem como uma resposta sobre multa costuma soar."}
+  ],
+  "0-1": [
+    {"role": "LLM", "text": "A multa por rescisão é de cinco mil reais, conforme a cláusula nona."}
+  ],
+  "0-2": [
+    {"role": "MARTA", "text": "Cinco mil? Cláusula nona? De onde você tirou isso?"},
+    {"role": "LLM", "text": "De lugar nenhum. Eu escrevi o que parecia uma resposta certa. Valor, cláusula, tom profissional. E nada disso veio do contrato. Isso tem nome: alucinação."}
+  ],
+  "0-3": [
+    {"role": "MARTA", "text": "Então toma. Aqui está o contrato, as quarenta e uma páginas."},
+    {"role": "LLM", "text": "Agora a conversa mudou. A multa é de catorze mil e setecentos reais, o equivalente a duas mensalidades. Está na cláusula quinta."}
+  ],
+  "0-4": [
+    {"role": "LLM", "text": "Mas não acredite só em mim. Abra o trecho que eu citei e confira com os seus olhos."},
+    {"role": "MARTA", "text": "Valor, cláusula e trecho conferido. Isso eu mando para o cliente."}
+  ]
+}

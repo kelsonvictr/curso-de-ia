@@ -1,0 +1,8 @@
+{
+  "model": "eleven_multilingual_v2",
+  "format": "mp3_44100_128",
+  "voices": {
+    "MARTA": {"id": "ohZOfA9iwlZ5nOsoY7LB", "name": "roberta", "direction": "Marta, sócia da Aurora: prática, direta, bem-humorada", "settings": {"stability": 0.5, "similarity_boost": 0.8, "style": 0.25, "use_speaker_boost": true}},
+    "LLM": {"id": "CstacWqMhJQlnfLPxRG4", "name": "Will - Deep, Smooth and Affectionate", "direction": "Tico: a IA dos bastidores, acolhedor, pausado e muito claro", "settings": {"stability": 0.6, "similarity_boost": 0.8, "style": 0.15, "use_speaker_boost": true}}
+  }
+}

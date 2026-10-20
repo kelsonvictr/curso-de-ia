@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Noite 1 · O que a IA faz de verdade — Curso de IA · Programa AI</title>
+<script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('curso-ia-tema');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../shared/base.css">
+<link rel="stylesheet" href="teatro-oficina/teatro.css">
+<link rel="stylesheet" href="noite.css">
+</head>
+<body>
+
+<!-- ═══════════ TOPO ═══════════ -->
+<header class="topo">
+  <div class="topo-in">
+    <a class="marca" href="../../"><span class="marca-logo">A</span><span>Curso de IA<small>Programa AI</small></span></a>
+    <span class="topo-noite"><b>Noite 1</b> · O que a IA faz de verdade</span>
+    <div class="topo-acoes">
+      <button class="btn-icone" id="btn-tema" type="button" aria-label="Trocar tema">☀️</button>
+      <button class="btn-icone" type="button" data-abre-indice aria-label="Abrir índice da noite">☰</button>
+    </div>
+  </div>
+  <div class="progresso"></div>
+</header>
+
+<div class="veu"></div>
+<nav class="indice" aria-label="Índice da noite">
+  <button class="btn-icone indice-fechar" type="button" data-fecha-indice aria-label="Fechar índice">✕</button>
+  <h3>Noite 1</h3>
+  <a href="#abertura"><span class="n">00</span>Bem-vindo à Aurora</a>
+  <a href="#enter"><span class="n">01</span>O que acontece no Enter</a>
+  <a href="#alucinacao"><span class="n">02</span>Alucinação e a regra da fonte</a>
+  <a href="#briefing"><span class="n">03</span>O briefing de 4 peças</a>
+  <a href="#pratica-a"><span class="n">03a</span>Prática A · ruim × bom</a>
+  <a href="#ferramentas"><span class="n">04</span>Qual ferramenta usar</a>
+  <a href="#pratica-b"><span class="n">04a</span>Prática B · três IAs</a>
+  <a href="#pratica-c"><span class="n">04b</span>Prática C · NotebookLM</a>
+  <a href="#dados"><span class="n">05</span>O semáforo dos dados</a>
+  <a href="#fechamento"><span class="n">06</span>Do chat ao agente</a>
+  <a href="#quiz-final"><span class="n">07</span>Quiz final</a>
+</nav>
+
+<main>
+<div class="wrap">
+
+  <!-- ═══════════ HERO ═══════════ -->
+  <section class="hero">
+    <span class="hero-kicker">Noite 1 de 6 · Panorama</span>
+    <h1>O que a IA <em>faz de verdade</em> e como colocá&#8209;la para trabalhar</h1>
+    <p class="hero-lead">
+      Hoje você entende o que acontece por dentro quando aperta Enter, descobre
+      <strong>por que a IA erra com cara de certeza</strong>, aprende a escrever um pedido
+      que não deixa nada para ela adivinhar e testa isso em quatro ferramentas,
+      com um contrato de 41 páginas no meio do caminho.
+    </p>
+
+    <div class="roteiro" style="--cols:3">
+      <a class="tl" href="#abertura"><span class="tl-hora">19:00 · 10 min</span><b>Bem-vindo à Aurora</b><span>O caso que atravessa o curso</span></a>
+      <a class="tl" href="#enter"><span class="tl-hora">19:10 · 25 min</span><b>O que acontece no Enter</b><span>A máquina da próxima palavra</span></a>
+      <a class="tl" href="#alucinacao"><span class="tl-hora">19:35 · 15 min</span><b>Alucinação</b><span>Com fonte × sem fonte</span></a>
+      <a class="tl" href="#briefing"><span class="tl-hora">19:50 · 25 min</span><b>O briefing de 4 peças</b><span>Montador + Prática A</span></a>
+      <a class="tl" href="#ferramentas"><span class="tl-hora">20:15 · 35 min</span><b>Qual ferramenta usar</b><span>Práticas B e C (NotebookLM)</span></a>
+      <a class="tl" href="#dados"><span class="tl-hora">20:50 · 10 min</span><b>Dados e próximo passo</b><span>Semáforo, chat × agente, quiz</span></a>
+    </div>
+  </section>
+
+  <!-- ═══════════ 00 · ABERTURA ═══════════ -->
+  <section class="ato" id="abertura">
+    <span class="kicker">00 · abertura</span>
+    <h2>Bem-vindo à Aurora Assessoria</h2>
+    <p class="lead">
+      Durante as seis noites, você trabalha num escritório fictício: a <strong>Aurora Assessoria</strong>,
+      que cuida da contabilidade, do jurídico e do RH de pequenas empresas.
+      Cada noite chega uma demanda nova de um setor diferente. Os arquivos são de mentira,
+      então dá para errar à vontade, mas os problemas são os mesmos do seu trabalho.
+    </p>
+
+    <div class="aurora revela">
+      <div class="aurora-cab">
+        <span class="aurora-logo">A</span>
+        <div><b>Aurora Assessoria</b><small>contabilidade · jurídico · RH · administrativo</small></div>
+      </div>
+      <div class="aurora-corpo">
+        <div class="aurora-msg">
+          <span class="aurora-de">Marta, sócia da Aurora · 08:12</span>
+          <p>
+            Bom dia! O nosso cliente <b>Supermercados Bom Preço do Vale</b> quer saber quanto paga
+            de multa se cancelar o contrato de manutenção com a RefriTec. São 41 páginas.
+            Consegue me responder ainda hoje, <b>com a cláusula</b>? Ah, e preciso mandar um e-mail
+            cobrando os documentos do mês de alguns clientes.
+          </p>
+        </div>
+        <p class="aurora-nota">Você resolve as duas coisas hoje à noite, sem instalar nada.</p>
+      </div>
+    </div>
+
+    <h3>Como cada noite funciona</h3>
+    <div class="ciclo revela">
+      <div class="ciclo-item"><span>1</span><b>Entender</b><small>uma ideia por vez, com o porquê</small></div>
+      <div class="ciclo-item"><span>2</span><b>Ver</b><small>uma simulação mostra o mecanismo</small></div>
+      <div class="ciclo-item"><span>3</span><b>Fazer</b><small>prática guiada, com a sua área</small></div>
+      <div class="ciclo-item"><span>4</span><b>Levar</b><small>uma tarefa real para a sua semana</small></div>
+    </div>
+
+    <details class="prof">
+      <summary>Para o professor · quebra-gelo (5 min)</summary>
+      Pergunte: <em>"Qual tarefa do seu trabalho você faria tudo para nunca mais fazer?"</em>
+      Anote as respostas no quadro, agrupadas por área. Essa lista volta na Noite 6, quando cada
+      aluno monta a própria rotina. Guarde uma foto do quadro.
+    </details>
+  </section>
+
+  <!-- ═══════════ 01 · O QUE ACONTECE NO ENTER ═══════════ -->
+  <section class="ato" id="enter">
+    <span class="kicker">01 · teoria + simulação</span>
+    <h2>O que acontece quando você aperta Enter</h2>
+    <p class="lead">
+      ChatGPT, Gemini e Claude funcionam com o mesmo tipo de motor: um
+      <strong>LLM</strong> (do inglês <em>Large Language Model</em>, "modelo de linguagem grande").
+      Entender o que ele faz explica quase tudo o que vem depois, inclusive os erros.
+    </p>
+
+    <h3>O mecanismo, em quatro passos</h3>
+    <ol class="mecanismo revela">
+      <li><b>Lê</b> tudo o que está na conversa: o seu pedido, o que já foi dito, os arquivos anexados.</li>
+      <li><b>Calcula</b> quais palavras poderiam vir em seguida e a chance de cada uma.</li>
+      <li><b>Escolhe</b> uma delas, normalmente entre as mais prováveis.</li>
+      <li><b>Repete</b>: a palavra escolhida entra no texto, e o cálculo recomeça. Até terminar a resposta.</li>
+    </ol>
+
+    <div class="caixa analogia">
+      <span class="caixa-ic">📱</span>
+      <div>
+        <span class="caixa-tit">Parece o autocompletar do celular…</span>
+        <p>
+          …o teclado que sugere a próxima palavra. A diferença é de escala: o LLM foi treinado
+          com uma quantidade gigantesca de texto e consegue manter coerência por páginas,
+          levando em conta tudo o que está na conversa. <strong>Onde a comparação falha:</strong>
+          o celular sugere e você escolhe; o LLM escolhe sozinho, palavra após palavra, e entrega
+          o texto pronto, com tom de quem sabe.
+        </p>
+      </div>
+    </div>
+
+    <p>
+      Antes de falar de trabalho, veja o mecanismo numa cena simples. A Lia faz uma pergunta,
+      o Beto responde, e o <strong>Tico</strong> (a IA, nos bastidores) monta a fala do Beto
+      um pedacinho de cada vez. Assista às três histórias em ordem: a terceira prepara o
+      próximo assunto da noite.
+    </p>
+
+    <!-- TEATRO: a oficina de falas (padrão aprovado, vozes ElevenLabs locais) -->
+    <div id="llm-teatro" class="lt" aria-label="Animação didática: a oficina de falas">
+      <div class="lt-heading"><span>UM PEDACINHO DE CADA VEZ</span><h3>A oficina de falas</h3><p>Lia pergunta. Beto responde. Abra os bastidores da IA.</p></div>
+      <div class="lt-scenes" role="group" aria-label="Escolha uma história">
+        <button type="button" data-scene="0" aria-pressed="true">01 · Hora do café</button>
+        <button type="button" data-scene="1" aria-pressed="false">02 · Mudou o contexto!</button>
+        <button type="button" data-scene="2" aria-pressed="false">03 · Parece verdade…</button>
+      </div>
+      <div class="lt-stage">
+        <div class="lt-person lt-lia"><div class="lt-bubble" id="lt-question"></div><div class="lt-avatar" aria-hidden="true"><div class="lt-hair"></div><div class="lt-face"><i></i><i></i><b></b></div><div class="lt-body"></div><div class="lt-arm"></div></div><strong>Lia</strong><span>traz o contexto</span></div>
+        <div class="lt-between" aria-hidden="true"><span>CONVERSA</span><div>·················</div><span>vira entrada</span></div>
+        <div class="lt-person lt-beto"><div class="lt-bubble" id="lt-answer"></div><div class="lt-avatar" aria-hidden="true"><div class="lt-hair"></div><div class="lt-face"><i></i><i></i><b></b></div><div class="lt-body"></div><div class="lt-arm"></div></div><strong>Beto</strong><span>fala escrita pela IA</span></div>
+      </div>
+      <div class="lt-workshop">
+        <div class="lt-bot-wrap"><div class="lt-bot" aria-hidden="true"><div class="lt-antenna"></div><div class="lt-screen">•‿•</div><div class="lt-bot-feet">▰ ▰</div></div><strong>Tico · a IA</strong><span>“O que pode vir agora?”</span></div>
+        <div class="lt-desk"><div class="lt-label">1 · LEIO O QUE JÁ TENHO</div><div class="lt-context" id="lt-context"></div><div class="lt-label">2 · CALCULO POSSIBILIDADES</div><div id="lt-options" class="lt-options"></div><div class="lt-label" id="lt-action">3 · ESCOLHO UM PEDAÇO E REPITO</div></div>
+      </div>
+      <div class="lt-caption" id="lt-caption" role="status" aria-live="polite"></div>
+      <div class="lt-voice" id="lt-voice" hidden><span class="lt-speaking" id="lt-speaking">Três personagens, três vozes</span><span id="lt-subtitle">Aperte Assistir para ouvir a conversa.</span></div>
+      <div class="lt-controls"><button type="button" id="lt-play">▶ Assistir</button><button type="button" id="lt-step">Um passo ›</button><button type="button" id="lt-reset">↺ Recomeçar</button><button type="button" id="lt-sound" hidden aria-pressed="true">🔊 Vozes ligadas</button><span id="lt-progress"></span></div>
+      <p class="lt-footnote">Teatro didático: o Beto representa a resposta da IA. Os percentuais e as divisões em pedaços são ilustrativos, não uma medição real. A escolha nem sempre fica com o mais provável: há um pouco de sorteio, por isso a mesma pergunta pode ter respostas diferentes.</p>
+      <noscript>Ative o JavaScript para assistir. O ciclo é: ler a conversa, calcular possibilidades para o próximo pedaço, escolher um, acrescentar à resposta e repetir.</noscript>
+    </div>
+
+    <details class="prof">
+      <summary>Para o professor · como usar o teatro</summary>
+      Rode a história 1 com as vozes no telão. Na 2, pause no segundo ciclo e pergunte: "por que 'chá' subiu?"
+      Na 3, pare antes do fim e pergunte se a turma confiaria no código. As três histórias levam uns 4 minutos no total.
+    </details>
+
+    <h3>Agora, no seu trabalho</h3>
+    <p>
+      O mesmo mecanismo vale para um e-mail de escritório. Os dois pedidos abaixo vão para a mesma IA.
+      O primeiro não diz quem você é nem o que precisa; o segundo diz. Avance palavra por palavra e
+      observe <strong>a altura das barras</strong>.
+    </p>
+
+    <!-- SIM 1: máquina da próxima palavra -->
+    <div class="sim" id="sim-palavra">
+      <div class="sim-topo"><span class="bolinhas"><i></i><i></i><i></i></span><span class="sim-label">simulação · a máquina da próxima palavra</span></div>
+      <div class="sim-palco">
+        <div class="cenarios" role="group" aria-label="Escolha o pedido">
+          <button class="cenario" type="button" data-cenario="vago" aria-pressed="true">Pedido vago</button>
+          <button class="cenario" type="button" data-cenario="claro" aria-pressed="false">Pedido com contexto</button>
+        </div>
+        <div class="np-pedido"><span class="np-rot">o seu pedido</span><p class="sim-texto" id="np-pedido"></p></div>
+        <div class="np-resposta"><span class="np-rot">a resposta, sendo escrita</span><p class="sim-texto" id="np-texto"><span class="cursor"></span></p></div>
+        <div class="np-cands" id="np-cands" aria-live="polite"></div>
+      </div>
+      <div class="sim-controles">
+        <span class="sim-legenda" id="np-legenda">Aperte <b>Próxima palavra</b> para ver a IA calcular e escolher.</span>
+        <button class="btn" type="button" id="np-reset">↺ Recomeçar</button>
+        <button class="btn" type="button" id="np-tudo">Completar</button>
+        <button class="btn prim" type="button" id="np-prox">Próxima palavra ›</button>
+      </div>
+    </div>
+    <p class="dim nota-mini">Porcentagens ilustrativas: servem para mostrar o padrão, não são medidas de um modelo real.</p>
+
+    <div class="duas">
+      <div class="cartao bad revela">
+        <h4>Pedido vago: barras parecidas</h4>
+        <p>Muitas continuações têm chance parecida. A IA "não sabe" o que você quer e vai pelo caminho mais comum: o texto genérico, que serve para qualquer pessoa e para ninguém.</p>
+      </div>
+      <div class="cartao ok revela">
+        <h4>Pedido com contexto: uma barra dispara</h4>
+        <p>O contexto estreita as opções. Com "extrato de setembro" na conversa, a próxima palavra quase se escolhe sozinha. O texto sai específico e utilizável.</p>
+      </div>
+    </div>
+
+    <div class="regra revela">
+      <span class="regra-rot">A regra central da noite</span>
+      <p>A IA não consulta a verdade: ela continua o seu texto do jeito mais provável. <em>O que está na conversa decide o que sai.</em></p>
+    </div>
+
+    <h3>Duas consequências práticas</h3>
+    <div class="duas">
+      <div class="cartao info">
+        <h4>Ela não aprende com você hoje</h4>
+        <p>O que ela "sabe" veio do treinamento, feito antes. Conversar com ela não muda o motor. Se você corrigir um erro hoje, amanhã, numa conversa nova, ela pode errar igual.</p>
+      </div>
+      <div class="cartao claude">
+        <h4>Contexto é a conversa aberta</h4>
+        <p>Tudo o que está nesta conversa conta. Começou uma conversa nova? Ela começa do zero. Por isso você explica quem é e o que precisa, toda vez, ou guarda isso num lugar fixo (você verá como nas próximas noites).</p>
+      </div>
+    </div>
+
+    <div class="quiz" data-quiz>
+      <p class="quiz-q">Duas colegas pediram "escreva um e-mail para o cliente". Uma recebeu um texto ótimo; a outra, um genérico. A explicação mais provável:</p>
+      <div class="quiz-ops">
+        <button class="quiz-op" type="button" data-fb="A ferramenta pode até variar um pouco, mas a diferença grande vem do que estava na conversa de cada uma.">Uma delas usou uma IA mais inteligente.</button>
+        <button class="quiz-op" type="button" data-certa data-fb="O pedido igual não significa conversa igual. Se uma já tinha explicado quem é o cliente e o que precisava, a continuação mais provável muda.">A primeira já tinha dado contexto na conversa; a segunda não.</button>
+        <button class="quiz-op" type="button" data-fb="Ela não lembra de pessoas entre conversas novas, e “conhecer” não é o mecanismo: ela continua o texto que está na conversa.">A IA já conhecia a primeira colega.</button>
+      </div>
+      <div class="quiz-fb"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 02 · ALUCINAÇÃO ═══════════ -->
+  <section class="ato" id="alucinacao">
+    <span class="kicker">02 · teoria + simulação</span>
+    <h2>Alucinação: a resposta errada com cara de certa</h2>
+    <p class="lead">
+      Se a IA sempre escreve a continuação mais provável, o que acontece quando
+      <strong>a informação não está na conversa</strong>? Ela não para. Escreve o que
+      <em>parece</em> uma resposta certa. Isso tem nome: <strong>alucinação</strong>.
+    </p>
+
+    <p>
+      Volte ao pedido da Marta: a multa do contrato do Bom Preço com a RefriTec.
+      Faça a mesma pergunta duas vezes, sem e com o contrato na conversa.
+    </p>
+
+    <!-- CENA NARRADA: a multa, com e sem fonte (vozes ElevenLabs locais) -->
+    <div class="sim cena" id="sim-fonte" data-passo="0">
+      <div class="sim-topo"><span class="bolinhas"><i></i><i></i><i></i></span><span class="sim-label">cena narrada · a multa do Bom Preço</span></div>
+      <div class="sim-palco">
+        <div class="cena-elenco">
+          <figure class="ator ator-marta" data-ator="marta">
+            <svg viewBox="0 0 120 140" aria-hidden="true">
+              <ellipse cx="60" cy="132" rx="40" ry="5" fill="currentColor" opacity=".12"/>
+              <path d="M22 140c0-26 17-42 38-42s38 16 38 42z" fill="#2f4a6b"/>
+              <path d="M48 100l12 18 12-18" fill="#f3ece4"/>
+              <path d="M50 99l10 16 10-16-4-2-6 9-6-9z" fill="#e07a55"/>
+              <rect x="52" y="78" width="16" height="16" rx="6" fill="#c98d6b"/>
+              <path d="M30 56c0-24 13-38 30-38s30 14 30 38c0 10-3 22-8 28H38c-5-6-8-18-8-28z" fill="#3a2a24"/>
+              <ellipse cx="60" cy="58" rx="21" ry="25" fill="#d9a07c"/>
+              <path d="M38 50c4-16 14-22 24-22 10 0 18 6 22 18-10-6-24-6-46 4z" fill="#3a2a24"/>
+              <g class="olhos"><circle cx="51" cy="60" r="2.6" fill="#2a1d18"/><circle cx="69" cy="60" r="2.6" fill="#2a1d18"/></g>
+              <path d="M46 53q5-3 10 0M64 53q5-3 10 0" stroke="#2a1d18" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+              <ellipse class="boca" cx="60" cy="72" rx="5" ry="1.6" fill="#8a3b33"/>
+              <circle cx="39" cy="64" r="2.5" fill="#e07a55"/><circle cx="81" cy="64" r="2.5" fill="#e07a55"/>
+            </svg>
+            <div class="fala" id="fala-marta"></div>
+            <figcaption><b>Marta</b><small>sócia da Aurora</small></figcaption>
+          </figure>
+          <div class="cena-meio">
+            <div class="conversa-box" id="conversa-box">
+              <span class="np-rot">na conversa</span>
+              <div class="conversa-itens">
+                <span class="c-item">💬 a pergunta</span>
+                <span class="c-item c-pdf" id="c-pdf">📎 contrato.pdf · 41 págs</span>
+              </div>
+            </div>
+          </div>
+          <figure class="ator ator-tico" data-ator="llm">
+            <svg viewBox="0 0 120 140" aria-hidden="true">
+              <ellipse cx="60" cy="132" rx="38" ry="5" fill="currentColor" opacity=".12"/>
+              <line x1="60" y1="14" x2="60" y2="30" stroke="#b8a2ed" stroke-width="3"/>
+              <circle class="antena" cx="60" cy="12" r="6" fill="#d7b8ff"/>
+              <rect x="22" y="30" width="76" height="66" rx="20" fill="#9780d4" stroke="#cdb9ff" stroke-width="3"/>
+              <rect x="31" y="41" width="58" height="40" rx="11" fill="#252335"/>
+              <g class="olhos"><circle cx="48" cy="58" r="4" fill="#bdf8de"/><circle cx="72" cy="58" r="4" fill="#bdf8de"/></g>
+              <path class="boca" d="M50 70q10 7 20 0" stroke="#bdf8de" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <rect x="40" y="100" width="40" height="22" rx="8" fill="#7d68b8"/>
+              <rect x="34" y="122" width="16" height="8" rx="3" fill="#9780d4"/><rect x="70" y="122" width="16" height="8" rx="3" fill="#9780d4"/>
+            </svg>
+            <div class="fala" id="fala-tico"></div>
+            <figcaption><b>Tico</b><small>a IA</small></figcaption>
+          </figure>
+        </div>
+
+        <div class="fonte-lados">
+          <div class="fonte-lado" id="lado-sem">
+            <span class="np-rot">❌ resposta sem o contrato</span>
+            <div class="balao" id="resp-sem"><span class="dim">aguardando…</span></div>
+            <span class="selo selo-bad">INVENTADO</span>
+          </div>
+          <div class="fonte-lado" id="lado-com">
+            <span class="np-rot">📎 resposta com o contrato</span>
+            <div class="balao" id="resp-com"><span class="dim">aguardando…</span></div>
+            <span class="selo selo-ok">CONFERE NA FONTE</span>
+          </div>
+        </div>
+        <div class="pdf-trecho" id="pdf-trecho">
+          <span class="np-rot">trecho do PDF citado</span>
+          <p><b>CLÁUSULA QUINTA — DA MULTA POR RESCISÃO</b><br>A rescisão imotivada por qualquer das partes implicará multa de <mark>R$ 14.700,00</mark> (catorze mil e setecentos reais), equivalente a duas mensalidades.</p>
+        </div>
+      </div>
+      <div class="cena-legenda" aria-live="polite"><span class="cena-quem" id="cena-quem">Marta e Tico</span><span id="cena-texto">Aperte Assistir para ouvir a cena, ou avance passo a passo em silêncio.</span></div>
+      <div class="sim-controles">
+        <span class="sim-legenda" id="cena-progresso">passo 0 de 4</span>
+        <button class="btn" type="button" id="cena-som" aria-pressed="true" hidden>🔊 Vozes</button>
+        <button class="btn" type="button" id="cena-reset">↺ Recomeçar</button>
+        <button class="btn" type="button" id="cena-passo">Um passo ›</button>
+        <button class="btn prim" type="button" id="cena-play">▶ Assistir</button>
+      </div>
+    </div>
+
+    <p>
+      Repare no que assusta: a resposta inventada tem <strong>valor, cláusula e tom profissional</strong>.
+      Nada nela avisa que é chute. O problema não é a IA "mentir"; é ela não ter de onde tirar
+      e mesmo assim produzir a continuação mais provável para uma pergunta sobre multa contratual.
+    </p>
+
+    <h3>Os três hábitos que protegem você</h3>
+    <div class="habitos revela">
+      <div class="habito"><span>📎</span><b>Dê a fonte</b><small>Anexe o documento. A resposta passa a sair dele, não do "provável".</small></div>
+      <div class="habito"><span>📍</span><b>Peça o endereço</b><small>"Diga a cláusula e a página de cada resposta." Assim dá para conferir.</small></div>
+      <div class="habito"><span>👀</span><b>Confira você</b><small>Abra o trecho citado e leia. Em número, data e nome, sempre.</small></div>
+    </div>
+
+    <div class="caixa perigo">
+      <span class="caixa-ic">🪤</span>
+      <div>
+        <span class="caixa-tit">Armadilha: perguntar "tem certeza?"</span>
+        <p>Isso não é conferência. A IA vai continuar a conversa do jeito mais provável, e às vezes isso significa reafirmar o erro com mais convicção. Conferir é olhar a fonte.</p>
+      </div>
+    </div>
+
+    <div class="caixa dica">
+      <span class="caixa-ic">💡</span>
+      <div>
+        <span class="caixa-tit">A frase que reduz invenção</span>
+        <p>Termine pedidos factuais com: <em>“Se a resposta não estiver no documento, diga apenas: não consta.”</em> Você dá a ela uma saída honesta.</p>
+      </div>
+    </div>
+
+    <div class="quiz" data-quiz>
+      <p class="quiz-q">Um colega do jurídico pediu à IA "jurisprudência sobre multa por rescisão de contrato de manutenção" e recebeu três decisões com número do processo e trecho entre aspas. O que ele deve fazer?</p>
+      <div class="quiz-ops">
+        <button class="quiz-op" type="button" data-fb="Número e aspas são justamente o que a continuação mais provável de um texto jurídico costuma ter. Detalhe não é prova.">Usar na peça: com número do processo, deve ser real.</button>
+        <button class="quiz-op" type="button" data-fb="Ela vai continuar a conversa e pode confirmar o que inventou. Perguntar à própria IA não é olhar a fonte.">Perguntar à IA se as decisões existem mesmo.</button>
+        <button class="quiz-op" type="button" data-certa data-fb="Nenhuma fonte foi dada, então as decisões podem ter sido escritas por ser o “provável”. Só o site do tribunal confirma.">Conferir cada número no site do tribunal antes de citar.</button>
+      </div>
+      <div class="quiz-fb"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 03 · BRIEFING ═══════════ -->
+  <section class="ato" id="briefing">
+    <span class="kicker">03 · teoria + montador</span>
+    <h2>O briefing de 4 peças</h2>
+    <p class="lead">
+      Se o que está na conversa decide o que sai, o seu pedido é a parte da conversa que você
+      controla. Um bom pedido é um <strong>briefing</strong>, como o que você daria a um estagiário
+      no primeiro dia: ele é capaz, mas não sabe nada da sua empresa.
+    </p>
+
+    <div class="pecas revela">
+      <div class="peca p1"><b>Contexto</b><small>Quem você é, para quem é, qual a situação.</small></div>
+      <div class="peca p2"><b>Objetivo</b><small>O que você precisa, exatamente.</small></div>
+      <div class="peca p3"><b>Formato</b><small>Como entregar: e-mail, tabela, lista, tamanho.</small></div>
+      <div class="peca p4"><b>Restrições</b><small>Tom, o que evitar, o que não inventar.</small></div>
+    </div>
+
+    <p>
+      Escolha a sua área e ligue as peças uma a uma. Observe o
+      <strong>medidor de adivinhação</strong>: é o quanto a IA ainda precisa chutar sobre o que você quer.
+    </p>
+
+    <!-- SIM 3: montador de briefing -->
+    <div class="sim" id="sim-briefing">
+      <div class="sim-topo"><span class="bolinhas"><i></i><i></i><i></i></span><span class="sim-label">montador · o briefing de 4 peças</span></div>
+      <div class="sim-palco">
+        <div class="mb-areas" role="group" aria-label="Sua área" id="mb-areas"></div>
+        <div class="mb-pecas" role="group" aria-label="Peças do briefing" id="mb-pecas"></div>
+        <div class="mb-grade">
+          <div>
+            <span class="np-rot">o seu pedido</span>
+            <div class="prompt mb-prompt">
+              <div class="prompt-topo"><span class="rot" id="mb-rot">pedido fraco</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+              <pre id="mb-pedido"></pre>
+            </div>
+          </div>
+          <div>
+            <span class="np-rot">o que tende a voltar</span>
+            <div class="balao mb-resp" id="mb-resp"></div>
+            <div class="medidor"><span class="np-rot">adivinhação</span><div class="medidor-trilho"><div class="medidor-barra" id="mb-medidor"></div></div><b id="mb-pct">100%</b></div>
+          </div>
+        </div>
+      </div>
+      <div class="sim-controles">
+        <span class="sim-legenda" id="mb-legenda">Ligue as peças na ordem que quiser.</span>
+        <button class="btn" type="button" id="mb-limpar">↺ Desligar tudo</button>
+      </div>
+    </div>
+
+    <details class="prof">
+      <summary>Para o professor · como conduzir o montador</summary>
+      Projete com a área da maioria da turma. Ligue só "Objetivo" e pergunte: "o que ainda falta para
+      a IA não chutar?" Deixe a turma dizer as outras peças antes de ligar. Feche mostrando que
+      "Restrições" é a peça que mais evita alucinação ("não invente prazos").
+    </details>
+  </section>
+
+  <!-- ═══════════ PRÁTICA A ═══════════ -->
+  <section class="ato pratica" id="pratica-a">
+    <span class="kicker">03a · prática guiada · 15 min</span>
+    <h2>Prática A · O mesmo pedido, fraco e forte</h2>
+    <p class="lead">Agora é com você, numa IA de verdade. A ideia é <strong>sentir</strong> a diferença, não acreditar nela.</p>
+
+    <div class="precisa">
+      <b class="tit">O que você vai precisar</b>
+      <ul>
+        <li>Navegador aberto em <strong>claude.ai</strong> (conta gratuita serve hoje)</li>
+        <li>O pedido completo que você montou no montador acima, na sua área</li>
+      </ul>
+    </div>
+
+    <ol class="passos">
+      <li><b>Envie o pedido fraco.</b> Desligue todas as peças no montador, copie e envie. Leia a resposta.</li>
+      <li><b>Abra uma conversa nova.</b> Isso é importante: na mesma conversa, o primeiro pedido viraria contexto do segundo e o teste não seria justo.</li>
+      <li><b>Envie o pedido completo.</b> Ligue as 4 peças, copie e envie na conversa nova.</li>
+      <li><b>Compare com este checklist.</b>
+        <ul class="check">
+          <li>Qual das duas você mandaria para um cliente <strong>sem mexer</strong>?</li>
+          <li>A resposta forte respeitou o <strong>formato e o tamanho</strong> pedidos?</li>
+          <li>Alguma das duas <strong>inventou</strong> prazo, valor ou nome que você não informou?</li>
+        </ul>
+      </li>
+      <li><b>Itere.</b> A primeira resposta raramente é a final. Peça um ajuste na mesma conversa:
+        <div class="prompt">
+          <div class="prompt-topo"><span class="rot">✨ ajuste de exemplo</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+          <pre>Ficou bom. Deixe 30% mais curto, sugira um assunto para o e-mail
+e termine oferecendo ajuda por telefone.</pre>
+        </div>
+      </li>
+    </ol>
+
+    <div class="caixa dica">
+      <span class="caixa-ic">🔁</span>
+      <div>
+        <span class="caixa-tit">Iterar é contexto também</span>
+        <p>O ajuste funciona porque a primeira resposta ficou na conversa. A IA continua a partir dela. É a regra central trabalhando a seu favor.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 04 · FERRAMENTAS ═══════════ -->
+  <section class="ato" id="ferramentas">
+    <span class="kicker">04 · panorama</span>
+    <h2>Qual ferramenta usar em cada situação</h2>
+    <p class="lead">
+      Não é torcida. É caixa de ferramentas. Os chats gerais fazem quase tudo; algumas
+      ferramentas são melhores em um tipo de trabalho. Este curso usa o <strong>Claude</strong>
+      como fio condutor, sem desprezar as outras.
+    </p>
+
+    <div class="ferramentas revela">
+      <div class="ferr"><span class="ferr-ic">💬</span><b>ChatGPT</b><small>OpenAI · chatgpt.com</small><p>Chat geral versátil: rascunhos, ideias, revisão de texto. Também gera imagens.</p></div>
+      <div class="ferr"><span class="ferr-ic">🔷</span><b>Gemini</b><small>Google · gemini.google.com</small><p>Chat geral ligado ao mundo Google. Bom para quem já trabalha no Gmail, Drive e Docs. Gera imagens.</p></div>
+      <div class="ferr destaque"><span class="ferr-ic">✳️</span><b>Claude</b><small>Anthropic · claude.ai</small><p>Chat geral forte em ler e analisar documentos longos. É a porta para o Claude Code, o agente das próximas noites.</p></div>
+      <div class="ferr"><span class="ferr-ic">📚</span><b>NotebookLM</b><small>Google · notebooklm.google.com</small><p>Responde <strong>só com base nos documentos que você carregar</strong> e mostra o trecho de onde tirou. A regra da fonte, embutida.</p></div>
+    </div>
+
+    <div class="caixa alerta">
+      <span class="caixa-ic">💳</span>
+      <div>
+        <span class="caixa-tit">Gratuito e pago</span>
+        <p>Os planos gratuitos bastam para hoje. A partir da Noite 2, o Claude Code exige um plano pago do Claude (o Pro é o de entrada). Preço atual na página oficial: <a href="https://claude.com/pricing" target="_blank" rel="noopener">claude.com/pricing</a>.</p>
+      </div>
+    </div>
+
+    <h3>Modo arcade: escolha sua ferramenta</h3>
+    <p>Assista com a turma. Em cada rodada, a contagem dá três segundos para todo mundo responder antes do Beto.</p>
+    <figure class="video-8bit" aria-labelledby="v8-escolha-sua-ferramenta"><video controls preload="none" playsinline poster="video/escolha-sua-ferramenta-capa.jpg" width="1920" height="1080"><source src="video/escolha-sua-ferramenta.mp4" type="video/mp4">Seu navegador não reproduz vídeo. Use a transcrição abaixo.</video>
+<figcaption id="v8-escolha-sua-ferramenta"><b>🎮 Mundo 1 · Modo arcade · Escolha sua ferramenta</b> (1 min 20 s, com som). Aperte play com a turma: em cada rodada, a contagem dá 3 segundos para todo mundo responder antes do Beto.</figcaption>
+<details><summary>Transcrição do vídeo</summary><ol class="transcricao"><li><strong>Tico:</strong> Modo arcade: escolha sua ferramenta!</li><li><strong>Tico:</strong> Quatro lutadores. O chat, bom de texto e de ideia. E o caderno, que só responde pelas suas fontes.</li><li><strong>Tico:</strong> O pintor, que faz imagem. E o agente, que mexe nos seus arquivos.</li><li><strong>Lia:</strong> Rodada um: transformar a ata da reunião em cinco tópicos para a equipe.</li><li><strong>Beto:</strong> Chat! Texto curto, ideia rápida. Qualquer um dos três resolve.</li><li><strong>Lia:</strong> Rodada dois: o que o manual do convênio diz sobre reembolso, com a página.</li><li><strong>Beto:</strong> Caderno! Responde só pela fonte, e mostra o trecho para conferir.</li><li><strong>Lia:</strong> Rodada três: uma capa para o post da festa de fim de ano.</li><li><strong>Beto:</strong> Pintor! Gerador de imagem, no Gemini ou no ChatGPT.</li><li><strong>Lia:</strong> Rodada quatro: renomear 300 notas fiscais que estão numa pasta.</li><li><strong>Beto:</strong> Chat? E copiar e colar 300 vezes? Nem pensar. Agente!</li><li><strong>Tico:</strong> Não existe ferramenta melhor. Existe a ferramenta certa para cada tarefa. E o agente, vocês instalam na próxima noite.</li></ol></details></figure>
+
+    <h3>Teste rápido: qual você abriria?</h3>
+    <div class="quiz" data-quiz>
+      <p class="quiz-q">O jurídico precisa saber o que três contratos de fornecedores dizem sobre multa por atraso, com a cláusula de cada um.</p>
+      <div class="quiz-ops">
+        <button class="quiz-op" type="button" data-fb="Qualquer chat geral pode ajudar, mas aqui o requisito é “só das minhas fontes, com a cláusula”. Existe uma ferramenta feita para isso.">ChatGPT, porque é o mais conhecido.</button>
+        <button class="quiz-op" type="button" data-certa data-fb="Ela responde a partir das fontes carregadas e aponta o trecho. É exatamente o que o jurídico pediu.">NotebookLM, com os três contratos como fontes.</button>
+        <button class="quiz-op" type="button" data-fb="Gerar imagem não ajuda a achar uma multa dentro de contratos.">Um gerador de imagem.</button>
+      </div>
+      <div class="quiz-fb"></div>
+    </div>
+    <div class="quiz" data-quiz>
+      <p class="quiz-q">Você precisa de dez ideias de nome para o evento de fim de ano da empresa, para ontem.</p>
+      <div class="quiz-ops">
+        <button class="quiz-op" type="button" data-fb="O NotebookLM só responde com base nas fontes. Para ideias novas, ele é a ferramenta errada.">NotebookLM.</button>
+        <button class="quiz-op" type="button" data-certa data-fb="Brainstorm é o forte de qualquer chat geral. Use o que você abre mais rápido, e dê contexto: público, tom, o que evitar.">Qualquer chat geral: ChatGPT, Gemini ou Claude.</button>
+        <button class="quiz-op" type="button" data-fb="Ainda não chegamos lá, e para dez nomes não precisa: um chat resolve em segundos.">Um agente instalado no computador.</button>
+      </div>
+      <div class="quiz-fb"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════ PRÁTICA B ═══════════ -->
+  <section class="ato pratica" id="pratica-b">
+    <span class="kicker">04a · prática guiada · 10 min</span>
+    <h2>Prática B · O mesmo pedido em três IAs</h2>
+    <p class="lead">Um pedido com regras que dá para conferir. Quem obedeceu melhor?</p>
+
+    <ol class="passos">
+      <li><b>Abra três abas:</b> claude.ai, chatgpt.com e gemini.google.com.</li>
+      <li><b>Cole o mesmo pedido nas três, sem mudar nada.</b> É o e-mail que a Marta pediu hoje de manhã:
+        <div class="prompt">
+          <div class="prompt-topo"><span class="rot">✨ o pedido de teste</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+          <pre>Sou assistente administrativo da Aurora Assessoria, um escritório de
+contabilidade. Escreva um e-mail curto para um cliente MEI lembrando
+que faltam documentos do mês. Tom cordial e direto, no máximo 120
+palavras, com uma lista de três itens: extrato bancário, notas fiscais
+emitidas e comprovante de pagamento do DAS.
+Não invente prazos nem valores.</pre>
+          <div class="prompt-pq"><b>Por que é um bom teste:</b> tem regras verificáveis (120 palavras, três itens, nada de prazo inventado). Fica fácil ver quem obedeceu.</div>
+        </div>
+      </li>
+      <li><b>Dê o veredito:</b>
+        <ul class="check">
+          <li>Ficou dentro de 120 palavras?</li>
+          <li>Trouxe os três documentos, em lista?</li>
+          <li>Alguma inventou prazo ou valor, mesmo com a proibição?</li>
+        </ul>
+      </li>
+    </ol>
+    <p class="dim">Não existe vencedor universal. Cada turma elege uma diferente, e tudo bem: a melhor ferramenta é a que você usa com constância e confere sempre.</p>
+  </section>
+
+  <!-- ═══════════ PRÁTICA C ═══════════ -->
+  <section class="ato pratica" id="pratica-c">
+    <span class="kicker">04b · prática guiada · 25 min</span>
+    <h2>Prática C · Respondendo à Marta com o NotebookLM</h2>
+    <p class="lead">
+      Hora de resolver o primeiro pedido da Marta: a multa do contrato de 41 páginas, <strong>com a cláusula</strong>.
+      Você vai aplicar os três hábitos da alucinação: dar a fonte, pedir o endereço e conferir.
+    </p>
+
+    <div class="precisa">
+      <b class="tit">O que você vai precisar</b>
+      <ul>
+        <li>Uma conta Google logada no navegador</li>
+        <li>O contrato do kit (fictício, feito para treino)</li>
+      </ul>
+      <a class="btn-kit" href="../../assets/kit/contrato/contrato-prestacao-servicos.pdf" download>⬇ Baixar o contrato (PDF, 41 páginas)</a>
+    </div>
+
+    <ol class="passos">
+      <li><b>Crie o caderno.</b> Abra <strong>notebooklm.google.com</strong>, crie um caderno novo e adicione o PDF como fonte. Espere o processamento terminar.</li>
+      <li><b>Faça a pergunta da Marta, exigindo o endereço:</b>
+        <div class="prompt">
+          <div class="prompt-topo"><span class="rot">✨ a multa e a cláusula</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+          <pre>Qual é a multa se a contratante cancelar o contrato sem motivo?
+Diga a cláusula de onde saiu a resposta.</pre>
+        </div>
+        <div class="tela">
+          <span class="tela-rot">o que deve aparecer (resumido)</span>
+          <span class="tela-linha">Multa de R$ 14.700,00, equivalente a duas mensalidades (Cláusula Quinta).</span>
+          <span class="tela-linha dim">Com números de citação clicáveis ao lado do trecho.</span>
+        </div>
+      </li>
+      <li><b>Confira.</b> Clique no número da citação. O NotebookLM mostra o trecho do PDF. Leia com os seus olhos: bateu?</li>
+      <li><b>Agora as perguntas que o cliente faria em seguida:</b>
+        <div class="prompt">
+          <div class="prompt-topo"><span class="rot">✨ valor, prazo e atendimento</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+          <pre>Qual o valor mensal e o dia do vencimento? Por quanto tempo o
+contrato vale? Em quanto tempo um chamado urgente é atendido?
+Diga a cláusula de cada resposta.</pre>
+        </div>
+        <div class="tela">
+          <span class="tela-rot">o que deve aparecer (resumido)</span>
+          <span class="tela-linha">Valor: R$ 7.350,00 por mês, vencimento todo dia 5 (Cláusula Terceira).</span>
+          <span class="tela-linha">Prazo: 24 meses, prorrogável por termo aditivo (Cláusula Segunda).</span>
+          <span class="tela-linha">Chamado urgente: até 6 horas úteis; comum, até 2 dias úteis (Cláusula Oitava).</span>
+        </div>
+      </li>
+      <li><b>A pergunta-armadilha.</b> Pergunte algo que o contrato não diz:
+        <div class="prompt">
+          <div class="prompt-topo"><span class="rot">🪤 o teste da invenção</span><button class="btn-copiar" type="button">📋 copiar</button></div>
+          <pre>O contrato prevê o uso de drones nas visitas técnicas? Se não
+constar nas fontes, responda apenas "não consta".</pre>
+          <div class="prompt-pq"><b>O que observar:</b> a resposta certa é "não consta". Uma ferramenta presa às fontes admite que não achou, em vez de inventar.</div>
+        </div>
+      </li>
+    </ol>
+
+    <details class="prof">
+      <summary>Para o professor · o contrato repete cláusulas</summary>
+      Para chegar a 41 páginas, o contrato de treino repete o mesmo bloco de cláusulas mais adiante
+      (a Décima Sexta repete a Quinta, por exemplo). Se a citação apontar uma cláusula de número alto
+      com o mesmo texto, está correto. Bom gancho: "documento longo tem repetição; a citação te leva ao trecho exato".
+    </details>
+
+    <div class="caixa perigo">
+      <span class="caixa-ic">🔒</span>
+      <div>
+        <span class="caixa-tit">Treino é com dado fictício</span>
+        <p>Não suba contrato real de cliente para treinar. Na seção a seguir, você vê o que pode ou não ir para um chat. Na Noite 4, este mesmo contrato volta, desta vez com o Claude Code trabalhando nos seus arquivos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 05 · DADOS ═══════════ -->
+  <section class="ato" id="dados">
+    <span class="kicker">05 · decisão</span>
+    <h2>O semáforo dos dados</h2>
+    <p class="lead">
+      Tudo o que você cola num chat sai do seu computador e vai para a empresa que roda a IA.
+      Contadores, advogados e RH lidam com dado de terceiros o tempo todo, então a pergunta
+      certa antes de colar é: <strong>esse dado pode sair daqui?</strong>
+    </p>
+
+    <div class="semaforo-leg revela">
+      <span><i class="luz verde"></i><b>Verde</b> pode colar</span>
+      <span><i class="luz amarela"></i><b>Amarelo</b> só depois de tirar nomes, CPFs e números</span>
+      <span><i class="luz vermelha"></i><b>Vermelho</b> nunca vai para um chat</span>
+    </div>
+
+    <div class="semaforo" id="semaforo"></div>
+    <p class="sim-legenda semaforo-placar" id="semaforo-placar" aria-live="polite"></p>
+
+    <div class="caixa alerta">
+      <span class="caixa-ic">🏢</span>
+      <div>
+        <span class="caixa-tit">A regra da empresa vem antes</span>
+        <p>Cada ferramenta tem regras sobre como usa as conversas; veja as configurações de privacidade da sua conta. E a política da sua empresa ou do seu conselho profissional vale mais do que qualquer dica deste material.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 06 · FECHAMENTO ═══════════ -->
+  <section class="ato" id="fechamento">
+    <span class="kicker">06 · próximo passo</span>
+    <h2>Do chat ao agente</h2>
+    <p class="lead">
+      Hoje você usou a IA no modo <strong>chat</strong>: você leva o material até ela e traz a resposta de volta.
+      Funciona, mas imagine a Marta pedindo isso para <strong>30 clientes</strong>.
+    </p>
+
+    <!-- SIM 4: chat × agente -->
+    <div class="sim" id="sim-agente">
+      <div class="sim-topo"><span class="bolinhas"><i></i><i></i><i></i></span><span class="sim-label">simulação · 30 e-mails de cobrança, dois jeitos</span></div>
+      <div class="sim-palco">
+        <div class="pistas">
+          <div class="pista">
+            <span class="np-rot">💬 no chat (hoje)</span>
+            <ol class="pista-passos" id="pista-chat">
+              <li>abrir a planilha de clientes</li><li>copiar o nome do cliente</li><li>colar no chat e pedir</li><li>copiar a resposta</li><li>colar no e-mail e enviar</li>
+            </ol>
+            <div class="contador"><b id="cont-chat">0</b><span>/30 e-mails</span></div>
+          </div>
+          <div class="pista agente">
+            <span class="np-rot">🤖 com um agente (Noite 2 em diante)</span>
+            <ol class="pista-passos" id="pista-agente">
+              <li>você descreve o objetivo, uma vez</li><li>ele lê a planilha sozinho</li><li>mostra o plano e pede sua permissão</li><li>escreve os 30 rascunhos</li><li>você confere uma amostra</li>
+            </ol>
+            <div class="contador"><b id="cont-agente">0</b><span>/30 e-mails</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="sim-controles">
+        <span class="sim-legenda" id="agente-legenda">Os dois jeitos começam juntos. Quem termina primeiro?</span>
+        <button class="btn" type="button" id="agente-reset">↺ Recomeçar</button>
+        <button class="btn prim" type="button" id="agente-play">▶ Começar</button>
+      </div>
+    </div>
+
+    <p>
+      Esse é o salto da Noite 2. Um <strong>agente</strong> é uma IA que, além de escrever, consegue
+      <strong>agir</strong>: abrir arquivos, organizar pastas, criar documentos. Mas a regra central
+      continua valendo para ele também: o que ele vê decide o que ele faz. E ele sempre pede sua
+      permissão antes de mexer.
+    </p>
+
+    <div class="duas">
+      <div class="cartao claude">
+        <h4>📝 Leve para o trabalho</h4>
+        <p>Escolha uma tarefa real desta semana, escreva o briefing de 4 peças e teste num chat. Anote o que precisou ajustar. Traga a tarefa que você "faria tudo para nunca mais fazer": ela vira matéria-prima nas próximas noites.</p>
+      </div>
+      <div class="cartao info" id="antes-noite-2">
+        <h4>🧰 Antes da Noite 2</h4>
+        <p>Traga o <strong>notebook com Windows ou Mac</strong> (tablet e Chromebook não servem). Assine o <strong>plano Pro do Claude</strong> em <a href="https://claude.com/pricing" target="_blank" rel="noopener">claude.com/pricing</a>. No Windows, instale o <strong>Git</strong> em <a href="https://git-scm.com/downloads/win" target="_blank" rel="noopener">git-scm.com</a> (é um ajudante que o app exige; avance com as opções padrão).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 07 · QUIZ FINAL ═══════════ -->
+  <section class="ato" id="quiz-final">
+    <span class="kicker">07 · quiz final</span>
+    <h2>Três decisões para fechar a noite</h2>
+    <p class="lead">Cada pergunta é um caso novo. A regra central resolve todas.</p>
+
+    <div class="quiz" data-quiz>
+      <p class="quiz-q">Na contabilidade, você pediu "resuma este balancete" e colou só a primeira página de cinco. O resumo menciona um prejuízo que você não encontra. O que houve?</p>
+      <div class="quiz-ops">
+        <button class="quiz-op" type="button" data-fb="Ela pode ter acertado por acaso, mas as páginas 2 a 5 nunca estiveram na conversa. Faltou fonte.">A IA leu as outras páginas sozinha no sistema.</button>
+        <button class="quiz-op" type="button" data-certa data-fb="Com só uma página na conversa, ela completou o resto com o que é provável num balancete. Cole o documento inteiro, peça a página de cada número e confira.">Ela completou o que faltava com o "provável": alucinação por falta de fonte.</button>
+        <button class="quiz-op" type="button" data-fb="O resumo apareceu, então ela funcionou. O problema é o que estava, ou não estava, na conversa.">A ferramenta estava fora do ar.</button>
+      </div>
+      <div class="quiz-fb"></div>
+    </div>
+
+    <div class="quiz" data-quiz>
+      <p class="quiz-q">Ontem, numa conversa, você explicou à IA todo o perfil do escritório. Hoje abriu uma conversa nova e a resposta voltou genérica. Por quê?</p>
+      <div class="quiz-ops">
+        <button class="quiz-op" type="button" data-certa data-fb="Contexto é a conversa aberta. Conversa nova começa do zero, a menos que você use um recurso que guarde instruções fixas (vem nas próximas noites).">A conversa nova não tem o contexto de ontem.</button>
+        <button class="quiz-op" type="button" data-fb="Ela não piora com o tempo. O que mudou foi o que está na conversa.">A IA esqueceu porque ficou mais lenta.</button>
+        <button class="quiz-op" type="button" data-fb="Ela não aprende com a sua conversa: o motor não muda enquanto você usa.">Ela aprendeu o perfil, mas preferiu ignorar.</button>
+      </div>
+      <div class="quiz-fb"></div>
+    </div>
+
+    <div class="quiz" data-quiz>
+      <p class="quiz-q">Qual pedido deixa menos coisa para a IA adivinhar?</p>
+      <div class="quiz-ops">
+        <button class="quiz-op" type="button" data-fb="Tem objetivo, mas falta contexto, formato e restrições. Ela vai chutar o resto.">"Escreva uma notificação extrajudicial."</button>
+        <button class="quiz-op" type="button" data-fb="Pedir “caprichado” não diz o que é caprichado para você. Continua sendo chute.">"Escreva uma notificação extrajudicial bem caprichada e profissional."</button>
+        <button class="quiz-op" type="button" data-certa data-fb="Contexto (escritório, cliente, situação), objetivo, formato (uma página, campos em branco) e restrições (não inventar). Quase nada para chutar.">"Sou advogada. Escreva uma notificação extrajudicial de cobrança de aluguel atrasado, em uma página, com campos em branco para nomes e valores. Não invente artigos de lei."</button>
+      </div>
+      <div class="quiz-fb"></div>
+    </div>
+
+    <div class="regra">
+      <span class="regra-rot">O que fica desta noite</span>
+      <p>O que está na conversa decide o que sai. Por isso você <em>dá contexto</em>, <em>dá a fonte</em> e <em>confere</em>.</p>
+    </div>
+
+    <nav class="nav-noites" aria-label="Navegação entre noites">
+      <a href="../../"><small>voltar</small>‹ Mapa do curso</a>
+      <a class="prox" href="../../#noite-2"><small>próxima</small>Noite 2 · Do chat ao agente ›</a>
+    </nav>
+  </section>
+
+</div>
+</main>
+
+<footer class="rodape">Curso de IA · Programa AI · Noite 1 · Dados e empresas dos exercícios são fictícios.</footer>
+
+<script src="../../shared/curso.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/motion@11.11.13/dist/motion.js" defer></script>
+<script src="teatro-oficina/audio/manifest.js" defer></script>
+<script src="teatro-oficina/teatro.js" defer></script>
+<script src="teatro-multa/audio/manifest.js" defer></script>
+<script src="noite.js" defer></script>
+</body>
+</html>
