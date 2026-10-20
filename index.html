@@ -36,6 +36,52 @@ a.cap-card:hover{border-color:var(--claude);transform:translateY(-3px)}
 .cap-card .estado.breve{background:var(--surface2);color:var(--faint)}
 .cap-card.breve{opacity:.72}
 .cap-card.destaque{border-color:color-mix(in srgb,var(--claude) 50%,transparent);box-shadow:0 0 0 4px var(--claude-bg)}
+
+.apoio{display:flex;gap:14px;align-items:center;padding:18px 20px;border-radius:var(--r-lg);border:1px dashed var(--line2);text-decoration:none;color:var(--text);margin-top:6px}
+.apoio:hover{border-color:var(--claude)}
+.apoio span{font-size:28px}.apoio small{display:block;color:var(--dim);font-size:14.5px}
+/* mini-IA */
+.mi{display:grid;grid-template-columns:1fr 200px 1.35fr;gap:18px;padding:22px;margin:24px 0;border-radius:var(--r-lg);border:1px solid var(--line2);background:var(--bg2);box-shadow:var(--shadow)}
+@media (max-width:900px){.mi{grid-template-columns:1fr}}
+.mi-passo{display:block;font-family:var(--mono);font-size:12.5px;color:var(--claude-soft);margin-bottom:10px;font-variant-ligatures:none;font-feature-settings:"liga" 0,"clig" 0,"calt" 0}
+.mi-bibs{display:grid;gap:8px}
+.mi-bib{display:grid;grid-template-columns:34px 1fr;align-items:center;text-align:left;gap:0 8px;padding:10px 12px;border-radius:12px;border:2px solid var(--line2);background:var(--surface);color:var(--text);cursor:pointer;font:inherit}
+.mi-bib span{grid-row:span 2;font-size:24px}
+.mi-bib b{font-size:15px}.mi-bib small{color:var(--dim);font-size:12.5px}
+.mi-bib[aria-pressed="true"]{border-color:var(--claude);background:var(--claude-bg)}
+.mi-ensina{display:flex;gap:6px;margin-top:10px}
+.mi-ensina input{flex:1;min-width:0;padding:9px 12px;border-radius:10px;border:1px solid var(--line2);background:var(--surface);color:var(--text);font:15px var(--sans)}
+.mi-extras{display:block;margin-top:6px;color:var(--ok);font-size:13px}
+.mi-meio{display:flex;flex-direction:column;align-items:center;position:relative}
+.mi-voo{position:absolute;left:-60%;right:0;top:20px;height:150px;pointer-events:none;overflow:visible}
+@media (max-width:900px){.mi-voo{display:none}}
+.mi-frase-voa{position:absolute;left:0;white-space:nowrap;font-size:12px;padding:3px 8px;border-radius:99px;background:var(--surface2);border:1px solid var(--line2);color:var(--dim);opacity:0}
+.mi-cerebro{text-align:center;margin:8px 0 12px}
+.mi-cerebro svg{width:140px;height:auto}
+.mi-cerebro span{display:block;font-size:13.5px;color:var(--dim)}
+.mi-cerebro b{font:600 26px var(--serif);color:var(--text)}
+.mi-cerebro.treinando svg{animation:mi-pulsa .5s ease-in-out infinite}
+.mi-cerebro.treinando .mi-sinapses{stroke:var(--ok)}
+@keyframes mi-pulsa{50%{transform:scale(1.08)}}
+.mi-treinar.pulsa{animation:mi-chama 1.4s ease-in-out infinite}
+@keyframes mi-chama{50%{box-shadow:0 0 0 8px var(--claude-bg)}}
+.mi-sugestoes{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.mi-sug{border:1px solid var(--line2);background:var(--surface);color:var(--dim);border-radius:99px;padding:5px 11px;font:600 13.5px var(--sans);cursor:pointer}
+.mi-sug:hover{color:var(--text);border-color:var(--claude)}
+.mi-texto{min-height:74px;margin:0 0 8px !important;padding:12px 14px;border-radius:12px;background:var(--surface2);border:1px solid var(--line2);font-size:18px;max-width:none !important}
+.mi-nova{background:var(--ok-bg);border-radius:5px}
+.mi-selo{margin:0 0 10px !important;font-size:14px;font-weight:700;padding:6px 10px;border-radius:8px;display:inline-block}
+.mi-selo.nova{background:var(--warn-bg);color:var(--warn)}
+.mi-selo.copia{background:var(--info-bg);color:var(--info)}
+.mi-cands{min-height:120px}
+.mi-vazio{color:var(--faint);font-size:14.5px}
+.mi-temp{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:12px 0;font-size:14px;color:var(--dim)}
+.mi-temp input{flex:1;accent-color:var(--claude)}
+.mi-temp small{flex-basis:100%;color:var(--faint)}
+.mi-botoes{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.mi-status{grid-column:1/-1;margin:0 !important}
+.mi-col{min-width:0}
+.mi-gera{display:flex;flex-direction:column}
 </style>
 </head>
 <body>
@@ -72,9 +118,69 @@ a.cap-card:hover{border-color:var(--claude);transform:translateY(-3px)}
         <circle class="no" cx="588" cy="60" r="20"/><text class="no-num" x="588" y="65">4</text>
         <circle class="no" cx="764" cy="60" r="20"/><text class="no-num" x="764" y="65">5</text>
         <circle class="no" cx="900" cy="60" r="20"/><text class="no-num" x="900" y="65">6</text>
-        <text x="60" y="110">chat</text><text x="236" y="110">agente</text><text x="412" y="110">dados</text>
-        <text x="588" y="110">documentos</text><text x="764" y="110">navegador</text><text x="900" y="110">rotina</text>
+        <text x="60" y="110">chat</text><text x="236" y="110">agente</text><text x="412" y="110">arquivos</text>
+        <text x="588" y="110">documentos</text><text x="764" y="110">conteúdo</text><text x="900" y="110">dia a dia</text>
       </svg>
+    </div>
+  </section>
+
+  <section class="ato" id="laboratorio">
+    <span class="kicker">laboratório · experimente agora</span>
+    <h2>Treine uma IA de bolso em dez segundos</h2>
+    <p class="lead">
+      Esta é uma IA <strong>de verdade</strong>, só que minúscula: ela aprende, ali no seu navegador, qual
+      palavra costuma vir depois de quais. É o mesmo princípio do ChatGPT e do Claude, em escala de brinquedo.
+      Escolha o que ela vai ler, treine e veja o que ela escreve.
+    </p>
+
+    <div class="mi" id="mini-ia">
+      <div class="mi-col">
+        <span class="mi-passo">1 · o que ela vai ler</span>
+        <div class="mi-bibs" id="mi-bibs"></div>
+        <form class="mi-ensina" id="mi-ensina">
+          <input id="mi-frase" type="text" maxlength="140" placeholder="Ensine uma frase sua…" aria-label="Frase para ensinar à IA">
+          <button class="btn" type="submit">+ Ensinar</button>
+        </form>
+        <small class="mi-extras" id="mi-extras"></small>
+      </div>
+
+      <div class="mi-col mi-meio">
+        <span class="mi-passo">2 · treino</span>
+        <div class="mi-voo" id="mi-voo"></div>
+        <div class="mi-cerebro" id="mi-cerebro">
+          <svg viewBox="0 0 120 100" aria-hidden="true">
+            <path d="M60 14c-10-10-30-6-33 8-12 1-18 14-11 24-7 8-3 22 9 24 2 12 18 18 28 10 4 6 14 6 18 0 10 8 26 2 28-10 12-2 16-16 9-24 7-10 1-23-11-24-3-14-23-18-33-8z" fill="var(--claude-bg)" stroke="var(--claude)" stroke-width="2.5"/>
+            <g class="mi-sinapses" stroke="var(--claude-soft)" stroke-width="2" fill="none" stroke-linecap="round">
+              <path d="M40 34q10 8 20 0t20 0"/><path d="M34 52q14 10 26 0t26 0"/><path d="M44 68q8 6 16 0t16 0"/><path d="M60 20v62"/>
+            </g>
+          </svg>
+          <span><b id="mi-pares">0</b> ligações aprendidas</span>
+        </div>
+        <button class="btn prim mi-treinar pulsa" id="mi-treinar" type="button">⚡ Treinar</button>
+      </div>
+
+      <div class="mi-col mi-gera">
+        <span class="mi-passo">3 · ela escreve</span>
+        <div class="mi-sugestoes" id="mi-sugestoes" aria-label="Começos sugeridos"></div>
+        <p class="mi-texto sim-texto" id="mi-texto"></p>
+        <p class="mi-selo" id="mi-selo" hidden></p>
+        <div class="np-cands mi-cands" id="mi-cands"></div>
+        <label class="mi-temp">temperatura
+          <input id="mi-temp" type="range" min="10" max="150" value="60">
+          <small id="mi-temp-rot">equilibrada</small>
+        </label>
+        <div class="mi-botoes" id="mi-gerar" hidden>
+          <button class="btn" type="button" id="mi-limpa">↺ Limpar</button>
+          <button class="btn" type="button" id="mi-tudo">Frase inteira</button>
+          <button class="btn prim" type="button" id="mi-prox">Próxima palavra ›</button>
+        </div>
+      </div>
+      <p class="mi-status sim-legenda" id="mi-status" aria-live="polite">Escolha uma ou mais bibliotecas e aperte <b>Treinar</b>.</p>
+    </div>
+
+    <div class="duas">
+      <div class="cartao claude"><h4>🧪 Experimente</h4><p>Treine só com os e-mails e depois misture com as receitas. Comece com "Prezado cliente," e veja o que acontece. Ensine uma frase sua e treine de novo.</p></div>
+      <div class="cartao info"><h4>🔎 O que reparar</h4><p>Ela nunca escreve uma palavra que não leu. Mas combina pedaços e cria frases que <b>ninguém escreveu</b>, às vezes erradas com cara de certas. Isso tem nome, e é o tema do Capítulo 1.</p></div>
     </div>
   </section>
 
@@ -91,44 +197,49 @@ a.cap-card:hover{border-color:var(--claude);transform:translateY(-3px)}
         <span class="estado on">disponível</span>
         <span class="n">Capítulo 1</span>
         <h3>O que a IA faz de verdade</h3>
-        <p>Como um LLM escreve, por que alucina, o briefing de 4 peças, qual ferramenta usar e o semáforo dos dados.</p>
+        <p>Como um LLM escreve, mitos, alucinação, o briefing de 4 peças, ChatGPT, Gemini, Claude, NotebookLM, imagem e o primeiro contato com o Claude Code.</p>
       </a>
       <div class="cap-card breve revela" id="cap-2">
         <span class="estado breve">em breve</span>
         <span class="n">Capítulo 2</span>
         <h3>Do chat ao agente</h3>
-        <p>Instalação do Claude Code e a primeira tarefa de verdade: a pasta bagunçada, com plano antes de mexer.</p>
+        <p>Claude na web (Artifacts e Projects) × Claude Code no seu computador, a instalação guiada e a primeira conversa com o kit.</p>
       </div>
-      <div class="cap-card breve revela">
+      <div class="cap-card breve revela" id="cap-3">
         <span class="estado breve">em breve</span>
         <span class="n">Capítulo 3</span>
-        <h3>O agente com dados</h3>
-        <p>Planilha de gastos e documentos em lote, com estações para cada área.</p>
+        <h3>O agente nos seus arquivos</h3>
+        <p>A pasta bagunçada com plano antes de mexer e a planilha de gastos que vira análise, gráfico e respostas.</p>
       </div>
-      <div class="cap-card breve revela">
+      <div class="cap-card breve revela" id="cap-4">
         <span class="estado breve">em breve</span>
         <span class="n">Capítulo 4</span>
-        <h3>Documentos longos e o seu jeito</h3>
-        <p>O contrato de 41 páginas com a cláusula citada, o caderno de regras e a sua primeira Skill.</p>
+        <h3>O agente nos seus documentos</h3>
+        <p>Declarações em lote e o contrato de 41 páginas com resumo, tabela de valores e a cláusula citada.</p>
       </div>
-      <div class="cap-card breve revela">
+      <div class="cap-card breve revela" id="cap-5">
         <span class="estado breve">em breve</span>
         <span class="n">Capítulo 5</span>
-        <h3>O agente no navegador</h3>
-        <p>Claude Code com o Chrome: tirar dados de sites, preencher formulários e rascunhar mensagens com segurança.</p>
+        <h3>Conteúdo e ensino no automático</h3>
+        <p>Um texto vira dez, a prova com gabarito, Skills, Conectores (Drive, Gmail, Agenda) e o Cowork.</p>
       </div>
-      <div class="cap-card breve revela">
+      <div class="cap-card breve revela" id="cap-6">
         <span class="estado breve">em breve</span>
         <span class="n">Capítulo 6</span>
-        <h3>Da tarefa à rotina</h3>
-        <p>Sua página publicada, conectores e uma rotina sua rodando, com os limites honestos do agente.</p>
+        <h3>Sua página e o agente no dia a dia</h3>
+        <p>Sua página na internet, o Claude Code usando o Chrome por você, hábitos, limites, voltar atrás e o seu próprio fluxo.</p>
       </div>
     </div>
+
+    <a class="apoio revela" href="https://kelsonvictr.github.io/oficina-claude-code-programaai/oficina/" target="_blank" rel="noopener">
+      <span>📘</span><div><b>Material de apoio · Oficina Claude Code</b><small>Os 11 capítulos da oficina, com o roteiro detalhado de cada prática. Abre em outra aba.</small></div>
+    </a>
   </section>
 </div>
 </main>
 
 <footer class="rodape">Curso de IA · Programa AI · Dados e empresas dos exercícios são fictícios.</footer>
 <script src="shared/curso.js"></script>
+<script src="shared/mini-ia.js"></script>
 </body>
 </html>
